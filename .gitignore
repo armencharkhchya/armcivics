@@ -1,0 +1,10 @@
+/application/cache/*
+!application/cache/index.html
+/application/logs/*
+!application/logs/index.html
+!application/*/.htaccess
+#/cache
+/application/config/config.php
+/application/config/database.php
+/application/storage
+.htaccess
