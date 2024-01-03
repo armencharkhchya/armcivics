@@ -27,6 +27,7 @@ require APPPATH.'/libraries/BaseController.php';
                 
                 
                 
+                
             }
             $this->global['links'] = $this->pagination->create_links();
             $this->global['items'] = $this->Admin_model->getItems($config['per_page'], $page);  
