@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.14" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.15" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -87,19 +87,20 @@
 	<section id="topbar" class="d-flex align-items-center">
 		<div class="container d-flex justify-content-center justify-content-md-between">
 			<div class="contact-info d-flex align-items-center me-auto">
-				<i class="bi bi-envelope d-none d-sm-flex align-items-center"><a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a></i>
-				<i class="bi bi-telephone d-none d-lg-flex align-items-center ms-4"><span>(010) 32-11-13; 32-11-14</span></i>
+				<!-- <i class="bi bi-envelope d-none d-sm-flex align-items-center"><a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a></i>
+				<i class="bi bi-telephone d-none d-lg-flex align-items-center ms-4"><span>(010) 32-11-13; 32-11-14</span></i> -->
+                <b>«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
-				<a href="https://twitter.com/PH_Armenia" target="_blank"><i class="bi bi-twitter"></i></a>
+				<!-- <a href="https://twitter.com/PH_Armenia" target="_blank"><i class="bi bi-twitter"></i></a> -->
 				<a href="https://www.facebook.com/ArmCivics4Engage" target="_blank"><i class="bi bi-facebook"></i></a>
 				<a href="https://www.instagram.com/armcivics4engage/" target="_blank"><i class="bi bi-instagram"></i></a>
 				<a href="https://www.youtube.com/@Armcivics4engage" target="_blank"><i class='bx bxl-youtube'></i></a>
 			</div>
 			<div class="languages d-flex align-items-center">
 				<!-- <a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'ru'); ?>" class="<?= $lang === 'ru' ? 'hidden' : NULL; ?>"><span class="ru">на Русском</span></a> -->
-				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'am'); ?>" class="<?= $lang === 'am' ? 'hidden' : NULL; ?>"><span class="am">Հայերեն</span></a>
-				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'en'); ?>" class="<?= $lang === 'en' ? 'hidden' : NULL; ?>"><span class="en">In English</span></a>
+				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'am'); ?>" class="<?= $lang === 'am' ? 'hidden' : NULL; ?>"><span class="am"></span></a>
+				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'en'); ?>" class="<?= $lang === 'en' ? 'hidden' : NULL; ?>"><span class="en"></span></a>
 			</div>
 			<a href="<?= base_url($lang . '/auth'); ?>" class="auth"><i class='bx bx-log-in-circle'></i></a>
 		</div>
@@ -108,7 +109,7 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="align-items-center d-lg-block d-flex">
 		<div class="container d-flex align-items-center justify-content-between position-relative">
-			<h1 class="logo d-lg-block d-none"><a href="<?= base_url($lang); ?>">ArmCivics<span>.</span></a></h1>
+			<h1 class="logo d-lg-block d-none"><a href="<?= base_url($lang); ?>">ArmCivics<span>.</span>am</a></h1>
 			<h1 class="logo d-lg-none d-block"><a href="<?= base_url($lang); ?>">A.C.</a></h1>
 			<div class="search-panel">
 				<a href="<?= base_url($lang); ?>"><?= $this->input->server('SERVER_NAME') ?></a>
@@ -136,6 +137,12 @@
 			</form>		
 			<nav id="navbar" class="navbar">				
 				<ul>
+                    <li class="me-3">
+                        <img src="<?php echo base_url('assets/img/clients/usaid.jpg'); ?>" height="43" alt="USAID">
+                    </li>
+                    <li>
+                        <img src="<?php echo base_url('assets/img/clients/ph.jpg'); ?>" height="36" alt="USAID">
+                    </li>
 					<!-- <?php if (!$this->uri->segment(2)) : ?>
 						<li><a class="nav-link scrollto" href="#about"><?= $this->lang->line('about'); ?></a></li>
 						<li><a class="nav-link scrollto" href="#services"><?= $this->lang->line('library'); ?></a></li>					

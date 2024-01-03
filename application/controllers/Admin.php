@@ -24,8 +24,6 @@ require APPPATH.'/libraries/BaseController.php';
             $page = intval($this->input->get('page'));
             if ($page > ceil($count / $config['per_page'])) {
                 return $this->pageNotFound();
-                   
-                
             }
             $this->global['links'] = $this->pagination->create_links();
             $this->global['items'] = $this->Admin_model->getItems($config['per_page'], $page);  
