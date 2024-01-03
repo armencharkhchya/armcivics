@@ -130,7 +130,7 @@
         return 1;
     }
     
-    function language($link = NULL, $lang = 'am', $change_lang) {
+    function language($link = NULL, $lang = 'am', $change_lang = NULL) {
         $data = [
             'am' => 'am',
             'ru' => 'ru',

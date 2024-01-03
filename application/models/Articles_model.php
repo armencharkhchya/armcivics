@@ -80,7 +80,7 @@
             }
         }
 
-        public function get_articles_by_category($categ_id = null, $limit, $start){
+        public function get_articles_by_category($categ_id = null, $limit = null, $start = null){
             $lang = $this->uri->segment(1);
             if ($start < 2) {
                 $start = 1;
