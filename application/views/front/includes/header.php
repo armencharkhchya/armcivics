@@ -135,7 +135,7 @@
 			<form action="<?php echo base_url($lang . '/category/'); ?>" method="get" class="ms-2 me-2 me-lg-0 ms-lg-3 d-lg-none d-block">
 				<select name="id" class="select2ToTree form-control" onchange="this.form.submit()"></select>
 			</form>		
-			<nav id="navbar" class="navbar">				
+			<nav class="navbar">				
 				<ul>
                     <li class="me-3">
                         <img src="<?php echo base_url('assets/img/clients/usaid.jpg'); ?>" height="43" alt="USAID">

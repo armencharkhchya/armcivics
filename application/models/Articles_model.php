@@ -67,6 +67,7 @@
             $data['about'] = $this->get_static_page('about');
             $data['result'] = $this->get_videos();
             $data['team'] = $this->get_our_team();
+            $data['categ_41'] = $this->get_articles_by_category('41', 6 , 0);
             $data['clients'] = $this->get_our_clients();
             return $data;
         }
@@ -88,7 +89,7 @@
             $data = $this->membersCateg($categ_id);
             $this->getCatIds($data);
             array_push($this->catIds, $categ_id);
-            $this->db->select('categories.id as c_id, categories.name_' . $lang . ' as c_name, articles.id,articles.name_'.$lang.' as name,articles.img,articles.date');
+            $this->db->select('categories.id as c_id, categories.name_' . $lang . ' as c_name, articles.id,articles.name_'.$lang.' as name,articles.text_'.$lang.' as text,articles.img,articles.date');
             $this->db->from($this->table);
             $this->db->join('categories', 'categories.id = articles.category_id', 'left');
             $this->db->where("articles.date <=", date("Y-m-d H:i:s"));
