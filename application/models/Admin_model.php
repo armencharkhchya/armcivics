@@ -536,7 +536,7 @@
             return $query->row();
         }
     
-        public function setArchive($name_am, $name_ru, $name_en, $img = null, $file_info, $date, $type){
+        public function setArchive($name_am, $name_ru, $name_en, $img = null, $file_info = null, $date = null , $type = null){
             $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
@@ -549,7 +549,7 @@
             return $this->db->insert('archive', $data);
         }
 
-        public function updateArchive($item, $name_am, $name_en, $img = null, $file_info = null, $date, $type){
+        public function updateArchive($item, $name_am, $name_en, $img = null, $file_info = null, $date = null, $type = null){
             if ($img == null && $file_info == null) {
                 $data = array(
                     'name_am' => $name_am,
@@ -1154,7 +1154,7 @@
             return $query->num_rows();
         }
         
-        function userListing($searchText = '', $page, $segment) {
+        function userListing($searchText = '', $page = null, $segment = null) {
             $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, BaseTbl.createdDtm, Role.role');
             $this->db->from('tbl_users as BaseTbl');
             $this->db->join('tbl_roles as Role', 'Role.roleId = BaseTbl.roleId','left');
