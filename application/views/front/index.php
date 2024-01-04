@@ -1,8 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-9 position-relative">
-        <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -15px;top: 40px;">
-        </div>
+            <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -15px;top: 20px;"></div>
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <!-- <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="0" class="active"
@@ -366,6 +365,8 @@
                 </div>
             </section>
         </div>
-    
+        <div class="col-3">
+            
+        </div>
     </div>
 </div>
