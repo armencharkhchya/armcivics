@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.16" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.17" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>

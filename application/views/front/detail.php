@@ -13,7 +13,7 @@
           <h1 class="article-title"><?= $article->name ?></h1>
           <div class="datetab row">
             <div class="col-sm-3">
-              <?= my_date(date($article->date), $lang) . '&nbsp;&nbsp;|&nbsp;&nbsp;<i class="bx bx-show" style="font-size: 22px;vertical-align: sub;"></i> ' . $article->votes; ?>
+                <small><?= my_date(date($article->date), $lang) . '&nbsp;&nbsp;|&nbsp;&nbsp;<i class="bx bx-show" style="font-size: 22px;vertical-align: sub;"></i> ' . $article->votes; ?></small>
             </div>
             <?php if (!empty($article->tag_name)) : ?>
               <div class="col-sm-9 article-tags ">
