@@ -1105,6 +1105,10 @@ section {
   padding: 20px 0;
   overflow: hidden;
 }
+section.eventful img {
+    height: 92px;
+    object-fit: cover;
+}
 .carousel-dark .carousel-caption {
     color: #fff;
     background: rgba(0,0,0,.75);

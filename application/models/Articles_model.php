@@ -67,7 +67,8 @@
             $data['about'] = $this->get_static_page('about');
             $data['result'] = $this->get_videos();
             $data['team'] = $this->get_our_team();
-            $data['slider'] = $this->db->get_where($this->table, ['general' => 1], 4, 0 )->result();
+            $data['slider'] = $this->db->get_where($this->table, ['general' => 1, 'publish' => '1'], 4, 0 )->result();
+            $data['eventful'] = $this->get_eventful();
             $data['clients'] = $this->get_our_clients();
             return $data;
         }
@@ -81,6 +82,21 @@
             }
         }
 
+        public function get_eventful(){
+           $query = $this->db->select('*')
+           ->from($this->table)
+           ->where('general',1)
+           ->where('publish','1')
+           ->where_not_in('category_id',array(46))
+           ->limit(2, 0)
+           ->get();
+           if ($query->num_rows() > 0) {
+                return $query->result();
+           }else{
+                return false;
+           }           
+        }
+        
         public function get_articles_by_category($categ_id = null, $limit = null, $start = null){
             $lang = $this->uri->segment(1);
             if ($start < 2) {

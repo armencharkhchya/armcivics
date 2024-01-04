@@ -3,7 +3,7 @@
         <div class="col-9 position-relative">
         <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -15px;top: 40px;">
         </div>
-            <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <!-- <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -92,36 +92,26 @@
             </section>
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                        <h3 class="mt-0 border-bottom pb-3"><?php echo $this->lang->line('eventful') ?></h3>
+                    <div class="section-title pb-3">
+                        <h3 class="mt-0"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="<?php echo base_url($lang . '/literature'); ?>">
+                        <?php foreach($eventful as $key => $item): ?>
+                        <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
+                            <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>" class="text-dark">
                                 <div class="row">
-                                    <p>sdfsdfsf</p>
-                                    <div class="col-3">
-                                    <img src="" alt=""> 
+                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo $item->{"name_".$lang}; ?></h6>
+                                    <div class="col-4">
+                                        <img class="lazyload d-block w-100" data-src="<?= cdn($item->img, 960, 480); ?>" alt=""
+                                        onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
                                     </div>
-                                    <div class="col-9">
-                                    <b>sdfsdfsdf</b>
+                                    <div class="col-8">
+                                        <b><?php echo word_limiter($item->{"text_".$lang}, 8); ?></b>
                                     </div>
                                 </div>
                             </a>
                         </div> 
-                        <div class="col-6" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="<?php echo base_url($lang . '/literature'); ?>">
-                                <div class="row">
-                                    <p>sdfsdfsf</p>
-                                    <div class="col-3">
-                                    <img src="" alt=""> 
-                                    </div>
-                                    <div class="col-9">
-                                    <b>sdfsdfsdf</b>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>                       
+                        <?php endforeach; ?>                                          
                     </div>
                 </div>
             </section>
