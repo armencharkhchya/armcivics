@@ -560,6 +560,23 @@ input.search {
     max-height: 70vh;
     object-fit: cover;
 }
+
+.carousel .carousel-control-next-icon {
+    background-image: url('../img/next.png');
+}
+.carousel .carousel-control-prev-icon {
+    background-image: url('../img/next.png');
+    transform: rotate(180deg);
+}
+.carousel-dark .carousel-control-next-icon, .carousel-dark .carousel-control-prev-icon {
+    filter:unset;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+    
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -1088,7 +1105,11 @@ section {
   padding: 40px 0;
   overflow: hidden;
 }
-
+.carousel-dark .carousel-caption {
+    color: #fff;
+    background: rgba(0,0,0,.5);
+    padding: 1.5rem;
+}
 .section-bg {
   background-color: #f6f9fe;
 }

@@ -1,8 +1,10 @@
    	<!-- ======= Contact Section ======= -->
-       <section id="contact" class="contact">
-  		<div class="container" data-aos="fade-up">
+  
+       <section  class="contact" style="position: relative">
+        <div id="contact" style="position: absolute; top:-160px"></div>
+  		<div  class="container" data-aos="fade-up">
 
-  			<div class="section-title">
+  			<div  class="section-title">
   				<h2><?php echo $this->lang->line('contact'); ?></h2>
   				<h3><span><?php echo $this->lang->line('contact_us'); ?></span></h3>
   				<p>Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված մոդելային տեքստ է։</p>

@@ -67,7 +67,7 @@
             $data['about'] = $this->get_static_page('about');
             $data['result'] = $this->get_videos();
             $data['team'] = $this->get_our_team();
-            $data['categ_41'] = $this->get_articles_by_category('41', 6 , 0);
+            $data['slider'] = $this->db->get_where($this->table, ['general' => 1], 4, 0 )->result();
             $data['clients'] = $this->get_our_clients();
             return $data;
         }
