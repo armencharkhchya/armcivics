@@ -37,7 +37,7 @@
                 </button>
             </section>
             <section id="about" class="about section-bg">
-                <div class="container" data-aos="fade-up">
+                <div class="px-4" data-aos="fade-up">
                     <div class="section-title">
                         <h2><?php echo $this->lang->line('about'); ?></h2>
                         <h3><?php echo $this->lang->line('know more'); ?></h3>
@@ -294,7 +294,7 @@
                     </div>
                 </div>
             </section>
-            <section id="multimedia" class="multimedia">
+            <section id="multimedia" class="multimedia pt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
                         <h2><?php echo $this->lang->line('programs'); ?></h2>
