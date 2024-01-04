@@ -1109,6 +1109,9 @@ section.eventful img {
     height: 92px;
     object-fit: cover;
 }
+section.eventful h6 {
+    height: 48px;
+}
 .carousel-dark .carousel-caption {
     color: #fff;
     background: rgba(0,0,0,.75);
