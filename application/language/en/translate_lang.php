@@ -99,6 +99,8 @@ $lang['our-team'] = 'Our <span>team</span>';
 $lang['pl_login'] = 'Please login';
 $lang['NCET'] = 'National Center for Educational Technology';
 $lang['login_system'] = 'Login system';
+$lang['eventful'] = 'Eventful';
+
 
 $lang['about-ap'] = 'About the program';
 $lang['about-io'] = 'Implementing organizations';
