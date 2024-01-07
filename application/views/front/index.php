@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-9 position-relative">
-            <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -15px;top: 20px;"></div>
+            <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -1px;top: 20px;"></div>
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <!-- <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="0" class="active"
@@ -312,8 +312,8 @@
                         </div>
                     </div>
                     <div class="row multimedia-container" data-aos="fade-up" data-aos-delay="200">
-                        <?php if(!empty($result)) : ?>
-                        <?php foreach ($result as $key => $value) : ?>
+                        <?php if(!empty($videos)) : ?>
+                        <?php foreach ($videos as $key => $value) : ?>
                         <?php $url = $value->url;
                     parse_str(parse_url($url, PHP_URL_QUERY), $my_array_of_vars);
                     $unique_id = $my_array_of_vars['v']; ?>
@@ -366,7 +366,27 @@
             </section>
         </div>
         <div class="col-3">
-            
+            <section id="announcements">
+                <img src="<?php echo base_url('assets/img/announcements.png'); ?>" alt="announcements" class="img-fluid">
+                <div class="section-bg mt-4 px-2 py-3">
+                    <p class="text-uppercase mb-0 text-primary"><?php echo $this->lang->line('announcement'); ?>.</p>
+                    <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
+                        <div class="text-primary mb-1"><?php echo $announcement->name; ?></div>
+                        <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
+                        <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>
+                    </a>
+                </div>
+            </section>
+            <section class="pt-0">
+                <a href="">
+                    <img src="<?php echo base_url('assets/img/Screenshot_1.png'); ?>" alt="announcements" class="img-fluid w-100">
+                </a>                
+            </section>
+            <section class="pt-0">
+                <a href="">
+                    <img src="<?php echo base_url('assets/img/Screenshot_2.png'); ?>" alt="announcements" class="img-fluid w-100">
+                </a>                
+            </section>
         </div>
     </div>
 </div>

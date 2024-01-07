@@ -100,7 +100,7 @@ $lang['pl_login'] = 'Please login';
 $lang['NCET'] = 'National Center for Educational Technology';
 $lang['login_system'] = 'Login system';
 $lang['eventful'] = 'Eventful';
-
+$lang['announcement'] = 'Announcement';
 
 $lang['about-ap'] = 'About the program';
 $lang['about-io'] = 'Implementing organizations';
