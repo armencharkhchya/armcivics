@@ -91,7 +91,7 @@
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
                             <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>" class="text-dark">
                                 <div class="row">
-                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($item->{"name_".$lang}, 40); ?></h6>
+                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($item->{"name_".$lang}, 30); ?></h6>
                                     <div class="col-4">
                                         <img class="lazyload d-block w-100" data-src="<?= cdn($item->img, 960, 480); ?>" alt=""
                                         onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
