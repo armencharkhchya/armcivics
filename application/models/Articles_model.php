@@ -71,6 +71,7 @@
             $data['eventful'] = $this->get_eventful();
             $data['announcement'] = $this->get_announcement();
             $data['clients'] = $this->get_our_clients();
+            $data['video'] = $this->get_all_multimedia(1, 0);
             return $data;
         }
         
@@ -89,7 +90,7 @@
            ->where('general',1)
            ->where('publish','1')
            ->where_not_in('category_id',array(46))
-           ->limit(1, 0)
+           ->limit(2, 0)
            ->get();
            if ($query->num_rows() > 0) {                
                 return $query->result();

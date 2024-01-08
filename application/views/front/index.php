@@ -3,14 +3,6 @@
         <div class="col-9 position-relative">
             <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -1px;top: 20px;"></div>
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
-                <!-- <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselMainSlider" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div> -->
                 <div class="carousel-inner">
                     <?php foreach($slider as $key => $item): ?>
                         <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">                            
@@ -99,7 +91,7 @@
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
                             <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>" class="text-dark">
                                 <div class="row">
-                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo $item->{"name_".$lang}; ?></h6>
+                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($item->{"name_".$lang}, 40); ?></h6>
                                     <div class="col-4">
                                         <img class="lazyload d-block w-100" data-src="<?= cdn($item->img, 960, 480); ?>" alt=""
                                         onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
@@ -386,6 +378,33 @@
                 <a href="">
                     <img src="<?php echo base_url('assets/img/Screenshot_2.png'); ?>" alt="announcements" class="img-fluid w-100">
                 </a>                
+            </section>
+            <?php if (!empty($video)) : ?> 
+                <?php   $url = $video[0]->url;
+                        parse_str(parse_url($url, PHP_URL_QUERY), $my_array_of_vars);
+                        $unique_id = $my_array_of_vars['v'];
+                ?>
+                <section class="pt-0 youtube">
+                            <!-- <img src="http://img.youtube.com/vi/<?= $unique_id; ?>/mqdefault.jpg" class="card-img-top" /> -->
+                    <iframe width="560" height="200" src="https://www.youtube.com/embed/<?= $unique_id; ?>?si=PNHGPJqQK1fjPGU7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <!-- <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px" width="50px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" data-src="<?= $unique_id; ?>">
+                                <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                                    C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                                <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                                    C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                                <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"></path>
+                            </svg> -->
+                </section>
+            <?php endif; ?>
+            <section class="pt-0">
+                <a href="">
+                    <img src="<?php echo base_url('assets/img/Screenshot_3.png'); ?>" alt="announcements" class="img-fluid w-100">
+                </a>                
+            </section>
+            <section class="pt-0">
+                <div class="fb-page" data-href="https://www.facebook.com/ArmCivics4Engage" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/ArmCivics4Engage" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ArmCivics4Engage">Քաղաքացիական կրթություն և մասնակցություն/ACE</a></blockquote>
+                </div>         
             </section>
         </div>
     </div>

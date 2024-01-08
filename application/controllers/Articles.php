@@ -27,7 +27,6 @@ class Articles extends CI_Controller {
 		// }else{
 		// 	$this->global = $this->cache->get('index.'.$this->global['lang']);
 		// }
-		
 		$this->global += $this->Articles_model->general_data();
 		load_page('front/index', $this->global['lang'], $this->global);          
 	}
