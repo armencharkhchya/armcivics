@@ -68,7 +68,8 @@
             $data['videos'] = $this->get_videos();
             // $data['team'] = $this->get_our_team();
             $data['slider'] = $this->db->get_where($this->table, ['general' => 1, 'publish' => '1'], 4, 0 )->result();
-            $data['eventful'] = $this->get_eventful();
+            $data['eventful_1'] = $this->get_eventful_1();
+            $data['eventful_2'] = $this->get_eventful_2();
             $data['announcement'] = $this->get_announcement();
             $data['clients'] = $this->get_our_clients();
             $data['video'] = $this->get_all_multimedia(1, 0);
@@ -84,21 +85,16 @@
             }
         }
 
-        public function get_eventful(){        
-           $query = $this->db->select("*")
-           ->from($this->table)
-           ->where('general',1)
-           ->where('publish','1')
-           ->where_not_in('category_id',array(46))
-           ->limit(2, 0)
-           ->get();
-           if ($query->num_rows() > 0) {                
-                return $query->result();
-           }else{
-                return false;
-           }           
+        public function get_eventful_1(){ 
+          $q =   $this->get_articles_by_category('28','1','0');  
+          return $q[0]; 
         }
         
+        public function get_eventful_2(){ 
+            $q =   $this->get_articles_by_category('41','1','0');  
+            return $q[0]; 
+        }
+          
         public function get_announcement(){
             $lang = $this->uri->segment(1);
             $query = $this->db->select("name_{$lang} AS name, text_{$lang} AS text, date")

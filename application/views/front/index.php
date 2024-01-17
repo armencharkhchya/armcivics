@@ -87,22 +87,34 @@
                         <h3 class="mt-0"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
-                        <?php foreach($eventful as $key => $item): ?>
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>" class="text-dark">
+                            <a href="<?= base_url($lang . '/article?'.$eventful_1->name. '&i=' . $eventful_1->id); ?>" class="text-dark">
                                 <div class="row">
-                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($item->{"name_".$lang}, 30); ?></h6>
+                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_1->name, 30); ?></h6>
                                     <div class="col-4">
-                                        <img class="lazyload d-block w-100" data-src="<?= cdn($item->img, 960, 480); ?>" alt=""
+                                        <img class="lazyload d-block w-100" data-src="<?= cdn($eventful_1->img, 960, 480); ?>" alt=""
                                         onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
                                     </div>
                                     <div class="col-8">
-                                        <b><?php echo word_limiter($item->{"text_".$lang}, 8); ?></b>
+                                        <b><?php echo word_limiter($eventful_1->text, 8); ?></b>
                                     </div>
                                 </div>
                             </a>
-                        </div> 
-                        <?php endforeach; ?>                                          
+                        </div>      
+                        <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
+                            <a href="<?= base_url($lang . '/article?'.$eventful_2->name. '&i=' . $eventful_2->id); ?>" class="text-dark">
+                                <div class="row">
+                                    <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_2->name, 30); ?></h6>
+                                    <div class="col-4">
+                                        <img class="lazyload d-block w-100" data-src="<?= cdn($eventful_2->img, 960, 480); ?>" alt=""
+                                        onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
+                                    </div>
+                                    <div class="col-8">
+                                        <b><?php echo word_limiter($eventful_2->text, 8); ?></b>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>                                    
                     </div>
                 </div>
             </section>
