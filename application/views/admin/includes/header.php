@@ -15,7 +15,7 @@
   <link href="<?php echo base_url(); ?>assets/dist/css/bootstrap-tagsinput.css" rel="stylesheet" type="text/css">
   <link href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
   <link href="<?php echo base_url(); ?>assets/dist/css/_all-skins.min.css" rel="stylesheet" type="text/css" />
-  <link href="<?php echo base_url(); ?>assets/dist/css/admin_main.css?v=0.01" rel="stylesheet" type="text/css" />
+  <link href="<?php echo base_url(); ?>assets/dist/css/admin_main.css?v=0.02" rel="stylesheet" type="text/css" />
   <link href="<?php echo base_url(); ?>assets/dist/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
   <link href="<?php echo base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
   <link href="<?php echo base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
@@ -141,6 +141,11 @@
           <li>
             <a href="<?php echo base_url('admin/team'); ?>">
               <i class="fa fa-users"></i> <span>Մեր թիմը</span></i>
+            </a>
+          </li>
+          <li>
+            <a href="<?php echo base_url('admin/testimonials'); ?>">
+              <i class="fa fa-comments"></i> <span>Կարծիքներ</span></i>
             </a>
           </li>
           <li>

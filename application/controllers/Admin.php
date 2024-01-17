@@ -557,6 +557,53 @@ require APPPATH.'/libraries/BaseController.php';
             }
         }
 
+        public function testimonials(){
+            $this->global['pageTitle'] = 'Կարծիքներ';
+            $count = $this->Admin_model->get_count_by_testimonials();
+            $config = _pagination(base_url('admin/testimonials'), $count);
+            $this->pagination->initialize($config);
+            $page = intval($this->input->get('page'));
+            if ($page > ceil($count / $config['per_page'])) {
+                return $this->pageNotFound();
+            }
+            $this->global['links'] = $this->pagination->create_links();
+            $this->global['items'] = $this->Admin_model->get_all_testimonials($config['per_page'], $page);
+            $this->global['allCount'] = $count;
+            $this->loadViews('admin/testimonials', $this->global, null);
+        }
+        
+        public function addTestimonials(){               
+            if ($_FILES['image_name']['name'] !== '') {
+                $upload_path = FCPATH . 'images/testimonials';
+                resizeImage($upload_path);
+                $data['img'] = $this->upload->data('file_name');
+                $result = $this->Admin_model->setTestimonials($data); 
+                if (!$result) {
+                    $this->errorpage();
+                } else {
+                    redirect('admin/testimonials');
+                }  
+            }else{
+                $this->errorpage();
+            } 
+        }
+        
+        public function deleteTestimonials(){
+            if ($this->isAdmin() == true) {
+                $this->loadThis();
+            } else {
+                if ($this->input->is_ajax_request()) {
+                    $id = $this->input->post('id');
+                    $result = $this->Admin_model->deleteTestimonials($id);
+                    if ($result) {
+                        echo 'YES';
+                    } else {
+                        echo 'NO';
+                    }
+                }
+            }
+        }
+        
         public function clients(){
             $this->global['pageTitle'] = 'Մեր գործընկերները';
             $count = $this->Admin_model->get_count_by_clients();

@@ -146,7 +146,8 @@
 	on('click', '.closeSearchModal', function (e) {
 		$(".search-panel").removeClass("search-panel-open")
 	})
-	on('click', '.openCalendarModal', function (e) {
+    on('click', '.openCalendarModal', function (e) {
+        scrollto('header')
 		$(".calendar-panel").addClass("calendar-panel-open")
 		$("body").addClass('overflow-hidden')
 		$('#calendar-open').show()

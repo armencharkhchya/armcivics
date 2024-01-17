@@ -388,13 +388,29 @@
                     <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
                     <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>
                 </a>
-            </section>           
-            <section>
-                <a href="">
-                    <img src="<?php echo base_url('assets/img/Screenshot_1.png'); ?>" alt="announcements" class="img-fluid w-100">
-                </a>                
+            </section>         
+            <?php if(!empty($testimonials)): ?>  
+            <section id="testimonials" class="testimonials py-0 mt-4">
+                <div data-aos="zoom-in">
+                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper-wrapper">
+                            <?php foreach($testimonials as $item): ?>
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="<?php echo base_url(); ?>images/testimonials/<?= $item->img ?>"
+                                        class="testimonial-img" alt=""
+                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'"> 
+                                </div>
+                               
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
             </section>
-            <section class="pt-0">
+            <?php endif; ?>
+            <section class="pt-0 mt-4">
                 <a href="">
                     <img src="<?php echo base_url('assets/img/Screenshot_2.png'); ?>" alt="announcements" class="img-fluid w-100">
                 </a>                

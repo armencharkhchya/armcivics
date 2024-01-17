@@ -72,6 +72,7 @@
             $data['eventful_2'] = $this->get_eventful_2();
             $data['announcement'] = $this->get_announcement();
             $data['clients'] = $this->get_our_clients();
+            $data['testimonials'] = $this->get_testimonials();
             $data['video'] = $this->get_all_multimedia(1, 0);
             return $data;
         }
@@ -95,6 +96,15 @@
             return $q[0]; 
         }
           
+        public function get_testimonials(){
+            $query = $this->db->select("*")->from('testimonials')->get();
+            if ( $query->num_rows() > 0) {
+                return $query->result();
+            }else{
+                return false;
+            }
+        }
+        
         public function get_announcement(){
             $lang = $this->uri->segment(1);
             $query = $this->db->select("name_{$lang} AS name, text_{$lang} AS text, date")

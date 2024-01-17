@@ -38,8 +38,11 @@ $(document).ready(function () {
           }  
           if (element == 'pictureTeam') {
             $('#picTeam').attr('src', e.target.result);
-          }  
-          if (element == 'pictureClient') {
+         }  
+         if (element == 'pictureTestimonials') {
+            $('#picTestimonials').attr('src', e.target.result);
+         }  
+         if (element == 'pictureClient') {
             $('#picClient').attr('src', e.target.result);
           } 
         }
@@ -63,6 +66,10 @@ $(document).ready(function () {
     readURL(this,'pictureTeam');
   }); 
   
+  $("#pictureTestimonials").change(function () {
+    readURL(this,'pictureTestimonials');
+  }); 
+    
   $("#pictureClient").change(function () {
     readURL(this,'pictureClient');
   }); 
@@ -495,6 +502,28 @@ $(document).ready(function () {
     }
   });
   
+  $('.trashTestimonials').click(function() {
+    var id = $(this).attr('data');
+    var $ele = $(this).parent().parent();
+    var r = confirm("Հեռացնե՞լ տվյալ կարծիքը");
+    if (r == true) {
+      $.ajax({
+        type: 'POST',
+        url: baseURL + 'admin/deleteTestimonials',
+        data: {
+          id: id
+        },
+        success: function(data) {
+          if (data == "YES") {
+            $ele.fadeOut().remove();
+          } else {
+            alert("Չհեռացվեց")
+          }
+        }
+      })
+    }
+  });
+    
   $('.editClient').click(function () {
     var id = $(this).attr('data');
     $('#clientModal .modal-title').text('Խմբագրել գործընկերոջ տվյալները');

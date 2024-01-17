@@ -706,6 +706,47 @@
             return $query->result();
         }
 
+        public function get_count_by_testimonials(){
+            return $this->db->from("testimonials")->count_all_results();
+        }
+
+        public function get_all_testimonials($limit, $start){
+            if ($start < 2) {
+                $start = 1;
+            }
+            $this->db->select('*');
+            $this->db->from('testimonials');
+            $this->db->limit($limit, ($start - 1) * $limit);
+            $query = $this->db->get();
+            return $query->result();
+        }
+        
+        public function setTestimonials($data){
+            $this->db->insert('testimonials', $data);
+            if ($this->db->affected_rows() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        public function deleteTestimonials($id){
+            $img = $this->db->get_where('testimonials', array('id' => $id))->row('img');           
+            $this->db->where('id', $id);
+            $this->db->delete('testimonials');
+            if ($this->db->affected_rows() > 0) {   
+                if ($img != null) {
+                    $path_img = FCPATH . 'images/testimonials/' . $img;
+                    if (file_exists($path_img)) {
+                        UNLINK($path_img);
+                    }
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
         public function getTeamById($id){
             $this->db->select('*');
             $this->db->from('team');
