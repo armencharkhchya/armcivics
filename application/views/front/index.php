@@ -199,7 +199,7 @@
                     </div>
                 </div>
             </section>
-            <section id="testimonials" class="testimonials">
+            <!-- <section id="testimonials" class="testimonials">
                 <div class="container" data-aos="zoom-in">
                     <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper-wrapper">
@@ -297,7 +297,7 @@
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section id="multimedia" class="multimedia pt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
@@ -343,7 +343,7 @@
                     </div>
                 </div>
             </section>
-            <section id="clients" class="clients section-bg">
+            <section id="clients" class="clients">
                 <div class="container" data-aos="zoom-in">
                     <div class="section-title">
                         <h2><?php echo $this->lang->line('our-partners'); ?></h2>

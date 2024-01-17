@@ -4,6 +4,8 @@
 !application/logs/index.html
 !application/*/.htaccess
 /cache
+/documents
+/images
 /application/config/config.php
 /application/config/database.php
 /application/storage

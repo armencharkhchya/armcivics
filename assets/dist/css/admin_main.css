@@ -98,7 +98,7 @@
 .text-center {
     text-align: center!important;
 }
-.pagination strong {
+/* .pagination strong {
     font-weight: 400;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -133,7 +133,7 @@
     background-image: linear-gradient(to bottom, #fff, #e6e6e6);
     border: 1px solid #bbb;
     border-bottom-color: #a2a2a2;
-}
+} */
 .module-ct {    
     height: calc(100vh - 176px);
     overflow: auto;
