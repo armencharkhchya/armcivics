@@ -98,6 +98,7 @@
 .text-center {
     text-align: center!important;
 }
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{ border-color: #ddd; }
 /* .pagination strong {
     font-weight: 400;
     -webkit-user-select: none;
