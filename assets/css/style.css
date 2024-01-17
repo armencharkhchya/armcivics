@@ -49,7 +49,7 @@ button:disabled {
   /* Handle */
   .calendar-panel-open::-webkit-scrollbar-thumb {
     background-color: #173c69;
-    background-image: url(../images/scroll.png);
+    background-image: url(../img/scroll.png);
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -76,7 +76,7 @@ button:disabled {
 .lazyloading {
   opacity: 1 !important;
   transition: 600ms opacity;
-  background: #f7f7f7 url(../images/loader.gif) no-repeat center;
+  background: #f7f7f7 url(../img/loader.gif) no-repeat center;
   min-height: 310px !important;
   display: block !important;
 }
