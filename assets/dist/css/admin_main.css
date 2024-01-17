@@ -165,7 +165,7 @@
     height: 100%;
     object-fit: contain;
 }
-.module-ct b, .module-ct span {
+.module-ct b, .module-ct span:not(.page-link) {
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -180,7 +180,7 @@
     font-size: 12px;
     line-height: 20px;
 }
-.module-ct span {
+.module-ct span:not(.page-link) {
     line-height: 18px;
 }
 .sidebar-menu>li button span.badge {
