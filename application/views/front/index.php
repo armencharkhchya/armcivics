@@ -370,18 +370,26 @@
             </section>
         </div>
         <div class="col-3">
-            <section id="announcements">
-                <img src="<?php echo base_url('assets/img/announcements.png'); ?>" alt="announcements" class="img-fluid">
-                <div class="section-bg mt-4 px-2 py-3">
-                    <p class="text-uppercase mb-0 text-primary"><?php echo $this->lang->line('announcement'); ?>.</p>
-                    <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
-                        <div class="text-primary mb-1"><?php echo $announcement->name; ?></div>
-                        <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
-                        <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>
-                    </a>
-                </div>
-            </section>
-            <section class="pt-0">
+            <section id="civic_education" class="youtube position-relative">
+                 <img src="http://img.youtube.com/vi/hcglYBbIu1Y/mqdefault.jpg" class="card-img-top img-fluid w-100" />                
+                        <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px" width="50px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" data-src="hcglYBbIu1Y">
+                        <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                            C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                        <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                            C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                        <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"></path>
+                    </svg>
+                <!-- <iframe width="560" height="200" src="https://www.youtube.com/embed/hcglYBbIu1Y?si=EWuYsfu4jNbwyp-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+            </section>   
+            <section id="announcements" class="section-bg px-2">
+                <p class="text-uppercase mb-0 text-primary"><?php echo $this->lang->line('announcement'); ?>.</p>
+                <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
+                    <div class="text-primary mb-1"><?php echo $announcement->name; ?></div>
+                    <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
+                    <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>
+                </a>
+            </section>           
+            <section>
                 <a href="">
                     <img src="<?php echo base_url('assets/img/Screenshot_1.png'); ?>" alt="announcements" class="img-fluid w-100">
                 </a>                
@@ -396,16 +404,16 @@
                         parse_str(parse_url($url, PHP_URL_QUERY), $my_array_of_vars);
                         $unique_id = $my_array_of_vars['v'];
                 ?>
-                <section class="pt-0 youtube">
-                            <!-- <img src="http://img.youtube.com/vi/<?= $unique_id; ?>/mqdefault.jpg" class="card-img-top" /> -->
+                <section class="pt-0">
+                    <!-- <img src="http://img.youtube.com/vi/<?= $unique_id; ?>/mqdefault.jpg" class="card-img-top" /> -->
                     <iframe width="560" height="200" src="https://www.youtube.com/embed/<?= $unique_id; ?>?si=PNHGPJqQK1fjPGU7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                <!-- <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px" width="50px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" data-src="<?= $unique_id; ?>">
-                                <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
-                                    C97.3,23.7,75.7,2.3,49.9,2.5"></path>
-                                <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
-                                    C97.3,23.7,75.7,2.3,49.9,2.5"></path>
-                                <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"></path>
-                            </svg> -->
+                        <!-- <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px" width="50px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" data-src="<?= $unique_id; ?>">
+                        <path class="stroke-solid" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                            C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                        <path class="stroke-dotted" fill="none" stroke="white" d="M49.9,2.5C23.6,2.8,2.1,24.4,2.5,50.4C2.9,76.5,24.7,98,50.3,97.5c26.4-0.6,47.4-21.8,47.2-47.7
+                            C97.3,23.7,75.7,2.3,49.9,2.5"></path>
+                        <path class="icon" fill="white" d="M38,69c-1,0.5-1.8,0-1.8-1.1V32.1c0-1.1,0.8-1.6,1.8-1.1l34,18c1,0.5,1,1.4,0,1.9L38,69z"></path>
+                    </svg> -->
                 </section>
             <?php endif; ?>
             <section class="pt-0">
@@ -414,7 +422,15 @@
                 </a>                
             </section>
             <section class="pt-0">
-                <div class="fb-page" data-href="https://www.facebook.com/ArmCivics4Engage" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <div class="fb-page" 
+                    data-href="https://www.facebook.com/ArmCivics4Engage" 
+                    data-tabs="timeline" 
+                    data-width="" 
+                    data-height="300" 
+                    data-small-header="false" 
+                    data-adapt-container-width="true"
+                    data-hide-cover="false" 
+                    data-show-facepile="true">
                     <blockquote cite="https://www.facebook.com/ArmCivics4Engage" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ArmCivics4Engage">Քաղաքացիական կրթություն և մասնակցություն/ACE</a></blockquote>
                 </div>         
             </section>
