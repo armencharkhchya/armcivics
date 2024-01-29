@@ -54,7 +54,7 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <label class="col-sm-2">Անուն (հայերեն)</label>
+            <label class="col-sm-2">Անուն</label>
             <div class="col-sm-10">
               <input type="text" name="name_am" class="form-control title" required />
             </div>
@@ -67,15 +67,15 @@
             </div>
           </div>
           <br /> -->
-          <div class="row">
+          <!-- <div class="row">
             <label class="col-sm-2">Անուն (անգլերեն)</label>
             <div class="col-sm-10">
               <input type="text" name="name_en" class="form-control title" required />
             </div>
           </div>
-          <br />
+          <br /> -->
           <div class="row">
-            <label class="col-sm-2">Պաշտոն (հայերեն)</label>
+            <label class="col-sm-2">Պաշտոն</label>
             <div class="col-sm-10">
               <input type="text" name="position_am" class="form-control title" />
             </div>
@@ -88,13 +88,13 @@
             </div>
           </div>
           <br /> -->
-          <div class="row">
+          <!-- <div class="row">
             <label class="col-sm-2">Պաշտոն (անգլերեն)</label>
             <div class="col-sm-10">
               <input type="text" name="position_en" class="form-control title" />
             </div>
           </div>
-          <br />
+          <br /> -->
           <div class="row">
             <label class="col-sm-2">Ֆեյսբուք</label>
             <div class="col-sm-10">

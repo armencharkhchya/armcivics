@@ -5,7 +5,7 @@
         protected $table = 'students_funds';
     
         public function getProgramById($id){
-           $result = $this->db->select('*')->from($this->table)->get();
+           $result = $this->db->select('*')->from($this->table)->where('id', $id)->get();
            if ($result->num_rows()>0) {
                 return $result->row();
            }else{
@@ -42,23 +42,23 @@
             $this->load->library('form_validation');
             $this->form_validation->set_rules('name_am', '', 'required');
             // $this->form_validation->set_rules('name_ru', '', 'required');
-            $this->form_validation->set_rules('name_en', '', 'required');
+            // $this->form_validation->set_rules('name_en', '', 'required');
             if ($this->form_validation->run() !== false) {
                 $name_am = $this->input->post('name_am');
                 // $name_ru = $this->input->post('name_ru');
-                $name_en = $this->input->post('name_en');
+                // $name_en = $this->input->post('name_en');
                 $longtext_am = $this->input->post('longtext_am');
                 // $longtext_ru = $this->input->post('longtext_ru');
-                $longtext_en = $this->input->post('longtext_en');
+                // $longtext_en = $this->input->post('longtext_en');
                 $status = $this->input->post('status');  
-                $date = $this->input->post('date');             
+                $date = $this->input->post('date');   
                 $data = array(
                     'name_am' => @$name_am,
                     // 'name_ru' => @$name_ru,
-                    'name_en' => @$name_en,
+                    // 'name_en' => @$name_en,
                     'content_am' => @$longtext_am,
                     // 'content_ru' => @$longtext_ru,
-                    'content_en' => @$longtext_en,
+                    // 'content_en' => @$longtext_en,
                     'status' => @$status,
                     'date' => @$date
                 );               
@@ -66,6 +66,7 @@
                     $this->db->where("id", $item);                   
                     $this->db->update('students_funds', $data);                                      
                 }else {
+                    $data['school_id'] =  decrypt($this->input->post('school_id'));    
                     $this->db->insert('students_funds', $data);
                                      
                 }  

@@ -3,9 +3,16 @@
     class Articles_model extends CI_Model {
         
         protected $table = 'articles';
-        
+        protected $lang;
         protected $catIds = array();
 
+        public function __construct() {
+            parent::__construct();	
+            date_default_timezone_set('Asia/Yerevan');
+            // $this->lang = $this->uri->segment(1);
+            $this->lang = "am";	
+        }
+        
         public function membersCateg($parent_key){
             $row1 = [];
             $row = $this->db->select('cat.id')
@@ -19,7 +26,7 @@
         }
 
         public function members_tree($parent_id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $row1 = [];
             $this->db->select("categories.id, categories.name_{$lang} as cat_name, categories.parent_id");
             $this->db->from('categories');
@@ -35,7 +42,7 @@
         }
         
         public function membersTree($parent_id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $row1 = new stdClass();
             $this->db->select("categories.id, categories.name_{$lang} as cat_name, categories.parent_id");
             $this->db->from('categories');
@@ -106,7 +113,7 @@
         }
         
         public function get_announcement(){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $query = $this->db->select("name_{$lang} AS name, text_{$lang} AS text, date")
             ->from($this->table)
             ->where('category_id', 67)
@@ -123,7 +130,7 @@
         }
         
         public function get_articles_by_category($categ_id = null, $limit = null, $start = null){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -165,7 +172,7 @@
         }
 
         public function get_news(){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $this->db->select('categories.id as c_id, categories.name_' . $lang . ' as c_name, articles.id,articles.name_'.$lang.' as name,articles.date');
             $this->db->from($this->table);
             $this->db->join('categories', 'categories.id = articles.category_id', 'left');
@@ -178,7 +185,7 @@
         
         public function get_count_by_category($id){
             $id = intval($id);
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $data = $this->membersCateg($id);
             $this->getCatIds($data);
             array_push($this->catIds, $id);
@@ -220,7 +227,7 @@
         }
 
         public function get_articles_by_search($limit, $start, $key){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -276,7 +283,7 @@
         }
 
         public function get_articles_by_tags($limit, $start, $id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $id = intval($id);
             if ($start < 2) {
                 $start = 1;
@@ -301,7 +308,7 @@
         }
 
         public function get_article_by_id($id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $id = intval($id);
             $this->db->select("articles.id,articles.name_{$lang} AS name,articles.text_{$lang} AS text,articles.longtext_{$lang} AS longtext,articles.img,articles.date,articles.votes,articles.category_id,articles.publish, JSON_ARRAYAGG(JSON_OBJECT('id', documents.id, 'path', documents.file, 'extension', documents.extension)) as files");
             $this->db->from($this->table);
@@ -342,7 +349,7 @@
         }
 
         public function get_items_by_topic($limit, $start, $cat_id, $id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -502,7 +509,7 @@
         }
 
         public function get_count_by_students_funds(){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if($this->input->get('i')){
                 $this->db->where('students_funds.school_id', decrypt($this->input->get('i')));
             }
@@ -510,7 +517,7 @@
         }
 
         public function get_all_students_funds($limit, $start){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -528,7 +535,7 @@
         }
 
         public function get_students_fund_by_id($id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $id = intval($id);
             $this->db->select("students_funds.id,students_funds.name_{$lang} AS name,students_funds.content_{$lang} AS content, students_funds.date,students_funds.school_id");
             $this->db->from('students_funds');
@@ -571,7 +578,7 @@
         }
 
         public function get_all_school_grant_programs($limit, $start){            
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -605,7 +612,7 @@
         }
 
         public function get_school_grant_program_by_id($id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $id = intval($id);
             $this->db->select("
             name_{$lang} AS name, 
@@ -661,7 +668,7 @@
         }
 
         public function get_all_civil_society_crowdfunding($limit, $start){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             if ($start < 2) {
                 $start = 1;
             }
@@ -700,7 +707,7 @@
         }
 
         public function get_civil_society_crowdfund_by_id($id){
-            $lang = $this->uri->segment(1);
+            $lang = $this->lang;
             $id = intval($id);
             $this->db->select("
                 name_{$lang} AS name, 

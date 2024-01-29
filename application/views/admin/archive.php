@@ -69,7 +69,7 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <label class="col-sm-2">Վերնագիր (հայերեն)</label>
+              <label class="col-sm-2">Վերնագիր</label>
               <div class="col-sm-10">
                 <input type="text" name="name_am" class="form-control title" required />
               </div>
@@ -82,13 +82,13 @@
               </div>
             </div>
             <br /> -->
-            <div class="row">
+            <!-- <div class="row">
               <label class="col-sm-2">Վերնագիր (անգլերեն)</label>
               <div class="col-sm-10">
                 <input type="text" name="name_en" class="form-control title" required />
               </div>
             </div>
-            <br />
+            <br /> -->
             <div class="row">
               <label class="col-sm-2">Ընտրել նկարը</label>
               <div class="col-sm-10">

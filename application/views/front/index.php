@@ -5,13 +5,13 @@
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
                     <?php foreach($slider as $key => $item): ?>
-                        <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">                            
+                        <a href="<?= base_url('article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">                            
                             <div class="carousel-item <?php echo $key == 0 ? 'active' : ''; ?>" data-bs-interval="10000">
                                 <img class="lazyload d-block w-100" data-src="<?= cdn($item->img, 960, 480); ?>" alt=""
                                     onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5><?php echo $item->{"name_".$lang}; ?></h5>
-                                    <p class="m-0"><?php echo word_limiter($item->{"text_".$lang}, 8); ?></p>
+                                    <!-- <p class="m-0"><?php echo word_limiter($item->{"text_".$lang}, 8); ?></p> -->
                                 </div>
                             </div>
                         </a>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="row mt-4 gy-3">
                         <div class="col-lg-3">
-                            <a href="<?php echo base_url($lang . '/about/?l=about-ap'); ?>">
+                            <a href="<?php echo base_url('about/?l=about-ap'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-ap') ?>
@@ -55,7 +55,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3">
-                            <a href="<?php echo base_url($lang . '/about/?l=about-io'); ?>">
+                            <a href="<?php echo base_url('about/?l=about-io'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-io') ?>
@@ -63,7 +63,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3">
-                            <a href="<?php echo base_url($lang . '/about/?l=about-fn'); ?>">
+                            <a href="<?php echo base_url('about/?l=about-fn'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-fn') ?>
@@ -71,7 +71,7 @@
                             </a>
                         </div>
                         <div class="col-lg-3">
-                            <a href="<?php echo base_url($lang . '/about/?l=about-pr'); ?>">
+                            <a href="<?php echo base_url('about/?l=about-pr'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-pr') ?>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="row">
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="<?= base_url($lang . '/article?'.$eventful_1->name. '&i=' . $eventful_1->id); ?>" class="text-dark">
+                            <a href="<?= base_url('article?'.$eventful_1->name. '&i=' . $eventful_1->id); ?>" class="text-dark">
                                 <div class="row">
                                     <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_1->name, 30); ?></h6>
                                     <div class="col-4">
@@ -102,7 +102,7 @@
                             </a>
                         </div>      
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
-                            <a href="<?= base_url($lang . '/article?'.$eventful_2->name. '&i=' . $eventful_2->id); ?>" class="text-dark">
+                            <a href="<?= base_url('article?'.$eventful_2->name. '&i=' . $eventful_2->id); ?>" class="text-dark">
                                 <div class="row">
                                     <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_2->name, 30); ?></h6>
                                     <div class="col-4">
@@ -125,7 +125,7 @@
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <div class="icon"><i class='bx bx-money-withdraw'></i></div>
                                 <h4 class="title"><a
-                                        href="<?php echo base_url($lang . '/students_funds'); ?>"><?php echo $this->lang->line('students-funds'); ?></a>
+                                        href="<?php echo base_url('students_funds'); ?>"><?php echo $this->lang->line('students-funds'); ?></a>
                                 </h4>
                                 <p class="description"><?php echo $this->lang->line('contribution-students'); ?>
                                 </p>
@@ -135,7 +135,7 @@
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon"><i class='bx bx-wallet-alt'></i></div>
                                 <h4 class="title"><a
-                                        href="<?php echo base_url($lang . '/school_grant_programs'); ?>"><?php echo $this->lang->line('school-grant-programs'); ?></a>
+                                        href="<?php echo base_url('school_grant_programs'); ?>"><?php echo $this->lang->line('school-grant-programs'); ?></a>
                                 </h4>
                                 <p class="description"><?php echo $this->lang->line('contribution-students'); ?>
                                 </p>
@@ -145,7 +145,7 @@
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon"><i class='bx bxs-wallet-alt'></i></div>
                                 <h4 class="title"><a
-                                        href="<?php echo base_url($lang . '/civil_society_crowdfunding'); ?>"><?php echo $this->lang->line('civil-society-crowdfunding'); ?></a>
+                                        href="<?php echo base_url('civil_society_crowdfunding'); ?>"><?php echo $this->lang->line('civil-society-crowdfunding'); ?></a>
                                 </h4>
                                 <p class="description"><?php echo $this->lang->line('national-level'); ?></p>
                             </div>
@@ -163,7 +163,7 @@
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
                             data-aos-delay="100">
                             <div class="icon-box">
-                                <a href="<?php echo base_url($lang . '/literature'); ?>">
+                                <a href="<?php echo base_url('literature'); ?>">
                                     <div class="icon"><i class="bx bx-book"></i></div>
                                     <h4 class="text-dark"><?php echo $this->lang->line('literature') ?></h4>
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
@@ -187,7 +187,7 @@
                         <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                             data-aos-delay="300">
                             <div class="icon-box">
-                                <a href="<?php echo base_url($lang . '/multimedia') ?>">
+                                <a href="<?php echo base_url('multimedia') ?>">
                                     <div class="icon"><i class="bx bx-video"></i></div>
                                     <h4 class="text-dark"><?php echo $this->lang->line('multimedia') ?></h4>
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
@@ -199,105 +199,6 @@
                     </div>
                 </div>
             </section>
-            <!-- <section id="testimonials" class="testimonials">
-                <div class="container" data-aos="zoom-in">
-                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="<?php echo base_url(); ?>assets/img/testimonials/testimonials-1.jpg"
-                                        class="testimonial-img" alt=""
-                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'">
-                                    <h3>Պողոսյան Պողոս</h3>
-                                    <h4><?php echo $this->lang->line('executive-director') ?></h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված
-                                        մոդելային
-                                        տեքստ է։ Սկսած 1500-ականներից՝ Լորեմ Իպսումը հանդիսացել է տպագրական
-                                        արդյունաբերության
-                                        ստանդարտ մոդելային տեքստ
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="<?php echo base_url(); ?>assets/img/testimonials/testimonials-2.jpg"
-                                        class="testimonial-img" alt=""
-                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'">
-                                    <h3>Պողոսյան Պողոս</h3>
-                                    <h4><?php echo $this->lang->line('designer') ?></h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված
-                                        մոդելային
-                                        տեքստ է։ Սկսած 1500-ականներից՝ Լորեմ Իպսումը հանդիսացել է տպագրական
-                                        արդյունաբերության
-                                        ստանդարտ մոդելային տեքստ
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="<?php echo base_url(); ?>assets/img/testimonials/testimonials-3.jpg"
-                                        class="testimonial-img" alt=""
-                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'">
-                                    <h3>Պողոսյան Պողոս</h3>
-                                    <h4>Խանութի սեփականատեր</h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված
-                                        մոդելային
-                                        տեքստ է։ Սկսած 1500-ականներից՝ Լորեմ Իպսումը հանդիսացել է տպագրական
-                                        արդյունաբերության
-                                        ստանդարտ մոդելային տեքստ
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="<?php echo base_url(); ?>assets/img/testimonials/testimonials-4.jpg"
-                                        class="testimonial-img" alt=""
-                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'">
-                                    <h3>Պողոսյան Պողոս</h3>
-                                    <h4><?php echo $this->lang->line('freelancer') ?></h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված
-                                        մոդելային
-                                        տեքստ է։ Սկսած 1500-ականներից՝ Լորեմ Իպսումը հանդիսացել է տպագրական
-                                        արդյունաբերության
-                                        ստանդարտ մոդելային տեքստ
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="<?php echo base_url(); ?>assets/img/testimonials/testimonials-5.jpg"
-                                        class="testimonial-img" alt=""
-                                        onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'">
-                                    <h3>Պողոսյան Պողոս</h3>
-                                    <h4><?php echo $this->lang->line('entrepreneur') ?></h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված
-                                        մոդելային
-                                        տեքստ է։ Սկսած 1500-ականներից՝ Լորեմ Իպսումը հանդիսացել է տպագրական
-                                        արդյունաբերության
-                                        ստանդարտ մոդելային տեքստ
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </section> -->
             <section id="multimedia" class="multimedia pt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
@@ -383,7 +284,7 @@
             </section>   
             <section id="announcements" class="section-bg px-2">
                 <p class="text-uppercase mb-0 text-primary"><?php echo $this->lang->line('announcement'); ?>.</p>
-                <a href="<?= base_url($lang . '/article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
+                <a href="<?= base_url('article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
                     <div class="text-primary mb-1"><?php echo $announcement->name; ?></div>
                     <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
                     <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>

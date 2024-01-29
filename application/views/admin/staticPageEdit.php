@@ -12,7 +12,7 @@
                             <input type="hidden" name="id" value="<?= $item->id; ?>">
                             <div class="form-group">
                                 <label for="name">Անուն *</label>
-                                <input type="text" name="title" value="<?= $item->title_am . ' / ' . $item->title_ru . ' / ' . $item->title_en ?>" class="form-control" readonly>
+                                <input type="text" name="title" value="<?= $item->title_am  ?>" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="text" style="width: 130px;">Ընտրել նկար</label>
@@ -25,17 +25,17 @@
                                 <span>Նշելու դեպքում կհեռացվի նկարը</span>
                             </div>          
                             <div class="form-group">
-                                <label for="text">Տեքստ (հայերեն)</label>
+                                <label for="text">Տեքստ</label>
                                 <textarea id="longtextstatic" name="text_am" class="form-control" rows="20" style="resize: none;"><?= $item->text_am; ?></textarea>
                             </div>
                             <!-- <div class="form-group">
                                 <label for="text">Տեքստ (ռուսերեն)</label>
                                 <textarea id="longtextstatic" name="text_ru" class="form-control" rows="20" style="resize: none;"><?= $item->text_ru; ?></textarea>
                             </div> -->
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="text">Տեքստ (անգլերեն)</label>
                                 <textarea id="longtextstatic" name="text_en" class="form-control" rows="20" style="resize: none;"><?= $item->text_en; ?></textarea>
-                            </div>
+                            </div> -->
                             <div class="form-group text-right">
                                 <input type="submit" name="btn" value="Պահպանել" class="btn btn-success">
                             </div>

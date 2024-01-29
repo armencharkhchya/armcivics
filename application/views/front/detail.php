@@ -18,7 +18,7 @@
             <?php if (!empty($article->tag_name)) : ?>
               <div class="col-sm-9 article-tags ">
                 <?php foreach ($article->tag_name as $key => $item) : ?>
-                  <a href="<?= base_url($lang . '/tags/') . $key; ?>"><?= '#' . $item; ?></a>
+                  <a href="<?= base_url('tags/') . $key; ?>"><?= '#' . $item; ?></a>
                 <?php endforeach ?>
               </div>
             <?php endif; ?>
@@ -29,19 +29,19 @@
           <p><?= $article->text ?></p>
           <p><?= $article->longtext ?></p>
           <?php if(@$article->files):?>
-								<div class="tg-tagsshare">
-									<ul class='files_cont row'>
-										<?php foreach(json_decode($article->files) as $file): if(!$file->path || !$file->extension) continue; ?>													
-											<li class="files_cont_item col-sm-6">
-												<a href="<?php echo base_url("uploads/documents/".$file->path)?>" class='' target='_blank'>
-													<i class="bi <?php echo ( $file->extension == '.xlsx' || $file->extension =='.xls' || $file->extension =='.xml')?'bi-filetype-xml text-success':(($file->extension == '.pdf')?'bi-file-pdf text-danger': 'bi-file-earmark-text text-muted') ?>" aria-hidden="true"></i>
-													<span><?php echo $file->path?></span>
-												</a>
-											</li>
-										<?php endforeach;?>		
-									</ul>
-								</div>
-								<?php endif?>
+            <div class="tg-tagsshare">
+                <ul class='files_cont row'>
+                    <?php foreach(json_decode($article->files) as $file): if(!$file->path || !$file->extension) continue; ?>													
+                        <li class="files_cont_item col-sm-6">
+                            <a href="<?php echo base_url("uploads/documents/".$file->path)?>" class='' target='_blank'>
+                                <i class="bi <?php echo ( $file->extension == '.xlsx' || $file->extension =='.xls' || $file->extension =='.xml')?'bi-filetype-xml text-success':(($file->extension == '.pdf')?'bi-file-pdf text-danger': 'bi-file-earmark-text text-muted') ?>" aria-hidden="true"></i>
+                                <span><?php echo $file->path?></span>
+                            </a>
+                        </li>
+                    <?php endforeach;?>		
+                </ul>
+            </div>
+          <?php endif?>
           <div class="td-block-row td-post-next-prev">
             <div class="td-block-span6 td-post-prev-post">
               <?php if (!empty($prev)) : ?>
@@ -68,7 +68,7 @@
         <?php if (!empty($topic)) : ?>
           <h2 class="article-title"><?= $this->lang->line('topic') ?></h2>
           <?php foreach ($topic as $key => $item) : ?>
-            <a href="<?= base_url($lang . '/article?'.$item->name. '&i=' . $item->id); ?>" title="<?= $item->name ?>">
+            <a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>" title="<?= $item->name ?>">
               <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-4">

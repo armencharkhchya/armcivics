@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.19" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.20" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -88,35 +88,34 @@
 	<!-- ======= Top Bar ======= -->
 	<section id="topbar" class="d-flex align-items-center">
 		<div class="container d-flex justify-content-center justify-content-md-between">
-			<div class="contact-info d-flex align-items-center me-auto">
-				<!-- <i class="bi bi-envelope d-none d-sm-flex align-items-center"><a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a></i>
-				<i class="bi bi-telephone d-none d-lg-flex align-items-center ms-4"><span>(010) 32-11-13; 32-11-14</span></i> -->
-                <b>«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
+			<div class="contact-info d-flex align-items-center me-auto">			
+                <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1>
+                <b class="d-lg-none d-block">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
-				<!-- <a href="https://twitter.com/PH_Armenia" target="_blank"><i class="bi bi-twitter"></i></a> -->
 				<a href="https://www.facebook.com/ArmCivics4Engage" target="_blank"><i class="bi bi-facebook"></i></a>
 				<a href="https://www.instagram.com/armcivics4engage/" target="_blank"><i class="bi bi-instagram"></i></a>
 				<a href="https://www.youtube.com/@Armcivics4engage" target="_blank"><i class='bx bxl-youtube'></i></a>
 			</div>
-			<div class="languages d-flex align-items-center">
-				<!-- <a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'ru'); ?>" class="<?= $lang === 'ru' ? 'hidden' : NULL; ?>"><span class="ru">на Русском</span></a> -->
+			<!-- <div class="languages d-flex align-items-center">
+				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'ru'); ?>" class="<?= $lang === 'ru' ? 'hidden' : NULL; ?>"><span class="ru">на Русском</span></a>
 				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'am'); ?>" class="<?= $lang === 'am' ? 'hidden' : NULL; ?>"><span class="am"></span></a>
 				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'en'); ?>" class="<?= $lang === 'en' ? 'hidden' : NULL; ?>"><span class="en"></span></a>
-			</div>
-			<a href="<?= base_url($lang . '/auth'); ?>" class="auth"><i class='bx bx-log-in-circle'></i></a>
+			</div> -->
+			<a href="<?= base_url('auth'); ?>" class="auth"><i class='bx bx-log-in-circle'></i></a>
 		</div>
 	</section>
 
 	<!-- ======= Header ======= -->
 	<header id="header" class="align-items-center d-lg-block d-flex">
 		<div class="container d-flex align-items-center justify-content-between position-relative">
-			<h1 class="logo d-lg-block d-none"><a href="<?= base_url($lang); ?>">ArmCivics<span>.</span>am</a></h1>
-			<h1 class="logo d-lg-none d-block"><a href="<?= base_url($lang); ?>">A.C.</a></h1>
+        <b class="d-lg-block d-none"><a href="<?= base_url(); ?>" class="text-black">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</a></b>
+        <!-- <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1> -->
+			<h1 class="logo d-lg-none d-block"><a href="<?= base_url(); ?>">A.C.</a></h1>
 			<div class="search-panel">
-				<a href="<?= base_url($lang); ?>"><?= $this->input->server('SERVER_NAME') ?></a>
+				<a href="<?= base_url(); ?>"><?= $this->input->server('SERVER_NAME') ?></a>
 				<span class="search-panel-close closeSearchModal"></span>
-				<form action="<?= site_url($lang . '/find'); ?>" class="search_form" method="get" accept-charset="utf-8">
+				<form action="<?= site_url('find'); ?>" class="search_form" method="get" accept-charset="utf-8">
 					<input type="text" size="40" name="q" placeholder="<?= $this->lang->line('search') ?>" autocomplete="off" lang="<?= $lang; ?>" maxlength="100" required>
 					<button type="submit">
 						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#fff" width="26px" height="26px" viewBox="0 0 512 512" style="enable-background:new 0 0 36 36;" xml:space="preserve">
@@ -134,7 +133,7 @@
                 <span class="calendar-panel-close closeCalendarModal"></span>
                 <div id="calendar"></div>
             </div>
-			<form action="<?php echo base_url($lang . '/category/'); ?>" method="get" class="ms-2 me-2 me-lg-0 ms-lg-3 d-lg-none d-block">
+			<form action="<?php echo base_url('category/'); ?>" method="get" class="ms-2 me-2 me-lg-0 ms-lg-3 d-lg-none d-block">
 				<select name="id" class="select2ToTree form-control" onchange="this.form.submit()"></select>
 			</form>		
 			<nav class="navbar">				
@@ -143,16 +142,23 @@
                         <img src="<?php echo base_url('assets/img/clients/usaid.jpg'); ?>" height="43" alt="USAID">
                     </li>
                     <li>
-                        <img src="<?php echo base_url('assets/img/clients/ph.jpg'); ?>" height="36" alt="USAID">
+                        <img src="<?php echo base_url('assets/img/clients/ph.jpg'); ?>" height="36" alt="ph">
                     </li>
-					<!-- <?php if (!$this->uri->segment(2)) : ?>
-						<li><a class="nav-link scrollto" href="#about"><?= $this->lang->line('about'); ?></a></li>
-						<li><a class="nav-link scrollto" href="#services"><?= $this->lang->line('library'); ?></a></li>					
-					<?php endif; ?> -->
-					<li class="search"><a href="javascript:void(0)" class="openSearchModal"><i class="bi bi-search"></i></a></li>
+                    <li>
+                        <img src="<?php echo base_url('assets/img/clients/civitas.jpg'); ?>" height="36" alt="civitas">
+                    </li>
+                    <li>
+                        <img src="<?php echo base_url('assets/img/clients/ichd.jpg'); ?>" height="36" alt="ichd">
+                    </li>
+                    <li>
+                        <img src="<?php echo base_url('assets/img/clients/ktak.jpg'); ?>" height="36" alt="ktak">
+                    </li>					
+					<!-- <li class="search">
+                        <a href="javascript:void(0)" class="openSearchModal"><i class="bi bi-search"></i></a>
+                    </li>
                     <li class="calendar">
                         <a href="javascript:void(0)" class="openCalendarModal" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5"></i></a>
-                    </li>
+                    </li> -->
 				</ul>
 				<!-- <i class="bi bi-list mobile-nav-toggle"></i>				 -->
 			</nav>
@@ -164,27 +170,27 @@
 				<?php if (!empty($categories)) : ?>
 					<?php foreach ($categories as $key => $item): ?>
 						<li> 
-							<a href="<?= base_url($lang.'/category/?id='.$item->id); ?>"><?= $item->text; ?></a>													
+							<a href="<?= base_url('category/?id='.$item->id); ?>"><?= $item->text; ?></a>													
 							<?php if (@$item->children) : ?>
 								<ul>													
 									<?php foreach ($item->children as $key1 => $item1) : ?>
 										<li>
-											<a href='<?= base_url($lang.'/category/?id='.$item1->id); ?>'><?= $item1->text; ?></a>
+											<a href='<?= base_url('category/?id='.$item1->id); ?>'><?= $item1->text; ?></a>
 											<?php if (@$item1->children) : ?>
 												<ul>
 													<?php foreach ($item1->children as $key2 => $item2) : ?>
 														<li>
-															<a href="<?= base_url($lang.'/category/?id='.$item2->id); ?>"><?= $item2->text; ?></a>
+															<a href="<?= base_url('category/?id='.$item2->id); ?>"><?= $item2->text; ?></a>
 															<?php if (@$item2->children) : ?>
 																<ul>
 																	<?php foreach ($item2->children as $key3 => $item3) : ?>
 																		<li>
-																			<a href="<?= base_url($lang.'/category/?id='.$item3->id); ?>"><?= $item3->text; ?></a>
+																			<a href="<?= base_url('category/?id='.$item3->id); ?>"><?= $item3->text; ?></a>
 																			<?php if (@$item3->children) : ?>
 																				<ul>
 																					<?php foreach ($item3->children as $key4 => $item4) : ?>
 																						<li>
-																							<a href="<?= base_url($lang.'/category/?id='.$item4->id); ?>"><?= $item4->text; ?></a>
+																							<a href="<?= base_url('category/?id='.$item4->id); ?>"><?= $item4->text; ?></a>
 																						</li>
 																					<?php endforeach ?>																	
 																				</ul>
@@ -207,8 +213,15 @@
                 <li>
                     <a href="<?php echo base_url(); ?>#services"><?= $this->lang->line('useful_resources'); ?></a>                
                 </li>	
-                <li><a href="#contact"><?= $this->lang->line('contactus'); ?></a></li>				
-			</ul>
+                <li style="background: #173c69;">
+                    <div class="float-end bg-white" style="margin: 3px 6px">
+                        <button class="openSearchModal btn py-1"><i class="bi bi-search"></i></button>
+                        <button class="openCalendarModal btn py-1" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5"></i></button>
+                    </div>
+                    <a href="#contact"><?= $this->lang->line('contactus'); ?></a>
+                
+                </li>	
+             
 		</nav>
 	</header>
     

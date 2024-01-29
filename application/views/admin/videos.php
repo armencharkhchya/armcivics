@@ -1,7 +1,7 @@
 <div class="content-wrapper">
   <section class="content-header">
     <h1>
-      <i class="fa fa-play-circle-o" aria-hidden="true"></i>&nbsp;Տեսանյութեր (<?= $allCount ?? ''; ?><small>նյութ</small>)
+      <i class="fa fa-play-circle-o" aria-hidden="true"></i>&nbsp;Տեսադարան (<?= $allCount ?? ''; ?><small>նյութ</small>)
     </h1>
     <div class="row mt-3">
       <form action="<?php echo base_url('admin/videos'); ?>" method="get" class="col-sm-4">
@@ -68,7 +68,7 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <label class="col-sm-2">Վերնագիր (հայերեն)</label>
+              <label class="col-sm-2">Վերնագիր</label>
               <div class="col-sm-10">
                 <input type="text" name="title_am" class="form-control" required />
               </div>
@@ -81,13 +81,13 @@
               </div>
             </div>
             <br /> -->
-            <div class="row">
+            <!-- <div class="row">
               <label class="col-sm-2">Վերնագիր (անգլերեն)</label>
               <div class="col-sm-10">
                 <input type="text" name="title_en" class="form-control" required />
               </div>
             </div>
-            <br />
+            <br /> -->
             <div class="row">
               <label class="col-sm-2">Հղում</label>
               <div class="col-sm-10">

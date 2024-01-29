@@ -17,7 +17,7 @@
 	});
 
 	$.ajax({
-		url: BASE_URL + LANG + '/get_all_categories',
+		url: BASE_URL + 'get_all_categories',
 		success: function (result) {
 			$('.select2ToTree').prepend('<option value="0" class="11 non-left">' + sections + '</option>')
 			$('.select2ToTree').each(function () {
@@ -160,11 +160,11 @@
 			locale = 'hy-am';
 			DAY_NAMES = ['Կիր', 'Երկ', 'Երք', 'Չոր', 'Հնգ', 'Ուրբ', 'Շաբ'];
 		}
-		get_ajax(BASE_URL + LANG + '/getNews', null, function (result) {
+		get_ajax(BASE_URL + 'getNews', null, function (result) {
 			Array.prototype.forEach.call(result.data, el => {
 				events.push({
 					title: el.name,
-					url: BASE_URL + LANG +  '/article?' + el.name + '&i=' + el.id,
+					url: BASE_URL + 'article?' + el.name + '&i=' + el.id,
 					start: moment(el.date).format('YYYY-MM-DD')
 				})
 			});
@@ -205,7 +205,7 @@
 		$('#calendar-open').hide()
 	})
 	on("click", 'html', function (event) {
-		if ($(event.target).closest(".calendar").length === 0 && $(event.target).closest(".calendar-panel-open").length === 0) {
+		if ($(event.target).closest(".openCalendarModal").length === 0 && $(event.target).closest(".calendar-panel-open").length === 0) {
 			$(".calendar-panel").removeClass("calendar-panel-open")
 			$("body").removeClass('overflow-hidden')
 			$('#calendar-open').hide()

@@ -13,7 +13,7 @@
 					<?php foreach ($items as $key => $item) : ?>
 						<div class="col-sm-6 col-md-3 col-xs-12" data-aos="fade-up" data-aos-delay="100">
 							<div class="feature-box shadow">
-								<a href="<?= base_url($lang . '/article?'.$item->name. '&i=' . $item->id); ?>">
+								<a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>">
 									<figure>
 										<img class="lazyload" data-src="<?= cdn($item->img, 300, 210); ?>" alt="<?= $item->name ?>" onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'"/>
 										<div class="time-box">
@@ -22,8 +22,8 @@
 									</figure>
 								</a>
 								<div class="px-3">
-									<a href="<?= base_url($lang . '/category/?id=' . $item->c_id); ?>" class="category_link text-info"><?= word_limiter($item->c_name, 2); ?>&nbsp;<i class='bx bx-chevrons-right' style="font-size: 16px;vertical-align: sub;"></i></a>
-									<h4><a href="<?= base_url($lang . '/article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 60) ?></a></h4>
+									<a href="<?= base_url('category/?id=' . $item->c_id); ?>" class="category_link text-info"><?= word_limiter($item->c_name, 2); ?>&nbsp;<i class='bx bx-chevrons-right' style="font-size: 16px;vertical-align: sub;"></i></a>
+									<h4><a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 60) ?></a></h4>
 								</div>
 							</div>
 						</div>

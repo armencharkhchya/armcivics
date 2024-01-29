@@ -8,14 +8,14 @@
 <section id="content">
     <div class="container">
         <div class="row justify-content-end mb-4 gy-3">
-            <form action="<?php echo base_url($lang . '/civil_society_crowdfunding/'); ?>" method="get" class="col-sm-6 col-md-4 position-relative mb-3 mb-sm-0">
+            <form action="<?php echo base_url('civil_society_crowdfunding/'); ?>" method="get" class="col-sm-6 col-md-4 position-relative mb-3 mb-sm-0">
                 <input placeholder="<?php echo $this->lang->line('search'); ?>" type="text" name="q" class="form-control form-control form-control-sm" />
                 <input type="submit" value="<?php echo $this->lang->line('search'); ?>" class="search" />
             </form>
-            <form action="<?php echo base_url($lang . '/civil_society_crowdfunding/'); ?>" method="get" class="col-sm-6 col-md-2 position-relative">
+            <form action="<?php echo base_url('civil_society_crowdfunding/'); ?>" method="get" class="col-sm-6 col-md-2 position-relative">
                 <input placeholder="Ամսաթիվ" type="text" name="date" class="form-control form-control form-control-sm datepicker" onchange="this.form.submit()" autocomplete="off" value="<?php echo $this->input->get('date') ?>" />
             </form>
-            <form action="<?php echo base_url($lang .'/civil_society_crowdfunding'); ?>" class="col-sm-2" method="get">
+            <form action="<?php echo base_url('civil_society_crowdfunding'); ?>" class="col-sm-2" method="get">
                <select name="status" class="form-control form-control-sm" onchange="this.form.submit()">
                     <option value="" selected>Կարգավիճակ</option>
                     <option value="1">Ընթացիկ</option>
@@ -38,7 +38,7 @@
                     <tbody>
                         <?php foreach ($items as $key => $item) : ?>
                             <tr>
-                                <th scope="row"><a href="<?= base_url($lang . '/civil_society_crowdfund/?id=' . $item->id); ?>" class="text-decoration-underline text-dark"><small><?= $item->name; ?></small></a></th>
+                                <th scope="row"><a href="<?= base_url('civil_society_crowdfund/?id=' . $item->id); ?>" class="text-decoration-underline text-dark"><small><?= $item->name; ?></small></a></th>
                                 <td><?= $item->purpose; ?></td>
                                 <td><small class="text-muted text-nowrap"><?= my_date($item->date, $lang); ?></small></td>
                                 <td class="text-center"><?= $item->status == 1 ? '<small class="text-success">Ընթացիկ</small>' : '<small class="text-danger">Ավարտված</small' ?></td>

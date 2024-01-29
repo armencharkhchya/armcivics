@@ -8,11 +8,11 @@
 <section>
     <div class="container">
         <div class="row justify-content-end mb-4 gy-3">
-            <form action="<?php echo base_url($lang . '/multimedia'); ?>" method="get" class="col-sm-4 position-relative">
+            <form action="<?php echo base_url('multimedia'); ?>" method="get" class="col-sm-4 position-relative">
                 <input placeholder="<?= $this->lang->line('search') ?>" type="text" name="q" class="form-control form-control-sm" />
                 <input type="submit" value="<?= $this->lang->line('search') ?>" class="search" />
             </form>
-            <form action="<?php echo base_url($lang . '/multimedia'); ?>" class="col-sm-3" method="get">
+            <form action="<?php echo base_url('multimedia'); ?>" class="col-sm-3" method="get">
                 <select name="type" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="" selected><?= $this->lang->line('select') ?></option>
                     <option value="1"><?= $this->lang->line('programs') ?></option>

@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="list-group list-group-flush">
                         <?php foreach ($items as $key => $item) : ?>
-                            <a href="<?= base_url($lang . '/students_fund/?id=' . $item->id); ?>" class="list-group-item d-flex justify-content-between align-items-center"><?= ($key + 1) . ' | ' . $item->name; ?><small class="text-info"><?= my_date($item->date, $lang); ?></small></a>
+                            <a href="<?= base_url('students_fund/?id=' . $item->id); ?>" class="list-group-item d-flex justify-content-between align-items-center"><?= ($key + 1) . ' | ' . $item->name; ?><small class="text-info"><?= my_date($item->date, $lang); ?></small></a>
                         <?php endforeach;  ?>
                     </div>
                     <?= $links; ?>

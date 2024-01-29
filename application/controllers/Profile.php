@@ -7,12 +7,14 @@ class Profile extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();	
-		date_default_timezone_set('Asia/Yerevan');		
-		$this->global['lang'] = $this->uri->segment(1);
-		if(!$this->global['lang'] || ($this->global['lang'] !== 'am' && $this->global['lang'] !== 'en' && $this->global['lang'] !== 'ru')) { redirect(base_url('am')); }  
+		date_default_timezone_set('Asia/Yerevan');
+        $this->global['lang'] = "am";		
+		// $this->global['lang'] = $this->uri->segment(1);
+		// if(!$this->global['lang'] || ($this->global['lang'] !== 'am' && $this->global['lang'] !== 'en' && $this->global['lang'] !== 'ru')) { redirect(base_url('am')); }  
 		$this->lang->load('translate',$this->global['lang']);
 		$this->load->model('Profile_model');
 		$this->load->model('Articles_model');
+        $this->global['categories'] = $this->Articles_model->get_categories();	
 		$this->global['not_items'] = $this->lang->line('not_items_query');
 		$this->breadcrumbs->push($this->lang->line('home'), '/'. $this->global['lang']);		
 	}
@@ -22,7 +24,7 @@ class Profile extends CI_Controller {
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
 		$this->global['title'] = $this->lang->line('profile');
 		$count = $this->Articles_model->get_count_by_students_funds();
-		$config = _pagination(base_url() . $this->global['lang'] . '/profile', $count);
+		$config = _pagination(base_url('profile'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {

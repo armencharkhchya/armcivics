@@ -7,9 +7,10 @@ class Articles extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();	
-		date_default_timezone_set('Asia/Yerevan');		
-		$this->global['lang'] = $this->uri->segment(1);
-		if(!$this->global['lang'] || ($this->global['lang'] !== 'am' && $this->global['lang'] !== 'en' && $this->global['lang'] !== 'ru')) { redirect(base_url('am')); }  
+		date_default_timezone_set('Asia/Yerevan');
+        $this->global['lang'] = "am";		
+		// $this->global['lang'] = $this->uri->segment(1);
+		// if(!$this->global['lang'] || ($this->global['lang'] !== 'am' && $this->global['lang'] !== 'en' && $this->global['lang'] !== 'ru')) { redirect(base_url('am')); }  
 		$this->lang->load('translate',$this->global['lang']);
 		$this->load->model('Articles_model');
 		$this->global['not_items'] = $this->lang->line('not_items_query');
@@ -117,7 +118,8 @@ class Articles extends CI_Controller {
 	public function article(){
         $id = $this->input->get('i');
 		$data = $this->Articles_model->get_article_by_id($id);
-		$lang = $this->uri->segment(1);
+		// $lang = $this->uri->segment(1);
+        $lang = $this->global['lang'];
 		if (empty($data) || $data->date >= date('Y-m-d H:i:s') || $data->publish !== '1') {
 			return $this->my404();
 		} else {

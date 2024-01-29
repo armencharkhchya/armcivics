@@ -92,7 +92,7 @@ require APPPATH.'/libraries/BaseController.php';
             $data_edit['id'] = $this->input->post('id');
             $data_edit['name_am'] = trim($this->input->post('name_am'));
             // $data_edit['name_ru'] = trim($this->input->post('name_ru'));
-            $data_edit['name_en'] = trim($this->input->post('name_en'));
+            // $data_edit['name_en'] = trim($this->input->post('name_en'));
             $data_edit['parent_id'] = $this->input->post('parent_id');
             $data_edit['order_by'] = $this->input->post('order_by');
             $query = $this->Admin_model->getCategoryByID($data_edit['id']);   
@@ -120,7 +120,7 @@ require APPPATH.'/libraries/BaseController.php';
             $data_insert = [];
             $data_insert['name_am'] = trim($this->input->post('name_am'));
             // $data_insert['name_ru'] = trim($this->input->post('name_ru'));
-            $data_insert['name_en'] = trim($this->input->post('name_en'));
+            // $data_insert['name_en'] = trim($this->input->post('name_en'));
             $data_insert['parent_id'] = $this->input->post('parent_id');  
             $data =  $this->Admin_model->addCategory($data_insert);
             if ($data) {
@@ -346,11 +346,11 @@ require APPPATH.'/libraries/BaseController.php';
             $this->load->library('form_validation');
             $this->form_validation->set_rules('name_am', 'name_am', 'required');
             // $this->form_validation->set_rules('name_ru', 'name_ru', 'required');
-            $this->form_validation->set_rules('name_en', 'name_en', 'required');             
+            // $this->form_validation->set_rules('name_en', 'name_en', 'required');             
             if ($this->form_validation->run() !== false) {
                 $name_am = $this->input->post('name_am');
                 // $name_ru = $this->input->post('name_ru');
-                $name_en = $this->input->post('name_en');
+                // $name_en = $this->input->post('name_en');
                 $date = $this->input->post('date');
                 $type = $this->input->post('type');
                 $item = $this->input->post('item');
@@ -373,9 +373,9 @@ require APPPATH.'/libraries/BaseController.php';
                 }
                 if ($item == null) {                
                     $this->form_validation->set_rules('file', 'file', 'required');          
-                    $this->Admin_model->setArchive($name_am, $name_en, $img, $file_info, $date, $type);
+                    $this->Admin_model->setArchive($name_am, $img, $file_info, $date, $type);
                 } else {
-                    $this->Admin_model->updateArchive($item, $name_am, $name_en, $img, $file_info, $date, $type);
+                    $this->Admin_model->updateArchive($item, $name_am, $img, $file_info, $date, $type);
                 }                
             }
             redirect('admin/archive');
@@ -396,7 +396,7 @@ require APPPATH.'/libraries/BaseController.php';
         }
         
         public function videos(){
-            $this->global['pageTitle'] = 'Տեսանյութեր';
+            $this->global['pageTitle'] = 'Տեսադարան';
             $count = $this->Admin_model->get_count_by_videos();
             $config = _pagination(base_url('admin/videos'), $count);
             $this->pagination->initialize($config);
@@ -424,7 +424,7 @@ require APPPATH.'/libraries/BaseController.php';
             $this->load->library('form_validation');
             $this->form_validation->set_rules('title_am', 'title_am', 'trim|strip_tags|required');
             // $this->form_validation->set_rules('title_ru', 'title_ru', 'trim|strip_tags|required');
-            $this->form_validation->set_rules('title_en', 'title_en', 'trim|strip_tags|required');
+            // $this->form_validation->set_rules('title_en', 'title_en', 'trim|strip_tags|required');
             $this->form_validation->set_rules('url', 'url', 'trim|strip_tags|required');
             $this->form_validation->set_rules('type', 'type', 'trim|strip_tags|required|is_natural_no_zero');
             $this->form_validation->set_rules('date', 'Ամսաթիվ', 'trim|strip_tags|required');
@@ -436,7 +436,7 @@ require APPPATH.'/libraries/BaseController.php';
             if ($validation_status) {
                 $data['title_am'] = $this->input->post('title_am');
                 // $data['title_ru'] = $this->input->post('title_ru');
-                $data['title_en'] = $this->input->post('title_en');
+                // $data['title_en'] = $this->input->post('title_en');
                 $data['url'] = $this->input->post('url');
                 $data['type'] = $this->input->post('type');
                 $data['date'] = $this->input->post('date');
@@ -525,10 +525,10 @@ require APPPATH.'/libraries/BaseController.php';
             if ($validation_status) {
                 $data['name_am'] = $this->input->post('name_am');
                 // $data['name_ru'] = $this->input->post('name_ru');
-                $data['name_en'] = $this->input->post('name_en');
+                // $data['name_en'] = $this->input->post('name_en');
                 $data['position_am'] = $this->input->post('position_am');
                 // $data['position_ru'] = $this->input->post('position_ru');
-                $data['position_en'] = $this->input->post('position_en');
+                // $data['position_en'] = $this->input->post('position_en');
                 $data['link_fb'] = $this->input->post('link_fb');
                 $data['link_fb'] = $this->input->post('link_fb');
                 $data['link_tv'] = $this->input->post('link_tv');
@@ -649,7 +649,7 @@ require APPPATH.'/libraries/BaseController.php';
             $this->load->library('form_validation');
             $this->form_validation->set_rules('name_am', 'name_am', 'trim|strip_tags|required');
             // $this->form_validation->set_rules('name_ru', 'name_ru', 'trim|strip_tags|required');
-            $this->form_validation->set_rules('name_en', 'name_en', 'trim|strip_tags|required');
+            // $this->form_validation->set_rules('name_en', 'name_en', 'trim|strip_tags|required');
             $data_errors = array();
             $validation_status = $this->form_validation->run();
             foreach ($this->input->post() as $field => $value) {
@@ -658,7 +658,7 @@ require APPPATH.'/libraries/BaseController.php';
             if ($validation_status) {
                 $data['name_am'] = $this->input->post('name_am');
                 // $data['name_ru'] = $this->input->post('name_ru');
-                $data['name_en'] = $this->input->post('name_en');
+                // $data['name_en'] = $this->input->post('name_en');
                 $data['link'] = $this->input->post('link');
                 $data['img'] = null;
                 if ($_FILES['image_name']['name'] !== '') {

@@ -108,7 +108,7 @@
                             <h4><?= $this->lang->line('services'); ?></h4>
                             <ul>
                                 <li><i class="bx bx-chevron-right"></i> <a
-                                        href="<?php echo base_url($lang . '/auth'); ?>"><?php echo $this->lang->line('students-funds'); ?></a>
+                                        href="<?php echo base_url('auth'); ?>"><?php echo $this->lang->line('students-funds'); ?></a>
                                 </li>
                                 <li><i class="bx bx-chevron-right"></i> <a
                                         href=""><?php echo $this->lang->line('school-grant-programs'); ?></a></li>

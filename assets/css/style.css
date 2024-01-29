@@ -645,6 +645,19 @@ input.search {
   padding: 0;
 }
 
+#topbar .logo {
+    font-size: 34px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #topbar .logo a {
+    color: #ffffff;
+}
+  
 #topbar .contact-info i {
   font-style: normal;
   color: #fff;
@@ -2571,3 +2584,7 @@ nav ul {
     border-right-color: white;
     right: 10px; 
   }
+  
+  .nav li .btn:hover, .nav li .btn:focus {
+    border-color: white;
+}

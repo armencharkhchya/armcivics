@@ -44,17 +44,17 @@
                     <select id="editCategories" class="select2ToTree" style="width: 100%"></select>
                 </div>
                 <div class="form-group">
-                    <label>Կատեգորիայի անվանումը (հայերեն)</label>
+                    <label>Կատեգորիայի անվանումը</label>
                     <input type="text" class="form-control" name="edit_1">
                 </div>
                 <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (ռուսերեն)</label>
                     <input type="text" class="form-control" name="edit_2">
                 </div> -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (անգլերեն)</label>
                     <input type="text" class="form-control" name="edit_3">
-                </div>
+                </div> -->
                 <div class="form-group group-category">
                     <label for="editCategories">Կատեգորիաի խմբավորում</label>
                     <select id="order_by" class="form-control">
@@ -90,17 +90,17 @@
                     <select id="addCategories" style="width: 100%" class="select2ToTree"></select>
                 </div>
                 <div class="form-group">
-                    <label>Կատեգորիայի անվանումը (հայերեն)</label>
+                    <label>Կատեգորիայի անվանումը</label>
                     <input type="text" class="form-control" name="add_1">
                 </div>
                 <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (ռուսերեն)</label>
                     <input type="text" class="form-control" name="add_2">
                 </div> -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (անգլերեն)</label>
                     <input type="text" class="form-control" name="add_3">
-                </div>
+                </div> -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Փակել</button>

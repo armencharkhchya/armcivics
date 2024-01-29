@@ -56,7 +56,8 @@
 <div class="modal fade" id="addEditModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form id="addOrUpdateItem" action="<?= base_url($lang.'/profile/addOrUpdateItem'); ?>" method="post" enctype="multipart/form-data">
+            <form id="addOrUpdateItem" action="<?= base_url('profile/addOrUpdateItem'); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="school_id" value="<?php echo $this->input->get('i'); ?>">
                 <div class="modal-header">
                     <h5 class="modal-title"><?= $this->lang->line('add'); ?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -70,10 +71,10 @@
                         <label class="form-label"><?= $this->lang->line('title'); ?> (<?= $this->lang->line('russian'); ?>) <span class="text-danger">*</span></label>
                         <input type="text" name="name_ru" class="form-control" required autocomplete="off"/>
                     </div>   -->
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label class="form-label"><?= $this->lang->line('title'); ?> (<?= $this->lang->line('english'); ?>) <span class="text-danger">*</span></label>
                         <input type="text" name="name_en" class="form-control" required autocomplete="off"/>
-                    </div> 
+                    </div>  -->
                     <div class="mb-3">
                         <label class="form-label"><?= $this->lang->line('text'); ?> (<?= $this->lang->line('armenian'); ?>)</label>
                         <textarea id="longtext_am" name="longtext_am" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
@@ -82,16 +83,16 @@
                         <label class="form-label"><?= $this->lang->line('text'); ?> (<?= $this->lang->line('russian'); ?>)</label>
                         <textarea id="longtext_ru" name="longtext_ru" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
                     </div> -->
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label class="form-label"><?= $this->lang->line('text'); ?> (<?= $this->lang->line('english'); ?>)</label>
                         <textarea id="longtext_en" name="longtext_en" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
-                    </div>
+                    </div> -->
                     <div class="mb-3">
                         <label class="form-label"><?= $this->lang->line('status')?></span></label>
                     <div class="form-control">
                         <input class="form-check-input" type="radio" id="disabled" name="status" value="0">
                         <label class="form-check-label"><?= $this->lang->line('disabled')?></label>                 
-                        <input class="form-check-input ms-3" type="radio" id="enabled" name="status" checked value="1">
+                        <input class="form-check-input ms-3" type="radio" id="enabled" name="status" value="1">
                         <label class="form-check-label"><?= $this->lang->line('enabled')?></label>
                     </div>
                     </div>
@@ -112,20 +113,20 @@
 
 <script>
      $('.edit').click(function () {
-        var id = $(this).attr('data');
+        var id = $(this).attr('data-id');
         $('#addEditModal .modal-title').text('<?= $this->lang->line('edit'); ?>');
         $.ajax({
             type: 'POST',
-            url: '<?= base_url($lang.'/profile/getProgramById') ?>',
+            url: '<?= base_url('profile/getProgramById') ?>',
             data: {id: id},
             success: function (data) {
                 var item = JSON.parse(data);
                 $('[name=name_am]').val(item.name_am);
                 // $('[name=name_ru]').val(item.name_ru);
-                $('[name=name_en]').val(item.name_en);
+                // $('[name=name_en]').val(item.name_en);
                 var iframe_am = $('#longtext_am__ifr');
                 // var iframe_ru = $('#longtext_ru__ifr');
-                var iframe_en = $('#longtext_en__ifr');
+                // var iframe_en = $('#longtext_en__ifr');
                 iframe_am.ready(function () {         
                 iframe_am.contents().find("body").html('');
                     iframe_am.contents().find("body").append(item.longtext_am);
@@ -134,10 +135,10 @@
                 // iframe_ru.contents().find("body").html('');
                 //     iframe_ru.contents().find("body").append(item.longtext_ru);
                 // });
-                iframe_en.ready(function () {         
-                iframe_en.contents().find("body").html('');
-                    iframe_en.contents().find("body").append(item.longtext_en);
-                });
+                // iframe_en.ready(function () {         
+                // iframe_en.contents().find("body").html('');
+                //     iframe_en.contents().find("body").append(item.longtext_en);
+                // });
                 if(item.status == 1) {
                     $('#enabled').prop('checked', true);
                 }else {

@@ -106,7 +106,7 @@ $(document).ready(function () {
 
   $('.addItem').click(function () {  
     $('#tagsinput').tagsinput('removeAll');
-    $('[name=lang]').val('1');
+    // $('[name=lang]').val('1');
     var iframe = $('#longtext_ifr');
     iframe.ready(function () {
       iframe.contents().find("body").html('');
@@ -126,13 +126,13 @@ $(document).ready(function () {
         var item = JSON.parse(data).getItemById; 
         $('#itemModal [name=name_am]').val(item.name_am);
         // $('#itemModal [name=name_ru]').val(item.name_ru);
-        $('#itemModal [name=name_en]').val(item.name_en);
+        // $('#itemModal [name=name_en]').val(item.name_en);
         $('#itemModal [name=text_am]').val(item.text_am);
         // $('#itemModal [name=text_ru]').val(item.text_ru);
-        $('#itemModal [name=text_en]').val(item.text_en);
+        // $('#itemModal [name=text_en]').val(item.text_en);
         var iframe_am = $('#longtext_am_ifr');       
         // var iframe_ru = $('#longtext_ru_ifr');       
-        var iframe_en = $('#longtext_em_ifr');       
+        // var iframe_en = $('#longtext_em_ifr');       
         iframe_am.ready(function () {         
           iframe_am.contents().find("body").html('');
             iframe_am.contents().find("body").append(item.longtext_am);
@@ -141,10 +141,10 @@ $(document).ready(function () {
         //   iframe_ru.contents().find("body").html('');
         //     iframe_ru.contents().find("body").append(item.longtext_ru);
         // }); 
-        iframe_en.ready(function () {         
-          iframe_en.contents().find("body").html('');
-            iframe_en.contents().find("body").append(item.longtext_en);
-        }); 
+        // iframe_en.ready(function () {         
+        //   iframe_en.contents().find("body").html('');
+        //     iframe_en.contents().find("body").append(item.longtext_en);
+        // }); 
         $('#pic').attr('src', baseURL + 'images/upload/' + item.img);  
         if(item.general == 1) {
           $('#checkbox').prop('checked', true);
@@ -306,7 +306,7 @@ $(document).ready(function () {
           
         $('[name="edit_1"]').val(data.name_am);
         // $('[name="edit_2"]').val(data.name_ru);
-        $('[name="edit_3"]').val(data.name_en);
+        // $('[name="edit_3"]').val(data.name_en);
         $("[name=item]").val(data.id)
         
         $("#editCategories").select2ToTree({
@@ -328,7 +328,7 @@ $(document).ready(function () {
         parent_id: $('#editCategories').val(),
         name_am: $('[name="edit_1"]').val(),
         // name_ru: $('[name="edit_2"]').val(),
-        name_en: $('[name="edit_3"]').val(),
+        // name_en: $('[name="edit_3"]').val(),
         order_by: $('#order_by').val()
       },
       success: function (result) {
@@ -349,7 +349,7 @@ $(document).ready(function () {
         parent_id: $('#addCategories').val(),
         name_am: $('[name="add_1"]').val(),
         // name_ru: $('[name="add_2"]').val(),
-        name_en: $('[name="add_3"]').val()
+        // name_en: $('[name="add_3"]').val()
       },
       success: function (result) {
         var data = JSON.parse(result)
@@ -669,7 +669,11 @@ $(document).ready(function () {
     }
      if ($(this).attr('id') == 'civilSocietyCrowdfundingModal') {
       $(this).find(".modal-title").text('Ավելացնել քաղաքացիական հասարակության դրամաշնորհային ծրագրեր');
-    }
+     }
+     var iframe_am = $('#longtext_am_ifr');     
+     iframe_am.ready(function () {         
+       iframe_am.contents().find("body").html('');
+     }); 
     $(this)
       .find("input,textarea,select")
       .val('')
@@ -683,8 +687,8 @@ $(document).ready(function () {
       .find("input[name=date],input[name=time]")
       .val(dateNow)
       .end()
-      .find("select[name=lang]")
-      .val('1')
+    //   .find("select[name=lang]")
+    //   .val('1')
       .end()
       .find("button[type=submit]")
       .text('Ավելացնել')

@@ -82,33 +82,33 @@
           <h4 class="modal-title">Ավելացնել նյութ</h4>
         </div>
         <div class="modal-body">
-          <label>Վերնագիր (հայերեն)<span class="text-danger">*</span></label>
+          <label>Վերնագիր<span class="text-danger">*</span></label>
           <input type="text" name="name_am" class="form-control" required />
           <br />
           <!-- <label>Վերնագիր (ռուսերեն)<span class="text-danger">*</span></label>
           <input type="text" name="name_ru" class="form-control" required />
           <br /> -->
-          <label>Վերնագիր (անգլերեն)<span class="text-danger">*</span></label>
+          <!-- <label>Վերնագիր (անգլերեն)<span class="text-danger">*</span></label>
           <input type="text" name="name_en" class="form-control" required />
-          <br />
-          <label>Տեքստ (հայերեն)<span class="text-danger">*</span></label>
+          <br /> -->
+          <label>Տեքստ<span class="text-danger">*</span></label>
           <textarea name="text_am" class="form-control" rows="10" style="resize: none;" required></textarea>
           <br />
           <!-- <label>Տեքստ (ռուսերեն)<span class="text-danger">*</span></label>
           <textarea name="text_ru" class="form-control" rows="10" style="resize: none;" required></textarea>
           <br /> -->
-          <label>Տեքստ (անգլերեն)<span class="text-danger">*</span></label>
+          <!-- <label>Տեքստ (անգլերեն)<span class="text-danger">*</span></label>
           <textarea name="text_en" class="form-control" rows="10" style="resize: none;" required></textarea>
-          <br />
-          <label>Նյութեր (հայերեն)</label>
+          <br /> -->
+          <label>Նյութեր</label>
           <textarea id="longtext_am" name="longtext_am" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
           <br />
           <!-- <label>Նյութեր (ռուսերեն)</label>
           <textarea id="longtext_ru" name="longtext_ru" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
           <br /> -->
-           <label>Նյութեր (անգլերեն)</label>
+           <!-- <label>Նյութեր (անգլերեն)</label>
           <textarea id="longtext_en" name="longtext_en" class="form-control longtext" rows="20" style="resize: none;height: 300px"></textarea>
-          <br />
+          <br /> -->
           <div class="row">
             <label class="col-sm-2 col-form-label">Ընտրել նկարը</label>
             <div class="col-sm-10">

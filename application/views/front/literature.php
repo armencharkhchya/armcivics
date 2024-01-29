@@ -8,11 +8,11 @@
 <section>
     <div class="container">
         <div class="row justify-content-end mb-4 gy-3">
-            <form action="<?php echo base_url($lang . '/literature'); ?>" method="get" class="col-sm-4 position-relative">
+            <form action="<?php echo base_url('literature'); ?>" method="get" class="col-sm-4 position-relative">
                 <input placeholder="<?php echo $this->lang->line('search'); ?>" type="text" name="q" class="form-control form-control form-control-sm" />
                 <input type="submit" value="<?php echo $this->lang->line('search'); ?>" class="search" />
             </form>
-            <form action="<?php echo base_url($lang . '/literature'); ?>" class="col-sm-2" method="get">
+            <form action="<?php echo base_url('literature'); ?>" class="col-sm-2" method="get">
                 <select name="type" class="form-select form-control form-select-sm" onchange="this.form.submit()">
                     <option value="" selected><?php echo $this->lang->line('classes'); ?></option>
                     <option value="7">7<?php echo $this->lang->line('-th grade'); ?></option>

@@ -19,12 +19,9 @@
             if($this->input->get('q')) {
                 $key = $this->input->get('q');               
                 $this->db->where("
-                name_am LIKE '%$key%' OR
-                name_en LIKE '%$key%' OR
+                name_am LIKE '%$key%' OR              
                 text_am LIKE '%$key%' OR
-                text_en LIKE '%$key%' OR
-                longtext_am LIKE '%$key%' OR
-                longtext_en LIKE '%$key%' 
+                longtext_am LIKE '%$key%'
                 "); 
             }
             if($this->input->get('date')) {
@@ -53,11 +50,8 @@
                 $key = $this->input->get('q');               
                 $this->db->where("
                 name_am LIKE '%$key%' OR
-                name_en LIKE '%$key%' OR
                 text_am LIKE '%$key%' OR
-                text_en LIKE '%$key%' OR
-                longtext_am LIKE '%$key%' OR
-                longtext_en LIKE '%$key%' 
+                longtext_am LIKE '%$key%' 
                 "); 
             }
             if($this->input->get('date')) {
@@ -93,7 +87,7 @@
                 // 'title'     => str_replace('&nbsp;', ' ', preg_replace('/\s+/', ' ', htmlentities($this->input->post('title'), ENT_QUOTES, 'UTF-8'))),
                 'text_am'      => str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_am')))),
                 // 'text_ru'      => str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_ru')))),
-                'text_en'      => str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_en')))),
+                // 'text_en'      => str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_en')))),
                 'date'      => date("Y-m-d H:i:s"),
             ];  
             if ($delete_pic == "on") {
@@ -246,7 +240,7 @@
             $array = array(
                 'name_am' => $data_edit['name_am'],
                 // 'name_ru' => $data_edit['name_ru'],
-                'name_en' => $data_edit['name_en'],
+                // 'name_en' => $data_edit['name_en'],
                 'parent_id' => $data_edit['parent_id'],
                 'order_by' => $data_edit['order_by']
             );       
@@ -298,7 +292,7 @@
         }
 
         public function getItemById($id){
-            $this->db->select('articles.id,articles.name_am,articles.name_en,articles.text_am,articles.text_en,articles.longtext_am,articles.longtext_en,articles.img,articles.general,articles.category_id,articles.date, JSON_ARRAYAGG(JSON_OBJECT("id", documents.id, "path", documents.file, "extension", documents.extension)) as files');
+            $this->db->select('articles.id,articles.name_am,articles.text_am,articles.longtext_am,articles.img,articles.general,articles.category_id,articles.date, JSON_ARRAYAGG(JSON_OBJECT("id", documents.id, "path", documents.file, "extension", documents.extension)) as files');
             $this->db->from($this->table);
             $this->db->join('documents', 'documents.post_id=articles.id', 'left');
             $this->db->where("articles.id", $id);
@@ -318,21 +312,21 @@
             $this->load->library('form_validation');
             $this->form_validation->set_rules('name_am', '', 'required');
             // $this->form_validation->set_rules('name_ru', '', 'required');
-            $this->form_validation->set_rules('name_en', '', 'required');
+            // $this->form_validation->set_rules('name_en', '', 'required');
             $this->form_validation->set_rules('text_am', '', 'required');
             // $this->form_validation->set_rules('text_ru', '', 'required');
-            $this->form_validation->set_rules('text_en', '', 'required');
+            // $this->form_validation->set_rules('text_en', '', 'required');
             if ($this->form_validation->run() !== false) {
                // $name = str_replace('&nbsp;', ' ', preg_replace('/\s+/', ' ', htmlentities($this->input->post('name'), ENT_QUOTES, 'UTF-8')));
                 $name_am = $this->input->post('name_am');
                 // $name_ru = $this->input->post('name_ru');
-                $name_en = $this->input->post('name_en');
+                // $name_en = $this->input->post('name_en');
                 $text_am = str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_am'))));
                 // $text_ru = str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_ru'))));
-                $text_en = str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_en'))));
+                // $text_en = str_replace('&nbsp;', ' ', str_replace('</script>', '&lt;/script&gt;', str_replace('<script>', '&lt;script&gt;', $this->input->post('text_en'))));
                 $longtext_am = $this->input->post('longtext_am');
                 // $longtext_ru = $this->input->post('longtext_ru');
-                $longtext_en = $this->input->post('longtext_en');
+                // $longtext_en = $this->input->post('longtext_en');
                 $delete_pic = $this->input->post('delete_pic');
                 $general = $this->input->post('general');
                 $categ_id = $this->input->post('category');
@@ -353,13 +347,13 @@
                 $data = array(
                     'name_am' => @$name_am,
                     // 'name_ru' => @$name_ru,
-                    'name_en' => @$name_en,
+                    // 'name_en' => @$name_en,
                     'text_am' => @$text_am,
                     // 'text_ru' => @$text_ru,
-                    'text_en' => @$text_en,
+                    // 'text_en' => @$text_en,
                     'longtext_am' => @$longtext_am,
                     // 'longtext_ru' => @$longtext_ru,
-                    'longtext_en' => @$longtext_en,
+                    // 'longtext_en' => @$longtext_en,
                     'general' => @$general,
                     'category_id' => @$categ_id,
                     'date' => @$date,
@@ -500,7 +494,7 @@
             }
             if ($this->input->get('q')) {
                 $key = $this->input->get('q');
-                $where = "archive.name_am LIKE '%$key%' OR archive.name_en LIKE '%$key%'";
+                $where = "archive.name_am LIKE '%$key%'";
             } else if ($this->input->get('date')) {
                 $date = $this->input->get('date');
                 $where =  "archive.date LIKE '%$date%'";
@@ -519,7 +513,7 @@
         public function getCountByArchive(){
             if ($this->input->get('q')) {
                 $key = $this->input->get('q');
-                $where = "archive.name_am LIKE '%$key%' OR archive.name_en LIKE '%$key%'";
+                $where = "archive.name_am LIKE '%$key%'";
             } else if ($this->input->get('date')) {
                 $date = $this->input->get('date');
                 $where =  "archive.date LIKE '%$date%'";
@@ -536,11 +530,11 @@
             return $query->row();
         }
     
-        public function setArchive($name_am, $name_ru, $name_en, $img = null, $file_info = null, $date = null , $type = null){
+        public function setArchive($name_am, $img = null, $file_info = null, $date = null , $type = null){
             $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
-                    'name_en' => $name_en,
+                    // 'name_en' => $name_en,
                     'img' => $img,
                     'pdf' => $file_info,
                     'date' => $date,
@@ -549,12 +543,12 @@
             return $this->db->insert('archive', $data);
         }
 
-        public function updateArchive($item, $name_am, $name_en, $img = null, $file_info = null, $date = null, $type = null){
+        public function updateArchive($item, $name_am, $img = null, $file_info = null, $date = null, $type = null){
             if ($img == null && $file_info == null) {
                 $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
-                    'name_en' => $name_en,
+                    // 'name_en' => $name_en,
                     'date' => $date,
                     'type' => $type
                 );
@@ -562,7 +556,7 @@
                 $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
-                    'name_en' => $name_en,
+                    // 'name_en' => $name_en,
                     'pdf' => $file_info,
                     'date' => $date,
                     'type' => $type
@@ -571,7 +565,7 @@
                 $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
-                    'name_en' => $name_en,
+                    // 'name_en' => $name_en,
                     'img' => $img,
                     'date' => $date,
                     'type' => $type
@@ -580,7 +574,7 @@
                 $data = array(
                     'name_am' => $name_am,
                     // 'name_ru' => $name_ru,
-                    'name_en' => $name_en,
+                    // 'name_en' => $name_en,
                     'img' => $img,
                     'pdf' => $file_info,
                     'date' => $date,
@@ -619,7 +613,7 @@
         public function get_count_by_videos(){
             if ($this->input->get('q')) {
                 $key = $this->input->get('q');
-                $where = "videos.title_am LIKE '%$key%' OR videos.title_en LIKE '%$key%'";
+                $where = "videos.title_am LIKE '%$key%'";
             } else if ($this->input->get('date')) {
                 $date = $this->input->get('date');
                 $where =  "videos.date LIKE '%$date%'";
@@ -637,7 +631,7 @@
             }
             if ($this->input->get('q')) {
                 $key = $this->input->get('q');
-                $where = "videos.title_am LIKE '%$key%' OR videos.title_en LIKE '%$key%'";
+                $where = "videos.title_am LIKE '%$key%'";
             } else if ($this->input->get('date')) {
                 $date = $this->input->get('date');
                 $where =  "videos.date LIKE '%$date%'";
@@ -862,19 +856,13 @@
         if ($this->input->get('q')) {
             $key=$this->input->get('q');            
             $this->db->where("
-                school_grant_programs.name_am LIKE '%$key%' OR              
-                school_grant_programs.name_en LIKE '%$key%' OR
+                school_grant_programs.name_am LIKE '%$key%' OR 
                 school_grant_programs.purpose_am LIKE '%$key%' OR
-                school_grant_programs.purpose_en LIKE '%$key%' OR
                 school_grant_programs.interest_groups_am LIKE '%$key%' OR
-                school_grant_programs.interest_groups_en LIKE '%$key%' OR
                 school_grant_programs.location_am LIKE '%$key%' OR
-                school_grant_programs.structure_am LIKE '%$key%' OR              
-                school_grant_programs.structure_en LIKE '%$key%' OR
-                school_grant_programs.quotes_am LIKE '%$key%' OR                
-                school_grant_programs.quotes_en LIKE '%$key%' OR
-                school_grant_programs.results_am LIKE '%$key%' OR
-                school_grant_programs.results_en LIKE '%$key%'
+                school_grant_programs.structure_am LIKE '%$key%' OR  
+                school_grant_programs.quotes_am LIKE '%$key%' OR 
+                school_grant_programs.results_am LIKE '%$key%' 
             ");
         }
         if ($this->input->get('date')) {
@@ -895,19 +883,13 @@
           if ($this->input->get('q')) {
             $key=$this->input->get('q');            
             $this->db->where("
-                school_grant_programs.name_am LIKE '%$key%' OR              
-                school_grant_programs.name_en LIKE '%$key%' OR
+                school_grant_programs.name_am LIKE '%$key%' OR  
                 school_grant_programs.purpose_am LIKE '%$key%' OR
-                school_grant_programs.purpose_en LIKE '%$key%' OR
                 school_grant_programs.interest_groups_am LIKE '%$key%' OR
-                school_grant_programs.interest_groups_en LIKE '%$key%' OR
                 school_grant_programs.location_am LIKE '%$key%' OR
-                school_grant_programs.structure_am LIKE '%$key%' OR             
-                school_grant_programs.structure_en LIKE '%$key%' OR
-                school_grant_programs.quotes_am LIKE '%$key%' OR               
-                school_grant_programs.quotes_en LIKE '%$key%' OR
-                school_grant_programs.results_am LIKE '%$key%' OR
-                school_grant_programs.results_en LIKE '%$key%'
+                school_grant_programs.structure_am LIKE '%$key%' OR 
+                school_grant_programs.quotes_am LIKE '%$key%' OR  
+                school_grant_programs.results_am LIKE '%$key%'
             ");
         }
         if ($this->input->get('date')) {
@@ -925,53 +907,53 @@
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name_am', '', 'required'); 
         // $this->form_validation->set_rules('name_ru', '', 'required');       
-        $this->form_validation->set_rules('name_en', '', 'required'); 
+        // $this->form_validation->set_rules('name_en', '', 'required'); 
         if ($this->form_validation->run() !== false) {
             $name_am = $this->input->post('name_am');
             // $name_ru = $this->input->post('name_ru');
-            $name_en = $this->input->post('name_en');
+            // $name_en = $this->input->post('name_en');
             $purpose_am = $this->input->post('purpose_am'); 
             // $purpose_ru = $this->input->post('purpose_ru');  
-            $purpose_en = $this->input->post('purpose_en');  
+            // $purpose_en = $this->input->post('purpose_en');  
             $interest_groups_am = $this->input->post('interest_groups_am');
             // $interest_groups_ru = $this->input->post('interest_groups_ru');
-            $interest_groups_en = $this->input->post('interest_groups_en');
+            // $interest_groups_en = $this->input->post('interest_groups_en');
             $location_am = $this->input->post('location_am');
             // $location_ru = $this->input->post('location_ru');
-            $location_en = $this->input->post('location_en');
+            // $location_en = $this->input->post('location_en');
             $structure_am = $this->input->post('structure_am');
             // $structure_ru = $this->input->post('structure_ru');            
-            $structure_en = $this->input->post('structure_en');
+            // $structure_en = $this->input->post('structure_en');
             $results_am = $this->input->post('results_am');
             // $results_ru = $this->input->post('results_ru');            
-            $results_en = $this->input->post('results_en');
+            // $results_en = $this->input->post('results_en');
             $quotes_am = $this->input->post('quotes_am');
             // $quotes_ru = $this->input->post('quotes_ru');
-            $quotes_en = $this->input->post('quotes_en');
+            // $quotes_en = $this->input->post('quotes_en');
             $time = $this->input->post('time');
             $date = $this->input->post('date');
             $data = array(
                 'name_am' => @$name_am,
                 // 'name_ru' => @$name_ru,
-                'name_en' => @$name_en,
+                // 'name_en' => @$name_en,
                 'purpose_am' => @$purpose_am,
                 // 'purpose_ru' => @$purpose_ru,
-                'purpose_en' => @$purpose_en,                
+                // 'purpose_en' => @$purpose_en,                
                 'interest_groups_am' => @$interest_groups_am,
                 // 'interest_groups_ru' => @$interest_groups_ru,
-                'interest_groups_en' => @$interest_groups_en,
+                // 'interest_groups_en' => @$interest_groups_en,
                 'location_am' => @$location_am,
                 // 'location_ru' => @$location_ru,
-                'location_en' => @$location_en,
+                // 'location_en' => @$location_en,
                 'structure_am' => @$structure_am,
                 // 'structure_ru' => @$structure_ru,
-                'structure_en' => @$structure_en,
+                // 'structure_en' => @$structure_en,
                 'results_am' => @$results_am,
                 // 'results_ru' => @$results_ru,
-                'results_en' => @$results_en,
+                // 'results_en' => @$results_en,
                 'quotes_am' => @$quotes_am,
                 // 'quotes_ru' => @$quotes_ru,
-                'quotes_en' => @$quotes_en,
+                // 'quotes_en' => @$quotes_en,
                 'time' => @$time,
                 'date' => $date
             );           
@@ -1014,19 +996,13 @@
         if ($this->input->get('q')) {
             $key=$this->input->get('q');            
             $this->db->where("
-                civil_society_crowdfunding.name_am LIKE '%$key%' OR           
-                civil_society_crowdfunding.name_en LIKE '%$key%' OR
+                civil_society_crowdfunding.name_am LIKE '%$key%' OR 
                 civil_society_crowdfunding.purpose_am LIKE '%$key%' OR
-                civil_society_crowdfunding.purpose_en LIKE '%$key%' OR
                 civil_society_crowdfunding.interest_groups_am LIKE '%$key%' OR
-                civil_society_crowdfunding.interest_groups_en LIKE '%$key%' OR
                 civil_society_crowdfunding.location_am LIKE '%$key%' OR
-                civil_society_crowdfunding.structure_am LIKE '%$key%' OR              
-                civil_society_crowdfunding.structure_en LIKE '%$key%' OR
-                civil_society_crowdfunding.quotes_am LIKE '%$key%' OR               
-                civil_society_crowdfunding.quotes_en LIKE '%$key%' OR
-                civil_society_crowdfunding.results_am LIKE '%$key%' OR
-                civil_society_crowdfunding.results_en LIKE '%$key%'
+                civil_society_crowdfunding.structure_am LIKE '%$key%' OR 
+                civil_society_crowdfunding.quotes_am LIKE '%$key%' OR  
+                civil_society_crowdfunding.results_am LIKE '%$key%'
             ");
         }
         if ($this->input->get('date')) {
@@ -1051,20 +1027,13 @@
         if ($this->input->get('q')) {
             $key=$this->input->get('q');            
             $this->db->where("
-                civil_society_crowdfunding.name_am LIKE '%$key%' OR             
-                civil_society_crowdfunding.name_en LIKE '%$key%' OR
+                civil_society_crowdfunding.name_am LIKE '%$key%' OR 
                 civil_society_crowdfunding.purpose_am LIKE '%$key%' OR
-                civil_society_crowdfunding.purpose_en LIKE '%$key%' OR
                 civil_society_crowdfunding.interest_groups_am LIKE '%$key%' OR
-                civil_society_crowdfunding.interest_groups_en LIKE '%$key%' OR
                 civil_society_crowdfunding.location_am LIKE '%$key%' OR
-                civil_society_crowdfunding.location_en LIKE '%$key%' OR
-                civil_society_crowdfunding.structure_am LIKE '%$key%' OR              
-                civil_society_crowdfunding.structure_en LIKE '%$key%' OR
-                civil_society_crowdfunding.quotes_am LIKE '%$key%' OR               
-                civil_society_crowdfunding.quotes_en LIKE '%$key%' OR
-                civil_society_crowdfunding.results_am LIKE '%$key%' OR
-                civil_society_crowdfunding.results_en LIKE '%$key%'
+                civil_society_crowdfunding.structure_am LIKE '%$key%' OR    
+                civil_society_crowdfunding.quotes_am LIKE '%$key%' OR   
+                civil_society_crowdfunding.results_am LIKE '%$key%' 
             ");
         }
         if ($this->input->get('date')) {
@@ -1086,54 +1055,54 @@
         $this->load->library('form_validation');
         $this->form_validation->set_rules('name_am', '', 'required');
         // $this->form_validation->set_rules('name_ru', '', 'required');
-        $this->form_validation->set_rules('name_en', '', 'required');
+        // $this->form_validation->set_rules('name_en', '', 'required');
         if ($this->form_validation->run() !== false) {
             $name_am = $this->input->post('name_am');
             // $name_ru = $this->input->post('name_ru');
-            $name_en = $this->input->post('name_en');
+            // $name_en = $this->input->post('name_en');
             $purpose_am = $this->input->post('purpose_am'); 
             // $purpose_ru = $this->input->post('purpose_ru');  
-            $purpose_en = $this->input->post('purpose_en');              
+            // $purpose_en = $this->input->post('purpose_en');              
             $interest_groups_am = $this->input->post('interest_groups_am');
             // $interest_groups_ru = $this->input->post('interest_groups_ru');
-            $interest_groups_en = $this->input->post('interest_groups_en');            
+            // $interest_groups_en = $this->input->post('interest_groups_en');            
             $location_am = $this->input->post('location_am');
             // $location_ru = $this->input->post('location_ru');
-            $location_en = $this->input->post('location_en');            
+            // $location_en = $this->input->post('location_en');            
             $structure_am = $this->input->post('structure_am');
             // $structure_ru = $this->input->post('structure_ru');            
-            $structure_en = $this->input->post('structure_en');            
+            // $structure_en = $this->input->post('structure_en');            
             $results_am = $this->input->post('results_am');
             // $results_ru = $this->input->post('results_ru');            
-            $results_en = $this->input->post('results_en');
+            // $results_en = $this->input->post('results_en');
             $quotes_am = $this->input->post('quotes_am');
             // $quotes_ru = $this->input->post('quotes_ru');
-            $quotes_en = $this->input->post('quotes_en');
+            // $quotes_en = $this->input->post('quotes_en');
             $status = $this->input->post('status');
             $time = $this->input->post('time');
             $date = $this->input->post('date');
             $data = array(
                 'name_am' => @$name_am,
                 // 'name_ru' => @$name_ru,
-                'name_en' => @$name_en,
+                // 'name_en' => @$name_en,
                 'purpose_am' => @$purpose_am,
                 // 'purpose_ru' => @$purpose_ru,
-                'purpose_en' => @$purpose_en,                
+                // 'purpose_en' => @$purpose_en,                
                 'interest_groups_am' => @$interest_groups_am,
                 // 'interest_groups_ru' => @$interest_groups_ru,
-                'interest_groups_en' => @$interest_groups_en,
+                // 'interest_groups_en' => @$interest_groups_en,
                 'location_am' => @$location_am,
                 // 'location_ru' => @$location_ru,
-                'location_en' => @$location_en,
+                // 'location_en' => @$location_en,
                 'structure_am' => @$structure_am,
                 // 'structure_ru' => @$structure_ru,
-                'structure_en' => @$structure_en,
+                // 'structure_en' => @$structure_en,
                 'results_am' => @$results_am,
                 // 'results_ru' => @$results_ru,
-                'results_en' => @$results_en,
+                // 'results_en' => @$results_en,
                 'quotes_am' => @$quotes_am,
                 // 'quotes_ru' => @$quotes_ru,
-                'quotes_en' => @$quotes_en,
+                // 'quotes_en' => @$quotes_en,
                 'status' => @$status,
                 'time' => @$time,
                 'date' => $date

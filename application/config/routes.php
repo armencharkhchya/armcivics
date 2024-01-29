@@ -49,35 +49,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-// $default_controller = "articles";
-// $route['default_controller'] = $default_controller;
-// $language_alias = array('am', 'en', 'ru');
-// foreach ($language_alias as $key => $language) { $route[$language] = $default_controller; }
-//     $controller_exceptions = array('login', 'admin','auth');
-//     $route["^(" . implode('|', $language_alias) . ")/(" . implode('|', $controller_exceptions) . ")(.*)"] = '$2';
-//     $route["^(" . implode('|', $language_alias) . ")?/(.*)"] = $default_controller . '/$2';
-//     $route["^((?!\b" . implode('\b|\b', $controller_exceptions) . "\b).*)$"] = $default_controller . '/$1';
-//     $route['404_override'] = 'articles/my404';
-//     $route['translate_uri_dashes'] = FALSE;
-    
 $default_controller = "articles";
 $route['default_controller'] = $default_controller;
-$controllers = array('articles','auth','profile');
-$language_alias = array('am', 'en', 'ru');
-foreach ($language_alias as $key => $language) {
-    $route[$language] = $default_controller;
-    foreach($controllers as $controller){
-        $route[$language.'/'.$controller] = $controller."/index";
-        $route[$language.'/'.$controller."/(:any)"] = $controller."/$1";     
-        $route[$language.'/'.$controller."/(:any)/(:any)"] = $controller."/$1/$2";     
-    }    
-}
-$controller_exceptions = array('login', 'admin');
-$route["^(" . implode('|', $language_alias) . ")/(" . implode('|', $controller_exceptions) . ")(.*)"] = '$2';
-$route["^(" . implode('|', $language_alias) . ")?/(.*)"] = $default_controller . '/$2';
-$route["^((?!\b" . implode('\b|\b', $controller_exceptions) . "\b).*)$"] = $default_controller . '/$1';
-$route['404_override'] = 'home/my404';
-$route['translate_uri_dashes'] = FALSE;
+// $language_alias = array('am', 'en', 'ru');
+// foreach ($language_alias as $key => $language) { $route[$language] = $default_controller; }
+    $controller_exceptions = array('login', 'admin','auth');
+    // $route["^(" . implode('|', $language_alias) . ")/(" . implode('|', $controller_exceptions) . ")(.*)"] = '$2';
+    // $route["^(" . implode('|', $language_alias) . ")?/(.*)"] = $default_controller . '/$2';
+    $route["^((?!\b" . implode('\b|\b', $controller_exceptions) . "\b).*)$"] = $default_controller . '/$1';
+    $route['404_override'] = 'articles/my404';
+    $route['translate_uri_dashes'] = FALSE;
+    
+// $default_controller = "articles";
+// $route['default_controller'] = $default_controller;
+// $controllers = array('articles','auth','profile');
+// $language_alias = array('am', 'en', 'ru');
+// foreach ($language_alias as $key => $language) {
+//     $route[$language] = $default_controller;
+//     foreach($controllers as $controller){
+//         $route[$language.'/'.$controller] = $controller."/index";
+//         $route[$language.'/'.$controller."/(:any)"] = $controller."/$1";     
+//         $route[$language.'/'.$controller."/(:any)/(:any)"] = $controller."/$1/$2";     
+//     }    
+// }
+// $controller_exceptions = array('login', 'admin');
+// $route["^(" . implode('|', $language_alias) . ")/(" . implode('|', $controller_exceptions) . ")(.*)"] = '$2';
+// $route["^(" . implode('|', $language_alias) . ")?/(.*)"] = $default_controller . '/$2';
+// $route["^((?!\b" . implode('\b|\b', $controller_exceptions) . "\b).*)$"] = $default_controller . '/$1';
+// $route['404_override'] = 'home/my404';
+// $route['translate_uri_dashes'] = FALSE;
 /*********** USER DEFINED ROUTES *******************/
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

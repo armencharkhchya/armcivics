@@ -61,7 +61,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <label class="col-sm-3">Ծրագրի անվանում (հայերեն)<span class="text-danger">*</span></label>
+                            <label class="col-sm-3">Ծրագրի անվանում<span class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <input type="text" name="name_am" class="form-control" required />
                             </div>
@@ -74,15 +74,15 @@
                             </div>
                         </div>
                         <br /> -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <label class="col-sm-3">Ծրագրի անվանում (անգլերեն)<span class="text-danger">*</span></label>
                             <div class="col-sm-9">
                                 <input type="text" name="name_en" class="form-control" required />
                             </div>
                         </div>
-                        <br />
+                        <br /> -->
                         <div class="row">
-                            <label class="col-sm-3">Նպատակ (հայերեն)</label>
+                            <label class="col-sm-3">Նպատակ</label>
                             <div class="col-sm-9">
                                 <input type="text" name="purpose_am" class="form-control" />
                             </div>
@@ -95,15 +95,15 @@
                             </div>
                         </div>
                         <br /> -->
-                         <div class="row">
+                         <!-- <div class="row">
                             <label class="col-sm-3">Նպատակ (անգլերեն)</label>
                             <div class="col-sm-9">
                                 <input type="text" name="purpose_en" class="form-control" />
                             </div>
                         </div>
-                        <br />                       
+                        <br />                        -->
                         <div class="row">
-                            <label class="col-sm-3">Շահառու խումբ/խմբեր (հայերեն)</label>
+                            <label class="col-sm-3">Շահառու խումբ/խմբեր</label>
                             <div class="col-sm-9">
                                 <input type="text" name="interest_groups_am" class="form-control" />
                             </div>
@@ -116,15 +116,15 @@
                             </div>
                         </div>
                         <br /> -->
-                         <div class="row">
+                         <!-- <div class="row">
                             <label class="col-sm-3">Շահառու խումբ/խմբեր (անգլերեն)</label>
                             <div class="col-sm-9">
                                 <input type="text" name="interest_groups_en" class="form-control" />
                             </div>
                         </div>
-                        <br />
+                        <br /> -->
                         <div class="row">
-                            <label class="col-sm-3">Իրականացման վայր/եր (հայերեն)</label>
+                            <label class="col-sm-3">Իրականացման վայր/եր</label>
                             <div class="col-sm-9">
                                 <input type="text" name="location_am" class="form-control" />
                             </div>
@@ -137,15 +137,15 @@
                             </div>
                         </div>
                         <br /> -->
-                        <div class="row">
+                        <!-- <div class="row">
                             <label class="col-sm-3">Իրականացման վայր/եր (անգլերեն)</label>
                             <div class="col-sm-9">
                                 <input type="text" name="location_en" class="form-control" />
                             </div>
                         </div>
-                        <br />
+                        <br /> -->
                         <div class="row">
-                            <label class="col-sm-3">Իրականացնող դպրոց և կամ կառույց/ներ (հայերեն)</label>
+                            <label class="col-sm-3">Իրականացնող դպրոց և կամ կառույց/ներ</label>
                             <div class="col-sm-9">
                                 <input type="text" name="structure_am" class="form-control" />
                             </div>
@@ -158,15 +158,15 @@
                             </div>
                         </div>
                         <br /> -->
-                         <div class="row">
+                         <!-- <div class="row">
                             <label class="col-sm-3">Իրականացնող դպրոց և կամ կառույց/ներ (անգլերեն)</label>
                             <div class="col-sm-9">
                                 <input type="text" name="structure_en" class="form-control" />
                             </div>
                         </div>
-                        <br />
+                        <br /> -->
                         <div class="row">
-                            <label class="col-sm-3">Գործողություններ և ակնկալվող արդյունքներ, վիճակագրություն (հայերեն)&nbsp;
+                            <label class="col-sm-3">Գործողություններ և ակնկալվող արդյունքներ, վիճակագրություն&nbsp;
                                 <i class="fa fa-question-circle-o text-info cursor" aria-hidden="true" data-toggle="tooltip" title="Առանձնացված դաշտեր ըստ սեռի, տարիքի, բնակավայրի, այլ նկարագրիչների" style="vertical-align: text-top;"></i>
                             </label>
                             <div class="col-sm-9">
@@ -193,7 +193,7 @@
                         </div>
                         <br />
                         <div class="row">
-                            <label class="col-sm-3">Հաջողության պատմություններ (հայերեն)</label>
+                            <label class="col-sm-3">Հաջողության պատմություններ</label>
                             <div class="col-sm-9">
                                 <textarea name="quotes_am" class="form-control" rows="10" style="resize: none;"></textarea>
                             </div>
@@ -206,13 +206,13 @@
                             </div>
                         </div>
                         <br /> -->
-                         <div class="row">
+                         <!-- <div class="row">
                             <label class="col-sm-3">Հաջողության պատմություններ (անգլերեն)</label>
                             <div class="col-sm-9">
                                 <textarea name="quotes_en" class="form-control" rows="10" style="resize: none;"></textarea>
                             </div>
                         </div>
-                        <br />
+                        <br /> -->
                         <div class="row">
                             <label class="col-sm-3">Ժամանակահատված</label>
                             <div class="col-sm-5">
