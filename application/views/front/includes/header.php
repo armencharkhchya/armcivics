@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.20" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.21" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -210,17 +210,21 @@
 						</li>
 					<?php endforeach ?>
 				<?php endif; ?>	
-                <li>
+                <li style="background: #173c69;">
+                    <div class="float-end bg-white" style="margin: 3px 6px">
+                        <button class="openSearchModal btn py-1"><i class="bi bi-search"></i></button>
+                        <button class="openCalendarModal btn py-1" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5"></i></button>
+                    </div>
                     <a href="<?php echo base_url(); ?>#services"><?= $this->lang->line('useful_resources'); ?></a>                
                 </li>	
-                <li style="background: #173c69;">
+                <!-- <li style="background: #173c69;">
                     <div class="float-end bg-white" style="margin: 3px 6px">
                         <button class="openSearchModal btn py-1"><i class="bi bi-search"></i></button>
                         <button class="openCalendarModal btn py-1" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5"></i></button>
                     </div>
                     <a href="#contact"><?= $this->lang->line('contactus'); ?></a>
                 
-                </li>	
+                </li>	 -->
              
 		</nav>
 	</header>

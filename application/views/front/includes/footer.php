@@ -1,5 +1,5 @@
   
-        <section class="contact position-relative pt-5">
+        <!-- <section class="contact position-relative pt-5">
             <div id="contact" style="position: absolute; top:-100px"></div>
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <footer id="footer">
             <!-- <div class="footer-newsletter">
                 <div class="container">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="footer-top">
+            <!-- <div class="footer-top">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6 footer-contact">
@@ -132,10 +132,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="container py-4">
                 <div class="copyright">
-                    &copy; Հեղինակային իրավունք <strong><span>Civics</span></strong>. Բոլոր իրավունքները պաշտպանված են
+                    &copy; Հեղինակային իրավունք <strong><span>ArmCivics</span></strong>. Բոլոր իրավունքները պաշտպանված են
                 </div>
                 <div class="credits">
                     Ստեղծված է <a href="https://www.facebook.com/DigitalAgencie">DigitalAgencie</a> -ի կողմից

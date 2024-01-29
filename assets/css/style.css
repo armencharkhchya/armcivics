@@ -2502,7 +2502,7 @@ nav ul {
 .nav > li { 
     border-bottom: 4px #aaa solid; 
     border-right: 1px solid white;
-    width: calc(100% / 7);
+    width: calc(100% / 6);
     max-width: unset;  
 }   
   .nav li{

@@ -121,7 +121,7 @@
             <section id="featured-services" class="featured-services">
                 <div class="container" data-aos="fade-up">
                     <div class="row justify-content-center">
-                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
+                        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-3 mb-lg-0">
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <div class="icon"><i class='bx bx-money-withdraw'></i></div>
                                 <h4 class="title"><a
@@ -131,7 +131,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
+                        <div class="col-md-6 col-lg-6 d-flex align-items-stretch mb-3 mb-lg-0">
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon"><i class='bx bx-wallet-alt'></i></div>
                                 <h4 class="title"><a
@@ -141,7 +141,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
+                        <!-- <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-3 mb-lg-0">
                             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon"><i class='bx bxs-wallet-alt'></i></div>
                                 <h4 class="title"><a
@@ -149,18 +149,18 @@
                                 </h4>
                                 <p class="description"><?php echo $this->lang->line('national-level'); ?></p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>
             <section id="services" class="services">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
-                        <h2><?php echo $this->lang->line('library') ?></h2>
+                        <!-- <h2><?php echo $this->lang->line('library') ?></h2> -->
                         <h3><?php echo $this->lang->line('our-library') ?></h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
+                        <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
                             data-aos-delay="100">
                             <div class="icon-box">
                                 <a href="<?php echo base_url('literature'); ?>">
@@ -172,7 +172,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
                             data-aos-delay="200">
                             <div class="icon-box">
                                 <a href="">
@@ -183,8 +183,8 @@
                                         նախատեսված մոդելային տեքստ է։ </p>
                                 </a>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
+                        </div> -->
+                        <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                             data-aos-delay="300">
                             <div class="icon-box">
                                 <a href="<?php echo base_url('multimedia') ?>">
@@ -202,8 +202,8 @@
             <section id="multimedia" class="multimedia pt-5">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
-                        <h2><?php echo $this->lang->line('programs'); ?></h2>
-                        <h3><?php echo $this->lang->line('programs'); ?>
+                        <!-- <h2><?php echo $this->lang->line('programs'); ?></h2> -->
+                        <h3><?php  // echo $this->lang->line('programs'); ?>
                             <?php echo $this->lang->line('span-videos'); ?></h3>
                     </div>
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -244,7 +244,7 @@
                     </div>
                 </div>
             </section>
-            <section id="clients" class="clients">
+            <!-- <section id="clients" class="clients">
                 <div class="container" data-aos="zoom-in">
                     <div class="section-title">
                         <h2><?php echo $this->lang->line('our-partners'); ?></h2>
@@ -268,7 +268,7 @@
                         <?php endif; ?>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </div>
         <div class="col-3">
             <section id="civic_education" class="youtube position-relative">
