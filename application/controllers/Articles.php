@@ -16,19 +16,19 @@ class Articles extends CI_Controller {
 		$this->global['not_items'] = $this->lang->line('not_items_query');
 		$this->global['categories'] = $this->Articles_model->get_categories();	
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-		$this->breadcrumbs->push($this->lang->line('home'), '/'. $this->global['lang']);		
+		$this->breadcrumbs->push($this->lang->line('home'), '/');		
 	}
 	
 	public function index() {
 		$this->load->library('form_validation');
 		$this->global['title'] = $this->lang->line('s_name');
-		// if (!$this->cache->get('index.'.$this->global['lang'])) {
-		// 	$this->global +=$this->Articles_model->general_data();
-		// 	$this->cache->save('index.'.$this->global['lang'], $this->global, 300);
-		// }else{
-		// 	$this->global = $this->cache->get('index.'.$this->global['lang']);
-		// }
-		$this->global += $this->Articles_model->general_data();
+		if (!$this->cache->get('index.'.$this->global['lang'])) {
+			$this->global +=$this->Articles_model->general_data();
+			$this->cache->save('index.'.$this->global['lang'], $this->global, 300);
+		}else{
+			$this->global = $this->cache->get('index.'.$this->global['lang']);
+		}
+		// $this->global += $this->Articles_model->general_data();
 		load_page('front/index', $this->global['lang'], $this->global);          
 	}
 	
@@ -46,7 +46,7 @@ class Articles extends CI_Controller {
 			return $this->my404();
 		}
 		$count = $this->Articles_model->get_count_by_category($id);			
-		$config = _pagination(base_url().$this->global['lang'].'/category/?id='.$id,$count);  
+		$config = _pagination(base_url('category/?id=').$id,$count);  
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -54,20 +54,21 @@ class Articles extends CI_Controller {
 		}
 		$this->global['links'] = $this->pagination->create_links();
 		$this->global['items'] = $this->Articles_model->get_articles_by_category($id, $config['per_page'],$page);
+        $category = $this->db->get_where('categories', ['id'=> $id])->row();
 		if (!empty($this->global['items'])) {
 			$this->global['title'] = $this->global['items'][0]->categ_name;
 			if (!empty($this->global['items'][0]->parent_3_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['items'][0]->parent_3_name),  $this->global['lang'] . '/category/?id=' .  $this->global['items'][0]->parent_3_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_3_name), 2 ),  'category/?id=' .  $this->global['items'][0]->parent_3_id);
 			}
 			if (!empty($this->global['items'][0]->parent_2_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['items'][0]->parent_2_name),  $this->global['lang'] . '/category/?id=' .  $this->global['items'][0]->parent_2_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_2_name), 2 ),  'category/?id=' .  $this->global['items'][0]->parent_2_id);
 			}
 			if (!empty($this->global['items'][0]->parent_1_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['items'][0]->parent_1_name),  $this->global['lang'] . '/category/?id=' .  $this->global['items'][0]->parent_1_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_1_name), 2),  'category/?id=' .  $this->global['items'][0]->parent_1_id);
 			}
-			$this->breadcrumbs->push( word_limiter(mb_strtolower($this->global['title']), 2),  '/page');
-			$this->global['breadcrumbs'] = $this->breadcrumbs->show();			
 		}
+        $this->breadcrumbs->push(word_limiter(mb_strtolower($category->name_am), 2),  'category/?id=' .  $category->id);
+        $this->global['breadcrumbs'] = $this->breadcrumbs->show();
 		load_page('front/list', $this->global['lang'], $this->global);			         
 	}
 
@@ -80,7 +81,7 @@ class Articles extends CI_Controller {
 		$this->breadcrumbs->push($key, '/page');
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
 		$count = $this->Articles_model->get_count_by_search($key);
-		$config = _pagination(base_url() . $this->global['lang'] . '/find', $count);
+		$config = _pagination(base_url('find'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -97,7 +98,7 @@ class Articles extends CI_Controller {
 
 	public function tags($id){
 		$count = $this->Articles_model->get_count_by_tags($id);
-		$config = _pagination(base_url() . $this->global['lang'] . '/tags/'.$id, $count);
+		$config = _pagination(base_url('tags/').$id, $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -141,16 +142,16 @@ class Articles extends CI_Controller {
 				$this->Articles_model->update_count($id, null);
 			}
 			if (!empty($this->global['article']->parent_3_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['article']->parent_3_name),  $this->global['lang'] . '/category/?id=' .  $this->global['article']->parent_3_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_3_name), 2),  'category/?id=' .  $this->global['article']->parent_3_id);
 			}
 			if (!empty($this->global['article']->parent_2_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['article']->parent_2_name),  $this->global['lang'] . '/category/?id=' .  $this->global['article']->parent_2_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_2_name), 2),  'category/?id=' .  $this->global['article']->parent_2_id);
 			}
 			if (!empty($this->global['article']->parent_1_id)) {
-				$this->breadcrumbs->push(mb_strtolower($this->global['article']->parent_1_name),  $this->global['lang'] . '/category/?id=' .  $this->global['article']->parent_1_id);
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_1_name), 2),  'category/?id=' .  $this->global['article']->parent_1_id);
 			}
-			$this->breadcrumbs->push(mb_strtolower($this->global['article']->category_name),  $this->global['lang'] . '/category/?id=' .  $this->global['article']->category_id);
-			$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->name), 3), '/page');
+			$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->category_name), 2),  'category/?id=' .  $this->global['article']->category_id);
+			$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->name), 2), '/page');
 		}
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
 		load_page('front/detail', $this->global['lang'], $this->global);
@@ -173,7 +174,7 @@ class Articles extends CI_Controller {
 	public function literature(){
 		$this->global['title'] = $this->lang->line('literature');
 		$count = $this->Articles_model->get_count_by_literature();
-		$config = _pagination(base_url($this->global['lang']. '/literature/'), $count, 20);
+		$config = _pagination(base_url('literature'), $count, 20);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -192,7 +193,7 @@ class Articles extends CI_Controller {
 	public function multimedia(){
 		$this->global['title'] = $this->lang->line('multimedia');
 		$count = $this->Articles_model->get_count_by_multimedia();
-		$config = _pagination(base_url() . $this->global['lang'] . '/multimedia', $count);
+		$config = _pagination(base_url('multimedia'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		$this->global['links'] = $this->pagination->create_links();
@@ -205,7 +206,7 @@ class Articles extends CI_Controller {
 	public function students_funds(){
 		$this->global['title'] = $this->lang->line('students-funds');
 		$count = $this->Articles_model->get_count_by_students_funds();
-		$config = _pagination(base_url() . $this->global['lang'] . '/students_funds', $count);
+		$config = _pagination(base_url('students_funds'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -229,7 +230,7 @@ class Articles extends CI_Controller {
 		} else {
 			$this->global['title'] = $data->name;
 			$this->global['article'] = $data;
-			$this->breadcrumbs->push($this->lang->line('students-funds'),  $this->global['lang'] . '/students_funds');
+			$this->breadcrumbs->push($this->lang->line('students-funds'),  'students_funds');
 			$this->breadcrumbs->push(word_limiter($data->name, 4), '/page');
 		}
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
@@ -239,7 +240,7 @@ class Articles extends CI_Controller {
 	public function school_grant_programs(){
 		$this->global['title'] = $this->lang->line('school-grant-programs');
 		$count = $this->Articles_model->get_count_by_school_grant_programs();
-		$config = _pagination(base_url() . $this->global['lang'] . '/school_grant_programs', $count);
+		$config = _pagination(base_url('school_grant_programs'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -260,7 +261,7 @@ class Articles extends CI_Controller {
 		$this->global['title'] = $data->name;
 		$this->global['description'] = $data->purpose;
 		$this->global['article'] = $data;
-		$this->breadcrumbs->push($this->lang->line('school-grant-programs'),  $this->global['lang'] . '/school_grant_programs');
+		$this->breadcrumbs->push($this->lang->line('school-grant-programs'),  'school_grant_programs');
 		$this->breadcrumbs->push(word_limiter($data->name, 4), '/page');
 		
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
@@ -270,7 +271,7 @@ class Articles extends CI_Controller {
 	public function civil_society_crowdfunding(){
 		$this->global['title'] = $this->lang->line('civil-society-crowdfunding');
 		$count = $this->Articles_model->get_count_by_civil_society_crowdfunding();
-		$config = _pagination(base_url() . $this->global['lang'] . '/civil_society_crowdfunding', $count);
+		$config = _pagination(base_url('civil_society_crowdfunding'), $count);
 		$this->pagination->initialize($config);
 		$page = intval($this->input->get('page'));
 		if ($page > ceil($count / $config['per_page'])) {
@@ -292,7 +293,7 @@ class Articles extends CI_Controller {
 			$this->global['title'] = $data->name;
 			$this->global['description'] = $data->purpose;
 			$this->global['article'] = $data;
-			$this->breadcrumbs->push($this->lang->line('civil-society-crowdfunding'),  $this->global['lang'] . '/civil_society_crowdfunding');
+			$this->breadcrumbs->push($this->lang->line('civil-society-crowdfunding'),  'civil_society_crowdfunding');
 			$this->breadcrumbs->push(word_limiter($data->name, 4), '/page');
 		}
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();

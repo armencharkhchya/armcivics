@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-9 position-relative">
-            <div class="border-end position-absolute h-100 p-0" style="width: 2px;right: -1px;top: 20px;"></div>
+            <div class="border-end position-absolute" style="width: 2px;right: -1px;top: 20px; height: calc(100% - 40px);"></div>
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
                     <?php foreach($slider as $key => $item): ?>
@@ -31,7 +31,7 @@
             <section id="about" class="about section-bg">
                 <div class="px-4" data-aos="fade-up">
                     <div class="section-title">
-                        <h2><?php echo $this->lang->line('about'); ?></h2>
+                        <!-- <h2><?php echo $this->lang->line('about'); ?></h2> -->
                         <h3><?php echo $this->lang->line('know more'); ?></h3>
                     </div>
                     <div class="row">
@@ -45,7 +45,7 @@
                             <?php echo $about->{'text_' . $lang}; ?>
                         </div>
                     </div>
-                    <div class="row mt-4 gy-3">
+                    <div class="row mt-4 gy-3 justify-content-end">
                         <div class="col-lg-3">
                             <a href="<?php echo base_url('about/?l=about-ap'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
@@ -54,30 +54,30 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-3">
+                        <!-- <div class="col-lg-3">
                             <a href="<?php echo base_url('about/?l=about-io'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-io') ?>
                                 </div>
                             </a>
-                        </div>
-                        <div class="col-lg-3">
+                        </div> -->
+                        <!-- <div class="col-lg-3">
                             <a href="<?php echo base_url('about/?l=about-fn'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-fn') ?>
                                 </div>
                             </a>
-                        </div>
-                        <div class="col-lg-3">
+                        </div> -->
+                        <!-- <div class="col-lg-3">
                             <a href="<?php echo base_url('about/?l=about-pr'); ?>">
                                 <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
                                     data-aos-delay="100">
                                     <?php echo $this->lang->line('about-pr') ?>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>

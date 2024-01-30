@@ -36,6 +36,9 @@ button:disabled {
     opacity: .5;
     background: #106eea !important;
 }
+.mh-40{
+    min-height: 40px;
+}
 /* width */
 .calendar-panel-open::-webkit-scrollbar {
     width: 10px;
