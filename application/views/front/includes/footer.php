@@ -163,7 +163,7 @@
                     &copy; Հեղինակային իրավունք <strong><span>ArmCivics</span></strong>. Բոլոր իրավունքները պաշտպանված են
                 </div>
                 <div class="credits">
-                    Ստեղծված է <a href="https://www.facebook.com/DigitalAgencie">DigitalAgencie</a> -ի կողմից
+                    Ստեղծված է <a href="https://www.ktak.am/">«Կրթական տեխնոլոգիաների ազգային կենտրոն»</a>-ի կողմից
                 </div>
             </div>
         </footer>
