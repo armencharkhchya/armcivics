@@ -16,7 +16,7 @@ class Profile extends CI_Controller {
 		$this->load->model('Articles_model');
         $this->global['categories'] = $this->Articles_model->get_categories();	
 		$this->global['not_items'] = $this->lang->line('not_items_query');
-		$this->breadcrumbs->push($this->lang->line('home'), '/'. $this->global['lang']);		
+		$this->breadcrumbs->push($this->lang->line('home'), '/');		
 	}
     
     public function index(){
@@ -60,4 +60,12 @@ class Profile extends CI_Controller {
 			]);
 		}            
 	}
+    
+    public function my404(){
+		http_response_code(404);
+		header("HTTP/1.1 404 Not Found");
+		$this->global['title'] = '#404';
+		load_page('front/404', $this->global['lang'], $this->global);
+	}
+    
 }

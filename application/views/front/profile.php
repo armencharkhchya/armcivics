@@ -7,7 +7,7 @@
         </div>
     </div>
 </section>
-<section>
+<section style="min-height: calc(100vh - 511px)">
     <div class="container">       
         <div class="row">   
             <div class="col-12">

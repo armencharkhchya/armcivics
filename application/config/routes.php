@@ -53,7 +53,7 @@ $default_controller = "articles";
 $route['default_controller'] = $default_controller;
 // $language_alias = array('am', 'en', 'ru');
 // foreach ($language_alias as $key => $language) { $route[$language] = $default_controller; }
-    $controller_exceptions = array('login', 'admin','auth');
+    $controller_exceptions = array('login', 'admin','auth', 'profile');
     // $route["^(" . implode('|', $language_alias) . ")/(" . implode('|', $controller_exceptions) . ")(.*)"] = '$2';
     // $route["^(" . implode('|', $language_alias) . ")?/(.*)"] = $default_controller . '/$2';
     $route["^((?!\b" . implode('\b|\b', $controller_exceptions) . "\b).*)$"] = $default_controller . '/$1';

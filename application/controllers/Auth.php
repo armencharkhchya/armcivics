@@ -15,7 +15,6 @@ class Auth extends CI_Controller{
         if (!$this->session->customer_id && !$this->session->item) {
             redirect('profile/?i=' . uid('1'));
         }
-        // 
     }
     
     public function index(){
