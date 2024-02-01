@@ -412,7 +412,7 @@
 		$config['upload_path'] = $path;
 		$config['allowed_types'] = $types;
 		$config['max_size']    = '0';
-		$config['encrypt_name'] = false;
+		$config['encrypt_name'] = true;
 		$self->load->library('upload');		
 		$self->upload->initialize($config);		
 		if(!is_dir($path)){

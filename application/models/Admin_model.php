@@ -437,6 +437,7 @@
     
         public function deleteItem($id){
             $img = $this->db->get_where($this->table, array('id' => $id))->row('img');
+            $pdf = $this->db->get_where('documents', array('post_id' => $id))->result();
             $this->db->where('id', $id);
             $this->db->delete($this->table);
             if ($this->db->affected_rows() > 0) {
@@ -446,6 +447,14 @@
                         UNLINK($path);
                     }
                 }
+                if (!empty($pdf)) {
+                    foreach ($pdf as  $value) {
+                        $file = FCPATH . 'uploads/documents/' . $value->file;
+                        if (file_exists($file)) {
+                            UNLINK($file);
+                        }                        
+                    }
+                }               
                 return true;
             }else{
                 return false;
