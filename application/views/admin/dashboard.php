@@ -39,8 +39,8 @@
                   <b><?= $item->name ?></b>
                   <span><i class="fa fa-calendar mr-1"></i><?= my_date(date($item->date), 'am', true);  ?></time>&nbsp;&nbsp;&nbsp;&nbsp;(տեղադրող՝ <?= $item->user_name ?>)</span>
                   <span>
-                    <a href="<?= site_url('articles/article/') . $item->id ?>" target="_blank">
-                      <?= site_url('articles/article/') . $item->id ?>
+                    <a href="<?= base_url('article?'.$item->name . '&i=' . $item->id); ?>" target="_blank">
+                        <?= base_url('article?'. $item->id); ?>
                     </a>
                   </span>
                 </div>
