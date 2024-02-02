@@ -78,8 +78,8 @@
                   </div>
                   <div class="col-8">
                     <div class="card-body">
-                      <p class="card-text text-dark word-break-all"><?= character_limiter($item->name, 32) ?></p>
-                      <p class="card-text"><small class="text-muted"><?= my_date(date($item->date), $lang); ?></small></p>
+                      <p class="card-text text-dark word-break-all mb-1"><?= character_limiter($item->name, 32) ?></p>
+                      <small class="text-muted"><?= my_date(date($item->date), $lang); ?></small>
                     </div>
                   </div>
                 </div>
