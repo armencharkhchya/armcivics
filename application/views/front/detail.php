@@ -24,7 +24,9 @@
             <?php endif; ?>
           </div>
           <?php if ($article->img && $this->uri->segment(3) <> 25) : ?>
-            <img class="lazyload mb-4 img-center" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" />
+            <a href="<?= cdn($article->img, 700, 449); ?>" data-caption="<?= $article->name ?>" data-fancybox="images">
+                <img class="lazyload mb-4" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" />
+            </a>           
           <?php endif; ?>
           <p><?= $article->text ?></p>
           <p><?= $article->longtext ?></p>

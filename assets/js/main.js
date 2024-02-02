@@ -395,4 +395,19 @@
         });
     // });
 
+    $('[data-fancybox="images"]').fancybox({
+        buttons: [
+            'slideShow',
+            'share',
+            'zoom',
+            'fullScreen',
+            'close'
+        ],
+        thumbs: {
+            autoStart: true
+        }
+    });
+    $(document).on("click", ".img-center", function () {
+        $(this).cpLightimg();
+    });
 })()
