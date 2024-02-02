@@ -78,7 +78,7 @@
                   </div>
                   <div class="col-8">
                     <div class="card-body">
-                      <p class="card-text text-dark word-break-all mb-1"><?= character_limiter($item->name, 32) ?></p>
+                      <p class="card-text text-dark word-break-all mb-0"><?= character_limiter($item->name, 26) ?></p>
                     </div>
                   </div>
                 </div>
