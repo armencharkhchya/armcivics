@@ -22,7 +22,7 @@
 									</figure>
 								</a>
 								<div class="px-3">									
-									<h4 class="fw-bold"><a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 50) ?></a></h4>
+									<h4 class="fw-bold"><a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 60) ?></a></h4>
                                     <small class="text-muted"><?= character_limiter($item->text, 70) ?></small>
 								</div>
 							</div>
