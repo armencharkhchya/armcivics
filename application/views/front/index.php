@@ -28,28 +28,31 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </section>
-            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
-            <section id="about" class="about section-bg">
-               
-                    <div class="px-4" data-aos="fade-up">
-                        <div class="section-title">
-                            <h3><?php echo $this->lang->line('know more'); ?></h3>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          
+            <section id="about" class="about section-bg">               
+                <div class="px-4" data-aos="fade-up">
+                    <div class="section-title">
+                        <h3>  
+                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
+                                <?php echo $this->lang->line('know more'); ?>
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
                                 <img class="lazyload img-fluid" data-src="<?php echo cdn_st($about->img, 380, 290); ?>"
                                     alt="<?php echo $about->{'title_' . $lang}; ?>"
-                                    onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'" />
-                            </div>
-                            <div class="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-start"
-                                data-aos="fade-up" data-aos-delay="100">
-                                <?php echo $about->{'text_' . $lang}; ?>
-                            </div>
-                        </div>                   
-                    </div>
-                               
-            </section>
-            </a> 
+                                onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'" />
+                            </a>
+                        </div>
+                        <div class="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-start"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark"><?php echo $about->{'text_' . $lang}; ?></a>
+                        </div>
+                    </div>                   
+                </div>                               
+            </section>           
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title pb-3">
