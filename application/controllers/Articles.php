@@ -76,6 +76,34 @@ class Articles extends CI_Controller {
 		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
 		load_page('front/detail', $this->global['lang'], $this->global);
     }
+    public function announcements() {
+        $id = '67';		
+		$count = $this->Articles_model->get_count_by_category($id);			
+		$config = _pagination(base_url('category/?id=').$id,$count);  
+		$this->pagination->initialize($config);
+		$page = intval($this->input->get('page'));
+		if ($page > ceil($count / $config['per_page'])) {
+			return $this->my404();
+		}
+		$this->global['links'] = $this->pagination->create_links();
+		$this->global['items'] = $this->Articles_model->get_articles_by_category($id, $config['per_page'],$page);
+        $category = $this->db->get_where('categories', ['id'=> $id])->row();
+		if (!empty($this->global['items'])) {
+			$this->global['title'] = $this->global['items'][0]->categ_name;
+			if (!empty($this->global['items'][0]->parent_3_id)) {
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_3_name), 2 ),  'category/?id=' .  $this->global['items'][0]->parent_3_id);
+			}
+			if (!empty($this->global['items'][0]->parent_2_id)) {
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_2_name), 2 ),  'category/?id=' .  $this->global['items'][0]->parent_2_id);
+			}
+			if (!empty($this->global['items'][0]->parent_1_id)) {
+				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_1_name), 2),  'category/?id=' .  $this->global['items'][0]->parent_1_id);
+			}
+		}
+        $this->breadcrumbs->push(word_limiter(mb_strtolower($category->name_am), 2),  'category/?id=' .  $category->id);
+        $this->global['breadcrumbs'] = $this->breadcrumbs->show();
+		load_page('front/list', $this->global['lang'], $this->global);			
+    }
     
 	public function category() {
 		$id = $this->input->get('id');
@@ -84,6 +112,9 @@ class Articles extends CI_Controller {
 		}
         if ($id == '74') {
             redirect('pyd');
+        }
+        if ($id == '67') {
+            redirect('announcements');
         }
 		$count = $this->Articles_model->get_count_by_category($id);			
 		$config = _pagination(base_url('category/?id=').$id,$count);  

@@ -224,12 +224,14 @@
                     </svg>
                 <!-- <iframe width="560" height="200" src="https://www.youtube.com/embed/hcglYBbIu1Y?si=EWuYsfu4jNbwyp-E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
             </section>   
-            <section id="announcements" class="section-bg px-2">
-                <p class="text-uppercase mb-0 text-primary"><?php echo $this->lang->line('announcement'); ?>.</p>
+            <section id="announcements" class="section-bg px-2 py-1">
+                <div class="bg-light">
+                    <p class="text-uppercase mb-0 announcements"><?php echo $this->lang->line('announcements'); ?></p>
+                </div>                
                 <a href="<?= base_url('article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
-                    <div class="text-primary mb-1"><?php echo $announcement->name; ?></div>
+                    <div class="mb-1 text-dark fw-bold lh-20"><?php echo $announcement->name; ?></div>
                     <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
-                    <p class="text-dark mt-1 mb-0 fs-6"><?php echo $announcement->text; ?></p>
+                    <p class="text-dark mt-1 mb-0 lh-20"><small><?php echo $announcement->text; ?></small></p>
                 </a>
             </section>         
             <?php if(!empty($testimonials)): ?>  

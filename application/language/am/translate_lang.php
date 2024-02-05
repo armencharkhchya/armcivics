@@ -88,7 +88,7 @@ $lang['your_email']= 'Ձեր էլ․ փոստը';
 $lang['your_text']= 'Ձեր հաղորդագրությունը';
 $lang['simbol']= 'նիշ';
 $lang['useful_resources'] = 'ՕԳՏԱԿԱՐ ՌԵՍՈՒՐՍՆԵՐ';
-$lang['announcement'] = 'Հայտարարություն';
+$lang['announcements'] = 'Հայտարարություններ';
 
 
 $lang['form_validation_min_length']= 'պետք է ունենա նվազագույնը';

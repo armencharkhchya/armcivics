@@ -16,7 +16,7 @@
                 <select name="type" class="form-select form-select-sm" onchange="this.form.submit()">
                     <option value="" selected><?= $this->lang->line('select') ?></option>
                     <option value="1"><?= $this->lang->line('programs') ?></option>
-                    <option value="2"><?= $this->lang->line('videos') ?></option>
+                    <option value="2"><?= $this->lang->line('video') ?></option>
                 </select>
             </form>
         </div>

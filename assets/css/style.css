@@ -39,6 +39,9 @@ button:disabled {
 .mh-40{
     min-height: 40px;
 }
+.lh-20 {
+    line-height: 20px;
+}
 /* width */
 .calendar-panel-open::-webkit-scrollbar {
     width: 10px;
@@ -1210,8 +1213,14 @@ section.eventful img {
 }
 
 .section-title h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #106eea;
+}
+
+.announcements{
     margin: 4px 0 0 0;
-    font-size: 24px;
+    font-size: 17px;
     font-weight: 700;
     color: #106eea;
 }
