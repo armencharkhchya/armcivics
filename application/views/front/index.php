@@ -229,7 +229,8 @@
                     <a href="<?php echo base_url('announcements'); ?>">
                         <p class="text-uppercase mb-0 announcements"><?php echo $this->lang->line('announcements'); ?></p>
                     </a>
-                </div>                
+                </div> 
+                <hr class="my-2">               
                 <a href="<?= base_url('article?'.$item->{"name_".$lang}. '&i=' . $item->id); ?>">
                     <div class="mb-1 text-dark fw-bold lh-20"><?php echo $announcement->name; ?></div>
                     <small class="text-muted"><?= my_date(date($announcement->date), $lang); ?></small>
