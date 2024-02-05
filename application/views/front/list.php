@@ -21,9 +21,9 @@
 										</div>
 									</figure>
 								</a>
-								<div class="px-3">
-									<a href="<?= base_url('category/?id=' . $item->c_id); ?>" class="category_link text-info"><?= word_limiter($item->c_name, 2); ?>&nbsp;<i class='bx bx-chevrons-right' style="font-size: 16px;vertical-align: sub;"></i></a>
-									<h4><a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 60) ?></a></h4>
+								<div class="px-3">									
+									<h4 class="fw-bold"><a href="<?= base_url('article?'.$item->name. '&i=' . $item->id); ?>"><?= character_limiter($item->name, 60) ?></a></h4>
+                                    <small class="text-muted"><?= character_limiter($item->text, 60) ?></small>
 								</div>
 							</div>
 						</div>
