@@ -32,7 +32,6 @@
                 <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
                     <div class="px-4" data-aos="fade-up">
                         <div class="section-title">
-                            <!-- <h2><?php echo $this->lang->line('about'); ?></h2> -->
                             <h3><?php echo $this->lang->line('know more'); ?></h3>
                         </div>
                         <div class="row">
@@ -47,8 +46,7 @@
                             </div>
                         </div>                   
                     </div>
-                </a>
-                
+                </a>                
             </section>
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
