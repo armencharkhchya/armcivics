@@ -22,13 +22,13 @@ class Articles extends CI_Controller {
 	public function index() {
 		$this->load->library('form_validation');
 		$this->global['title'] = $this->lang->line('s_name');
-		if (!$this->cache->get('index.'.$this->global['lang'])) {
-			$this->global +=$this->Articles_model->general_data();
-			$this->cache->save('index.'.$this->global['lang'], $this->global, 300);
-		}else{
-			$this->global = $this->cache->get('index.'.$this->global['lang']);
-		}
-		// $this->global += $this->Articles_model->general_data();
+		// if (!$this->cache->get('index.'.$this->global['lang'])) {
+		// 	$this->global +=$this->Articles_model->general_data();
+		// 	$this->cache->save('index.'.$this->global['lang'], $this->global, 300);
+		// }else{
+		// 	$this->global = $this->cache->get('index.'.$this->global['lang']);
+		// }
+		$this->global += $this->Articles_model->general_data();
 		load_page('front/index', $this->global['lang'], $this->global);          
 	}
 	
