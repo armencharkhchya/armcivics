@@ -159,7 +159,7 @@ class Articles extends CI_Controller {
 
 	public function about(){		
 		$link = $this->input->get('l');		
-		$this->global['about'] = $this->Articles_model->get_static_page($link);
+		$this->global['about'] = $this->Articles_model->get_static_page($link = null);
 		if ($this->global['about']) {
 			$this->breadcrumbs->push($this->global['about']->{'title_'. $this->global['lang']}, '/page');
 			$this->global['breadcrumbs'] = $this->breadcrumbs->show();

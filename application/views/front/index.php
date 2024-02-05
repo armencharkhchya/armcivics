@@ -33,14 +33,14 @@
                 <div class="px-4" data-aos="fade-up">
                     <div class="section-title">
                         <h3>  
-                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
+                            <a href="<?php echo base_url('about'); ?>" class="text-dark">
                                 <?php echo $this->lang->line('know more'); ?>
                             </a>
                         </h3>
                     </div>
                     <div class="row">
                         <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
-                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
+                            <a href="<?php echo base_url('about'); ?>" class="text-dark">
                                 <img class="lazyload img-fluid" data-src="<?php echo cdn_st($about->img, 380, 290); ?>"
                                     alt="<?php echo $about->{'title_' . $lang}; ?>"
                                 onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'" />
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-lg-7 pt-4 pt-lg-0 content d-flex flex-column justify-content-start"
                             data-aos="fade-up" data-aos-delay="100">
-                            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark"><?php echo $about->{'text_' . $lang}; ?></a>
+                            <a href="<?php echo base_url('about'); ?>" class="text-dark"><?php echo $about->{'text_' . $lang}; ?></a>
                         </div>
                     </div>                   
                 </div>                               

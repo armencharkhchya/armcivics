@@ -396,7 +396,10 @@
             }
         }
         
-        public function get_static_page($link) {
+        public function get_static_page($link = null) {
+            if ($link == null) {
+                $link = 'about-ap';
+            }
             $this->db->select('*');
             $this->db->from('static_pages');
             $array = array('link' => $link);

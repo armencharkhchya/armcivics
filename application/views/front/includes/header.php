@@ -144,7 +144,7 @@
 		</div>        
 		<nav class="d-lg-block d-none">
 			<ul class="nav justify-content-center">
-                <li><a href="<?php echo base_url('about/?l=about-ap'); ?>"><?php echo $this->lang->line('about-ap') ?></a></li>													
+                <li><a href="<?php echo base_url('about'); ?>"><?php echo $this->lang->line('about-ap') ?></a></li>													
 				<?php if (!empty($categories)) : ?>
 					<?php foreach ($categories as $key => $item): ?>
 						<li> 
