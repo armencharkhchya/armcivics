@@ -45,40 +45,7 @@
                             <?php echo $about->{'text_' . $lang}; ?>
                         </div>
                     </div>
-                    <div class="row mt-4 gy-3 justify-content-end">
-                        <div class="col-lg-3">
-                            <a href="<?php echo base_url('about/?l=about-ap'); ?>">
-                                <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <?php echo $this->lang->line('about-ap') ?>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- <div class="col-lg-3">
-                            <a href="<?php echo base_url('about/?l=about-io'); ?>">
-                                <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <?php echo $this->lang->line('about-io') ?>
-                                </div>
-                            </a>
-                        </div> -->
-                        <!-- <div class="col-lg-3">
-                            <a href="<?php echo base_url('about/?l=about-fn'); ?>">
-                                <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <?php echo $this->lang->line('about-fn') ?>
-                                </div>
-                            </a>
-                        </div> -->
-                        <!-- <div class="col-lg-3">
-                            <a href="<?php echo base_url('about/?l=about-pr'); ?>">
-                                <div class="about-box aos-init aos-animate text-dark fw-bold" data-aos="fade-up"
-                                    data-aos-delay="100">
-                                    <?php echo $this->lang->line('about-pr') ?>
-                                </div>
-                            </a>
-                        </div> -->
-                    </div>
+                   
                 </div>
             </section>
             <section id="eventful" class="eventful">
