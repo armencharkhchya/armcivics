@@ -105,8 +105,13 @@ button:disabled {
 }
 
 .feature-box h4 {
-    line-height: 22px;
+    line-height: 16px;
     margin-top: 10px;
+}
+
+.feature-box small {
+    line-height: 20px;
+    display: block;
 }
 
 .feature-box img {
