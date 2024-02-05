@@ -48,6 +48,7 @@
                         </div>                   
                     </div>
                 </a>
+                
             </section>
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
