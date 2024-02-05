@@ -231,7 +231,7 @@ class Articles extends CI_Controller {
 	}
 
 	public function multimedia(){
-		$this->global['title'] = $this->lang->line('multimedia');
+		$this->global['title'] = $this->lang->line('videos');
 		$count = $this->Articles_model->get_count_by_multimedia();
 		$config = _pagination(base_url('multimedia'), $count);
 		$this->pagination->initialize($config);

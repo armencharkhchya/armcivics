@@ -161,7 +161,7 @@
                             <div class="icon-box">
                                 <a href="<?php echo base_url('multimedia') ?>">
                                     <div class="icon"><i class="bx bx-video"></i></div>
-                                    <h4 class="text-dark"><?php echo $this->lang->line('multimedia') ?></h4>
+                                    <h4 class="text-dark"><?php echo $this->lang->line('videos') ?></h4>
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
                                         համար
                                         նախատեսված մոդելային տեքստ է։</p>
