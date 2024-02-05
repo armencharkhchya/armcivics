@@ -31,7 +31,7 @@
           
             <section id="about" class="about section-bg">               
                 <div class="px-4" data-aos="fade-up">
-                    <div class="section-title">
+                    <div class="section-title row pb-1 bg-light">
                         <h3>  
                             <a href="<?php echo base_url('about'); ?>" class="text-dark">
                                 <?php echo $this->lang->line('know more'); ?>
@@ -55,7 +55,7 @@
             </section>           
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title pb-3">
+                    <div class="section-title row pb-1 bg-light">
                         <h3 class="mt-0"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
@@ -127,7 +127,7 @@
             </section>
             <section id="services" class="services">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title">
+                    <div class="section-title pb-1 bg-light">
                         <!-- <h2><?php echo $this->lang->line('library') ?></h2> -->
                         <h3><?php echo $this->lang->line('our-library') ?></h3>
                     </div>
@@ -171,20 +171,20 @@
                     </div>
                 </div>
             </section>
-            <section id="multimedia" class="multimedia pt-5">
+            <section id="multimedia" class="multimedia">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title">
+                    <div class="section-title pb-1 bg-light">
                         <!-- <h2><?php echo $this->lang->line('programs'); ?></h2> -->
                         <h3><?php  // echo $this->lang->line('programs'); ?>
                             <?php echo $this->lang->line('span-videos'); ?></h3>
                     </div>
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
                         <div class="col-lg-12 d-flex justify-content-center">
-                            <ul id="multimedia-flters">
+                            <ul id="multimedia-flters">                               
+                                <li data-filter=".filter-app"><?php echo $this->lang->line('programs'); ?></li>
+                                <li data-filter=".filter-video"><?php echo $this->lang->line('video'); ?></li>
                                 <li data-filter="*" class="filter-active"><?php echo $this->lang->line('all'); ?>
                                 </li>
-                                <li data-filter=".filter-app"><?php echo $this->lang->line('programs'); ?></li>
-                                <li data-filter=".filter-video"><?php echo $this->lang->line('videos'); ?></li>
                             </ul>
                         </div>
                     </div>
@@ -216,31 +216,6 @@
                     </div>
                 </div>
             </section>
-            <!-- <section id="clients" class="clients">
-                <div class="container" data-aos="zoom-in">
-                    <div class="section-title">
-                        <h2><?php echo $this->lang->line('our-partners'); ?></h2>
-                        <p>Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության համար նախատեսված մոդելային
-                            տեքստ է։</p>
-                    </div>
-                    <div class="row gy-2 align-items-start">
-                        <?php if(!empty($clients)): ?>
-                        <?php foreach ($clients as $key => $value) : ?>
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <a href="<?php echo $value->link ?>" class="text-center" target="_blank"
-                                title="<?php echo $value->{'name_' . $lang} ?>">
-                                <img class="lazyload img-fluid"
-                                    src="<?php echo base_url('images/client/'.$value->img); ?>"
-                                    alt="<?php echo $value->{'name_' . $lang} ?>"
-                                    onerror="this.src = '<?php echo base_url('assets/img/default.png'); ?>'" />
-                                <span><?php echo $value->{'name_' . $lang} ?></span>
-                            </a>
-                        </div>
-                        <?php endforeach;  ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </section> -->
         </div>
         <div class="col-3">
             <section id="civic_education" class="youtube position-relative">
