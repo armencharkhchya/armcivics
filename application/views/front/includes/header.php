@@ -127,7 +127,7 @@
 	<header id="header" class="align-items-center d-lg-block d-flex">
 		<div class="container-fluid px-5 d-flex align-items-center justify-content-between position-relative">
             <a href="<?= base_url(); ?>" class="text-black d-lg-block d-none">
-                <img src="<?php echo base_url('assets/img/text.png'); ?>" height="43" alt="text" style="object-fit: contain;" class="w-100">	
+                <img src="<?php echo base_url('assets/img/text.png'); ?>" height="50" alt="text" style="object-fit: contain;" class="w-100">	
             </a>
 			<h1 class="logo d-lg-none d-block"><a href="<?= base_url(); ?>">A.C.</a></h1>			
 			<form action="<?php echo base_url('category/'); ?>" method="get" class="ms-2 me-2 me-lg-0 ms-lg-3 d-lg-none d-block">

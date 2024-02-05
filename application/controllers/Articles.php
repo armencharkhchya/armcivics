@@ -39,12 +39,52 @@ class Articles extends CI_Controller {
 		$data =  $this->Articles_model->get_all_categories();
 		echo json_encode($data, JSON_UNESCAPED_UNICODE);
 	}
+	public function pyd()  {
+        $id = '48';
+		$data = $this->Articles_model->get_article_by_id($id);
+        $lang = $this->global['lang'];
+		
+        $this->global['title'] = $data->name;
+        $this->global['description'] = $data->text;
+        $this->global['article'] = $data;
+        $this->global['image'] = base_url('images/upload/') . $data->img;
+        $this->global['topic'] = $this->Articles_model->get_items_by_topic(6, 0, $data->category_id, $id);
+        $this->global['next_id'] =  $this->db->select_min('id')->from('articles')->where(array("id > " => $id))->get()->row()->id;
+        $this->global['prev_id'] =  $this->db->select_max('id')->from('articles')->where(array("id < " => $id))->get()->row()->id;
+        if ($this->global['next_id']) {
+            $this->global['next'] = $this->Articles_model->get_article_by_id($this->global['next_id']);
+        }
+        if ($this->global['prev_id']) {
+            $this->global['prev'] = $this->Articles_model->get_article_by_id($this->global['prev_id']);
+        }
+        if (!$this->session->has_userdata('id_' . $id)) {
+            $this->session->set_tempdata('id_' . $id, $id, 86400);
+            $this->Articles_model->update_count($id, null);
+        }
+        if (!empty($this->global['article']->parent_3_id)) {
+            $this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_3_name), 2),  'category/?id=' .  $this->global['article']->parent_3_id);
+        }
+        if (!empty($this->global['article']->parent_2_id)) {
+            $this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_2_name), 2),  'category/?id=' .  $this->global['article']->parent_2_id);
+        }
+        if (!empty($this->global['article']->parent_1_id)) {
+            $this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->parent_1_name), 2),  'category/?id=' .  $this->global['article']->parent_1_id);
+        }
+        $this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->category_name), 2),  'category/?id=' .  $this->global['article']->category_id);
+        $this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['article']->name), 2), '/page');
 	
+		$this->global['breadcrumbs'] = $this->breadcrumbs->show();
+		load_page('front/detail', $this->global['lang'], $this->global);
+    }
+    
 	public function category() {
 		$id = $this->input->get('id');
 		if (!$id) {
 			return $this->my404();
 		}
+        if ($id == '74') {
+            redirect('pyd');
+        }
 		$count = $this->Articles_model->get_count_by_category($id);			
 		$config = _pagination(base_url('category/?id=').$id,$count);  
 		$this->pagination->initialize($config);
