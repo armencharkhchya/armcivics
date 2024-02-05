@@ -172,12 +172,7 @@
                 </div>
             </section>
             <section id="multimedia" class="multimedia">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title pb-1 bg-light">
-                        <!-- <h2><?php echo $this->lang->line('programs'); ?></h2> -->
-                        <h3><?php  // echo $this->lang->line('programs'); ?>
-                            <?php echo $this->lang->line('span-videos'); ?></h3>
-                    </div>
+                <div class="container" data-aos="fade-up">                   
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
                         <div class="col-lg-12 d-flex justify-content-center">
                             <ul id="multimedia-flters">                               
