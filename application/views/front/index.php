@@ -254,7 +254,7 @@
             </section>
             <?php endif; ?>
             <section class="pt-0 mt-4">
-                <a href="">
+                <a href="<?php echo base_url('pyd') ?>">
                     <img src="<?php echo base_url('assets/img/Screenshot_2.png'); ?>" alt="announcements" class="img-fluid w-100">
                 </a>                
             </section>
