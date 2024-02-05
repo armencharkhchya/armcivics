@@ -107,6 +107,8 @@ button:disabled {
 .feature-box h4 {
     line-height: 16px;
     margin-top: 10px;
+    height: 57px;
+    overflow: hidden;
 }
 
 .feature-box small {
