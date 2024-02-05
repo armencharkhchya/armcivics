@@ -28,7 +28,6 @@
                 <img class="lazyload mb-4" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" />
             </a>           
           <?php endif; ?>
-          <p><?= $article->text ?></p>
           <p><?= $article->longtext ?></p>
           <?php if(@$article->files):?>
             <div class="tg-tagsshare">
