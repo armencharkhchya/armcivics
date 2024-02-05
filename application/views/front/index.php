@@ -28,8 +28,9 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </section>
+            <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
             <section id="about" class="about section-bg">
-                <a href="<?php echo base_url('about/?l=about-ap'); ?>" class="text-dark">
+               
                     <div class="px-4" data-aos="fade-up">
                         <div class="section-title">
                             <h3><?php echo $this->lang->line('know more'); ?></h3>
@@ -46,8 +47,9 @@
                             </div>
                         </div>                   
                     </div>
-                </a>                
+                               
             </section>
+            </a> 
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title pb-3">
