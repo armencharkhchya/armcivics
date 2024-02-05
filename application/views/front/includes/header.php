@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.22" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.23" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -108,9 +108,9 @@
         <div id="calendar"></div>
     </div>
 	<section id="topbar" class="d-flex align-items-center">
-		<div class="container d-flex justify-content-center justify-content-md-between">
+		<div class="container-fluid px-5 d-flex justify-content-center justify-content-md-between">
 			<div class="contact-info d-flex align-items-center me-auto">	
-                <img src="<?php echo base_url('assets/img/armcivics.png'); ?>" height="28" alt="armcivics" style="object-fit: contain;" class="w-100 logo d-lg-block d-none">
+                <img src="<?php echo base_url('assets/img/armcivics.png'); ?>" height="12" alt="armcivics" style="object-fit: contain;" class="mt-2 w-100 logo d-lg-block d-none">
                 <!-- <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1> -->
                 <b class="d-lg-none d-block">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
 			</div>
@@ -125,7 +125,7 @@
 
 	<!-- ======= Header ======= -->
 	<header id="header" class="align-items-center d-lg-block d-flex">
-		<div class="container d-flex align-items-center justify-content-between position-relative">
+		<div class="container-fluid px-5 d-flex align-items-center justify-content-between position-relative">
             <a href="<?= base_url(); ?>" class="text-black d-lg-block d-none">
                 <img src="<?php echo base_url('assets/img/text.png'); ?>" height="43" alt="text" style="object-fit: contain;" class="w-100">	
             </a>
