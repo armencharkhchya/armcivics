@@ -74,7 +74,7 @@
             $data['about'] = $this->get_static_page('about');
             $data['videos'] = $this->get_videos();
             // $data['team'] = $this->get_our_team();
-            $data['slider'] = $this->db->get_where($this->table, ['general' => 1, 'publish' => '1'], 4, 0 )->result();
+            $data['slider'] = $this->db->order_by('date', 'DESC')->get_where($this->table, ['general' => 1, 'publish' => '1'], 4, 0 )->result();
             $data['eventful_1'] = $this->get_eventful_1();
             $data['eventful_2'] = $this->get_eventful_2();
             $data['announcement'] = $this->get_announcement();
