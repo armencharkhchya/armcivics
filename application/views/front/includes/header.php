@@ -86,10 +86,32 @@
     <div id="fb-root"></div>
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/hy_AM/sdk.js#xfbml=1&version=v15.0&appId=850213488720450&autoLogAppEvents=1" nonce="f9AaTh9n"></script>
 	<!-- ======= Top Bar ======= -->
+    <div class="search-panel">
+        <a href="<?= base_url(); ?>"><?= $this->input->server('SERVER_NAME') ?></a>
+        <span class="search-panel-close closeSearchModal"></span>
+        <form action="<?= site_url('find'); ?>" class="search_form" method="get" accept-charset="utf-8">
+            <input type="text" size="40" name="q" placeholder="<?= $this->lang->line('search') ?>" autocomplete="off" lang="<?= $lang; ?>" maxlength="100" required>
+            <button type="submit">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#fff" width="26px" height="26px" viewBox="0 0 512 512" style="enable-background:new 0 0 36 36;" xml:space="preserve">
+                    <g>
+                        <path d="M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667
+                        S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732
+                        c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667
+                        c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z"></path>
+                    </g>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <div class="calendar-panel bg-white container">
+        <span class="calendar-panel-close closeCalendarModal"></span>
+        <div id="calendar"></div>
+    </div>
 	<section id="topbar" class="d-flex align-items-center">
 		<div class="container d-flex justify-content-center justify-content-md-between">
-			<div class="contact-info d-flex align-items-center me-auto">			
-                <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1>
+			<div class="contact-info d-flex align-items-center me-auto">	
+                <img src="<?php echo base_url('assets/img/armcivics.png'); ?>" height="28" alt="armcivics" style="object-fit: contain;" class="w-100 logo d-lg-block d-none">
+                <!-- <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1> -->
                 <b class="d-lg-none d-block">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">
@@ -97,11 +119,6 @@
 				<a href="https://www.instagram.com/armcivics4engage/" target="_blank"><i class="bi bi-instagram"></i></a>
 				<a href="https://www.youtube.com/@Armcivics4engage" target="_blank"><i class='bx bxl-youtube'></i></a>
 			</div>
-			<!-- <div class="languages d-flex align-items-center">
-				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'ru'); ?>" class="<?= $lang === 'ru' ? 'hidden' : NULL; ?>"><span class="ru">на Русском</span></a>
-				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'am'); ?>" class="<?= $lang === 'am' ? 'hidden' : NULL; ?>"><span class="am"></span></a>
-				<a href="<?= language(current_url($this->input->server('QUERY_STRING')), $lang, 'en'); ?>" class="<?= $lang === 'en' ? 'hidden' : NULL; ?>"><span class="en"></span></a>
-			</div> -->
 			<a href="<?= base_url('auth'); ?>" class="auth"><i class='bx bx-log-in-circle'></i></a>
 		</div>
 	</section>
@@ -109,58 +126,19 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="align-items-center d-lg-block d-flex">
 		<div class="container d-flex align-items-center justify-content-between position-relative">
-        <b class="d-lg-block d-none"><a href="<?= base_url(); ?>" class="text-black">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</a></b>
-        <!-- <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1> -->
-			<h1 class="logo d-lg-none d-block"><a href="<?= base_url(); ?>">A.C.</a></h1>
-			<div class="search-panel">
-				<a href="<?= base_url(); ?>"><?= $this->input->server('SERVER_NAME') ?></a>
-				<span class="search-panel-close closeSearchModal"></span>
-				<form action="<?= site_url('find'); ?>" class="search_form" method="get" accept-charset="utf-8">
-					<input type="text" size="40" name="q" placeholder="<?= $this->lang->line('search') ?>" autocomplete="off" lang="<?= $lang; ?>" maxlength="100" required>
-					<button type="submit">
-						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#fff" width="26px" height="26px" viewBox="0 0 512 512" style="enable-background:new 0 0 36 36;" xml:space="preserve">
-							<g>
-								<path d="M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667
-                             S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732
-                             c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667
-                             c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z"></path>
-							</g>
-						</svg>
-					</button>
-				</form>
-			</div>
-            <div class="calendar-panel bg-white container">
-                <span class="calendar-panel-close closeCalendarModal"></span>
-                <div id="calendar"></div>
-            </div>
+            <a href="<?= base_url(); ?>" class="text-black d-lg-block d-none">
+                <img src="<?php echo base_url('assets/img/text.png'); ?>" height="43" alt="text" style="object-fit: contain;" class="w-100">	
+            </a>
+			<h1 class="logo d-lg-none d-block"><a href="<?= base_url(); ?>">A.C.</a></h1>			
 			<form action="<?php echo base_url('category/'); ?>" method="get" class="ms-2 me-2 me-lg-0 ms-lg-3 d-lg-none d-block">
 				<select name="id" class="select2ToTree form-control" onchange="this.form.submit()"></select>
 			</form>		
 			<nav class="navbar">				
 				<ul>
-                    <li class="me-3">
-                        <img src="<?php echo base_url('assets/img/clients/usaid.jpg'); ?>" height="43" alt="USAID">
-                    </li>
                     <li>
-                        <img src="<?php echo base_url('assets/img/clients/ph.jpg'); ?>" height="36" alt="ph">
+                        <img src="<?php echo base_url('assets/img/partners.png'); ?>" height="43" alt="partners" style="width: 100%;object-fit: contain;">
                     </li>
-                    <li>
-                        <img src="<?php echo base_url('assets/img/clients/civitas.jpg'); ?>" height="36" alt="civitas">
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('assets/img/clients/ichd.jpg'); ?>" height="36" alt="ichd">
-                    </li>
-                    <li>
-                        <img src="<?php echo base_url('assets/img/clients/ktak.jpg'); ?>" height="36" alt="ktak">
-                    </li>					
-					<!-- <li class="search">
-                        <a href="javascript:void(0)" class="openSearchModal"><i class="bi bi-search"></i></a>
-                    </li>
-                    <li class="calendar">
-                        <a href="javascript:void(0)" class="openCalendarModal" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5"></i></a>
-                    </li> -->
 				</ul>
-				<!-- <i class="bi bi-list mobile-nav-toggle"></i>				 -->
 			</nav>
 			<a href="javascript:void(0)" class="openSearchModalMobile d-lg-none d-block"><i class="bi bi-search"></i></a>
 		</div>        
