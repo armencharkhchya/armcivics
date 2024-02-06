@@ -134,29 +134,27 @@
                 </div>
             </div> -->
             <div class="container py-4">
+                <div class="row mb-4">
+                    <div class="col-lg-8 text-start">
+                        <img src="<?php echo base_url('assets/img/text.png'); ?>" height="48" alt="text">
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <h6 class="fw-bold mh-40">
-                            <img src="<?php echo base_url('assets/img/text.png'); ?>" height="48" alt="text" style="object-fit: contain;transform: translateX(-10px);" class="w-100">
-                        </h6>
+                    <div class="col-lg-4 col-12">                        
                         <p>Ծրագրի նպատակն է բարելավել Հայաստանում ֆորմալ և ոչ ֆորմալ քաղաքացիական
                             կրթության որակը՝ խթանելու Հայաստանում երիտասարդների հանրային
                             ներգրավվածությունը և ժողովրդավարական գործընթացները։</p>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h6 class="fw-bold mh-40"></h5>
+                    <div class="col-lg-4 col-12">
                         <p>Կայքը հնարավոր է դարձել Ամերիկայի ժողովրդի աջակցությամբ՝ ԱՄՆ Միջազգային
                             զարգացման գործակալության միջոցով (ԱՄՆ ՄԶԳ):
                             Բովանդակության համար պատասխանատու են միմիայն հեղինակները և այն
                             պարտադիր չէ, որ արտահայտի ԱՄՆ ՄԶԳ կամ ԱՄՆ կառավարության տեսակետները:</p>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h6 class="fw-bold mh-40">Հետադարձ կապ</h5>
-                        <p>ք․Երևան <br>
-                            Պռոշյան 2/2 (գործունեության հասցե)
-                            Հայաստանի հանրապետություն <br><br>
-                            <strong><?= $this->lang->line('phone'); ?>:</strong> (010) 32-11-13; 32-11-14<br>
-                            <strong><?= $this->lang->line('email'); ?>:</strong> ph-arm-office@ph-int.org<br>
+                    <div class="col-lg-4 col-12">
+                            <strong><?= $this->lang->line('address'); ?>:</strong> ՀՀ, Երևան, Պռոշյան 2/2<br>
+                            <strong><?= $this->lang->line('phone'); ?>:</strong> (+374 10) 32-11-13; 32-11-14<br>
+                            <strong><?= $this->lang->line('email'); ?>:</strong> <a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a>
                         </p> 
                     </div>                        
                 </div>
