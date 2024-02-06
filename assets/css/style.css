@@ -196,7 +196,7 @@ button:disabled {
 .article-title {
   font-size: 30px;
   margin-bottom: 12px;
-  margin-top: 0;
+  margin-top: 12px;
   color: #53565c;
   line-height: 36px;
   font-weight: 800;
@@ -743,7 +743,7 @@ input.search {
   transition: all 0.5s;
   z-index: 997;
   min-height: 86px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
 }
 
 #header.fixed-top {
@@ -1175,7 +1175,7 @@ input.search {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 10px 0;
+  padding: 16px 0;
   overflow: hidden;
 }
 section.eventful img {
@@ -1541,7 +1541,7 @@ section.eventful img {
 .services .icon-box {
   text-align: center;
   border: 1px solid #e2eefd;
-  padding: 80px 20px;
+  padding: 40px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
 }

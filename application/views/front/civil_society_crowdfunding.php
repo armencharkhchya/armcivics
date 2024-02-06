@@ -1,10 +1,10 @@
-<section class="breadcrumbs">
+<!-- <section class="breadcrumbs">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <?= @$breadcrumbs ? $breadcrumbs : '' ?>
         </div>
     </div>
-</section>
+</section> -->
 <section id="content">
     <div class="container">
         <div class="row justify-content-end mb-4 gy-3">

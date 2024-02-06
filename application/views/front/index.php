@@ -55,8 +55,8 @@
             </section>           
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title row pb-1 bg-light">
-                        <h3 class="mt-0"><?php echo $this->lang->line('eventful') ?></h3>
+                    <div class="section-title row pb-1 pt-2 bg-light">
+                        <h3><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
@@ -127,7 +127,7 @@
             </section>
             <section id="services" class="services">
                 <div class="container" data-aos="fade-up">
-                    <div class="section-title pb-1 bg-light">
+                    <div class="section-title pb-1 pt-2 bg-light">
                         <!-- <h2><?php echo $this->lang->line('library') ?></h2> -->
                         <h3><?php echo $this->lang->line('our-library') ?></h3>
                     </div>

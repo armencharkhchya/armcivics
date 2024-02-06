@@ -1,12 +1,12 @@
 <script src="<?php echo base_url(); ?>assets/dist/js/tinymce/tinymce.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/dist/js/app.js" type="text/javascript"></script>
-<section class="breadcrumbs">
+<!-- <section class="breadcrumbs">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <?= @$breadcrumbs ? $breadcrumbs : '' ?>
         </div>
     </div>
-</section>
+</section> -->
 <section style="min-height: calc(100vh - 511px)">
     <div class="container">       
         <div class="row">   
