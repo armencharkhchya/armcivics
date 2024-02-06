@@ -42,8 +42,7 @@ class Articles extends CI_Controller {
 	public function pyd()  {
         $id = '48';
 		$data = $this->Articles_model->get_article_by_id($id);
-        $lang = $this->global['lang'];
-		
+        $lang = $this->global['lang'];		
         $this->global['title'] = $data->name;
         $this->global['description'] = $data->text;
         $this->global['article'] = $data;
@@ -128,6 +127,7 @@ class Articles extends CI_Controller {
         $category = $this->db->get_where('categories', ['id'=> $id])->row();
 		if (!empty($this->global['items'])) {
 			$this->global['title'] = $this->global['items'][0]->categ_name;
+            $this->global['category_text'] = $this->db->get_where('categories', ['id' => $id])->row('text');
 			if (!empty($this->global['items'][0]->parent_3_id)) {
 				$this->breadcrumbs->push(word_limiter(mb_strtolower($this->global['items'][0]->parent_3_name), 2 ),  'category/?id=' .  $this->global['items'][0]->parent_3_id);
 			}

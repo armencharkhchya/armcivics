@@ -304,7 +304,8 @@ $(document).ready(function () {
             $("#order_by").val(data.order_by)
           }
           
-        $('[name="edit_1"]').val(data.name_am);
+          $('[name="edit_1"]').val(data.name_am);
+          $('[name="text"]').val(data.text);
         // $('[name="edit_2"]').val(data.name_ru);
         // $('[name="edit_3"]').val(data.name_en);
         $("[name=item]").val(data.id)
@@ -327,6 +328,8 @@ $(document).ready(function () {
         id: $("[name=item]").val(),
         parent_id: $('#editCategories').val(),
         name_am: $('[name="edit_1"]').val(),
+        text: $('[name="text"]').val(),
+        
         // name_ru: $('[name="edit_2"]').val(),
         // name_en: $('[name="edit_3"]').val(),
         order_by: $('#order_by').val()
@@ -348,6 +351,7 @@ $(document).ready(function () {
       data: {
         parent_id: $('#addCategories').val(),
         name_am: $('[name="add_1"]').val(),
+        text: $('[name="text"]').val(),        
         // name_ru: $('[name="add_2"]').val(),
         // name_en: $('[name="add_3"]').val()
       },

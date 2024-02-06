@@ -93,6 +93,7 @@ require APPPATH.'/libraries/BaseController.php';
             $data_edit['name_am'] = trim($this->input->post('name_am'));
             // $data_edit['name_ru'] = trim($this->input->post('name_ru'));
             // $data_edit['name_en'] = trim($this->input->post('name_en'));
+            $data_edit['text'] = trim($this->input->post('text'));            
             $data_edit['parent_id'] = $this->input->post('parent_id');
             $data_edit['order_by'] = $this->input->post('order_by');
             $query = $this->Admin_model->getCategoryByID($data_edit['id']);   
@@ -119,6 +120,7 @@ require APPPATH.'/libraries/BaseController.php';
             }
             $data_insert = [];
             $data_insert['name_am'] = trim($this->input->post('name_am'));
+            $data_insert['text'] = $this->input->post('text');            
             // $data_insert['name_ru'] = trim($this->input->post('name_ru'));
             // $data_insert['name_en'] = trim($this->input->post('name_en'));
             $data_insert['parent_id'] = $this->input->post('parent_id');  

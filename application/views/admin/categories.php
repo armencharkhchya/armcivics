@@ -47,6 +47,10 @@
                     <label>Կատեգորիայի անվանումը</label>
                     <input type="text" class="form-control" name="edit_1">
                 </div>
+                <div class="form-group">
+                    <label>Կատեգորիայի տեքստը</label>
+                    <textarea name="text" class="form-control"></textarea>
+                </div>
                 <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (ռուսերեն)</label>
                     <input type="text" class="form-control" name="edit_2">
@@ -92,6 +96,10 @@
                 <div class="form-group">
                     <label>Կատեգորիայի անվանումը</label>
                     <input type="text" class="form-control" name="add_1">
+                </div>
+                <div class="form-group">
+                    <label>Կատեգորիայի տեքստը</label>
+                    <textarea name="text" class="form-control"></textarea>
                 </div>
                 <!-- <div class="form-group">
                     <label>Կատեգորիայի անվանումը (ռուսերեն)</label>

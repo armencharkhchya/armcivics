@@ -241,6 +241,7 @@
                 'name_am' => $data_edit['name_am'],
                 // 'name_ru' => $data_edit['name_ru'],
                 // 'name_en' => $data_edit['name_en'],
+                'text' =>       $data_edit['text'],                
                 'parent_id' => $data_edit['parent_id'],
                 'order_by' => $data_edit['order_by']
             );       
