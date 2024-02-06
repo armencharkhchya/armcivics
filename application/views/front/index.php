@@ -56,7 +56,7 @@
             <section id="eventful" class="eventful">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title row pb-1 pt-2 bg-light">
-                        <h3><?php echo $this->lang->line('eventful') ?></h3>
+                        <h3 class="text-start"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
                         <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
@@ -67,9 +67,7 @@
                                         <img class="lazyload d-block w-100" data-src="<?= cdn($eventful_1->img, 960, 480); ?>" alt=""
                                         onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
                                     </div>
-                                    <div class="col-8">
-                                        <b><?php echo word_limiter($eventful_1->text, 8); ?></b>
-                                    </div>
+                                    <div class="col-8"><?php echo word_limiter($eventful_1->text, 15); ?></div>
                                 </div>
                             </a>
                         </div>      
@@ -81,9 +79,7 @@
                                         <img class="lazyload d-block w-100" data-src="<?= cdn($eventful_2->img, 960, 480); ?>" alt=""
                                         onerror="this.src = '<?php echo base_url('documents/img/default.png'); ?>'">
                                     </div>
-                                    <div class="col-8">
-                                        <b><?php echo word_limiter($eventful_2->text, 8); ?></b>
-                                    </div>
+                                    <div class="col-8"><?php echo word_limiter($eventful_2->text, 15); ?></div>
                                 </div>
                             </a>
                         </div>                                    
@@ -135,36 +131,24 @@
                         <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
                             data-aos-delay="100">
                             <div class="icon-box">
-                                <a href="<?php echo base_url('literature'); ?>">
-                                    <div class="icon"><i class="bx bx-book"></i></div>
+                                <a href="<?php echo base_url('literature'); ?>">                                   
                                     <h4 class="text-dark"><?php echo $this->lang->line('literature') ?></h4>
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
                                         համար
                                         նախատեսված մոդելային տեքստ է։ </p>
+                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/grakanutyun.jpg') ?>" alt="grakanutyun" class="img-thumbnail img-fluid"></div>
                                 </a>
                             </div>
                         </div>
-                        <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                            data-aos-delay="200">
-                            <div class="icon-box">
-                                <a href="">
-                                    <div class="icon"><i class="bx bx-link"></i></div>
-                                    <h4 class="text-dark"><?php echo $this->lang->line('links') ?></h4>
-                                    <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
-                                        համար
-                                        նախատեսված մոդելային տեքստ է։ </p>
-                                </a>
-                            </div>
-                        </div> -->
                         <div class="col-lg-6 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
                             data-aos-delay="300">
                             <div class="icon-box">
                                 <a href="<?php echo base_url('multimedia') ?>">
-                                    <div class="icon"><i class="bx bx-video"></i></div>
                                     <h4 class="text-dark"><?php echo $this->lang->line('videos') ?></h4>
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
                                         համար
                                         նախատեսված մոդելային տեքստ է։</p>
+                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/tesadaran.jpg') ?>" alt="tesadaran" class="img-thumbnail img-fluid"></div>
                                 </a>
                             </div>
                         </div>
