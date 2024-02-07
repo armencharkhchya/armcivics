@@ -136,7 +136,10 @@
             <div class="container py-4">
                 <div class="row mb-4">
                     <div class="col-lg-8 text-start">
-                        <img src="<?php echo base_url('assets/img/text.png'); ?>" height="48" alt="text">
+                        <img src="<?php echo base_url('assets/img/text.png'); ?>" height="48" alt="text" style="max-width: 100%">
+                    </div>
+                    <div class="col-lg-4 text-start d-none d-lg-block">
+                        <h4><b>Հետադարձ կապ</b></h4>
                     </div>
                 </div>
                 <div class="row">
@@ -152,9 +155,10 @@
                             պարտադիր չէ, որ արտահայտի ԱՄՆ ՄԶԳ կամ ԱՄՆ կառավարության տեսակետները:</p>
                     </div>
                     <div class="col-lg-4 col-12">
-                            <strong><?= $this->lang->line('address'); ?>:</strong> ՀՀ, Երևան, Պռոշյան 2/2<br>
-                            <strong><?= $this->lang->line('phone'); ?>:</strong> (+374 10) 32-11-13; 32-11-14<br>
-                            <strong><?= $this->lang->line('email'); ?>:</strong> <a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a>
+                            <h4 class="d-block d-lg-none"><b>Հետադարձ կապ</b></h4>
+                            <strong><?= $this->lang->line('address'); ?>՝ </strong> ՀՀ, Երևան, Պռոշյան 2/2<br>
+                            <strong><?= $this->lang->line('phone'); ?>՝ </strong> (+374 10) 32-11-13; 32-11-14<br>
+                            <strong><?= $this->lang->line('email'); ?>՝ </strong> <a href="mailto:ph-arm-office@ph-int.org">ph-arm-office@ph-int.org</a>
                         </p> 
                     </div>                        
                 </div>

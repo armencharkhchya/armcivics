@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-9 position-relative">
+        <div class="col-lg-9 position-relative">
             <div class="border-end position-absolute" style="width: 2px;right: -1px;top: 20px; height: calc(100% - 40px);"></div>
             <section id="carouselMainSlider" class="carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
                 <div class="carousel-inner">
@@ -59,7 +59,7 @@
                         <h3 class="text-start"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
-                        <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="col-lg-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
                             <a href="<?= base_url('article?'.$eventful_1->name. '&i=' . $eventful_1->id); ?>" class="text-dark">
                                 <div class="row">
                                     <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_1->name, 30); ?></h6>
@@ -71,7 +71,7 @@
                                 </div>
                             </a>
                         </div>      
-                        <div class="col-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="col-lg-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
                             <a href="<?= base_url('article?'.$eventful_2->name. '&i=' . $eventful_2->id); ?>" class="text-dark">
                                 <div class="row">
                                     <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_2->name, 30); ?></h6>
@@ -196,7 +196,7 @@
                 </div>
             </section>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3">
             <section id="civic_education" class="youtube position-relative">
                  <img src="http://img.youtube.com/vi/hcglYBbIu1Y/mqdefault.jpg" class="card-img-top img-fluid w-100" />                
                         <svg version="1.1" class="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="50px" width="50px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" data-src="hcglYBbIu1Y">
