@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.28" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.29" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -107,11 +107,10 @@
         <span class="calendar-panel-close closeCalendarModal"></span>
         <div id="calendar"></div>
     </div>
-	<section id="topbar" class="d-flex align-items-center">
-		<div class="container-fluid px-5 d-flex justify-content-center justify-content-md-between">
-			<div class="contact-info d-flex align-items-center me-auto">	
+	<section id="topbar" class="py-2 py-lg-0">
+		<div class="container-fluid px-lg-5 d-flex justify-content-center justify-content-md-between align-items-center">
+			<div class="me-auto">	
                 <img src="<?php echo base_url('assets/img/armcivics.png'); ?>" height="12" alt="armcivics" style="object-fit: contain;" class="mt-2 w-100 logo d-lg-block d-none">
-                <!-- <h1 class="logo d-lg-block d-none"><a href="<?= base_url(); ?>">ArmCivics<span>.</span>am</a></h1> -->
                 <b class="d-lg-none d-block">«Քաղացիական կրթություն և մասնակցություն» ծրագիր</b>
 			</div>
 			<div class="social-links d-none d-md-flex align-items-center">

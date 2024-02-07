@@ -654,7 +654,7 @@ input.search {
 --------------------------------------------------------------*/
 #topbar {
   background: #106eea;
-  height: 40px;
+  min-height: 40px;
   font-size: 14px;
   transition: all 0.5s;
   color: #fff;
