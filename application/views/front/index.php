@@ -59,7 +59,7 @@
                         <h3 class="text-start"><?php echo $this->lang->line('eventful') ?></h3>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 border py-3" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="col-lg-6 border py-3 mb-2 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
                             <a href="<?= base_url('article?'.$eventful_1->name. '&i=' . $eventful_1->id); ?>" class="text-dark">
                                 <div class="row">
                                     <h6 class="text-center text-uppercase fs-6 mb-3"><?php echo character_limiter($eventful_1->name, 30); ?></h6>
@@ -136,7 +136,7 @@
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
                                         համար
                                         նախատեսված մոդելային տեքստ է։ </p>
-                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/grakanutyun.jpg') ?>" alt="grakanutyun" class="img-thumbnail img-fluid"></div>
+                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/grakanutyun.jpg') ?>" alt="grakanutyun" class="img-thumbnail" style="height: 232px; width: 100%; object-fit: cover;"></div>
                                 </a>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                     <p class="text-dark">Լորեմ Իպսումը տպագրության և տպագրական արդյունաբերության
                                         համար
                                         նախատեսված մոդելային տեքստ է։</p>
-                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/tesadaran.jpg') ?>" alt="tesadaran" class="img-thumbnail img-fluid"></div>
+                                    <div class="mt-2"><img src="<?php echo base_url('assets/img/tesadaran.jpg') ?>" alt="tesadaran" class="img-thumbnail" style="height: 232px; width: 100%; object-fit: cover;"></div>
                                 </a>
                             </div>
                         </div>
