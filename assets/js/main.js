@@ -7,6 +7,38 @@
 (function () {
 	"use strict";
 
+    const params = new URLSearchParams(window.location.search);
+    let el = $(`a[href*="id=${params.get("id")}"]`);    
+    function activeMenu(el) {
+        $(el).addClass("active");
+        let parent = $(el).closest("ul").siblings('a');
+        if (parent.length) {
+            $(parent).addClass("active");
+            activeMenu(parent);
+        }
+    }
+    activeMenu(el);   
+    
+    $(document).ready(function(){
+        var currentUrl = window.location.href;
+        var searchStringPyd = 'pyd'; 
+        var searchStringAbout = 'about'; 
+        var searchStringAnnouncements = 'announcements'; 
+        var searchStringServices = 'services'; 
+        if (currentUrl.indexOf(searchStringPyd) !== -1) {
+            $(document).find(`a[href*="id=74"]`).addClass('active');
+        }
+        if (currentUrl.indexOf(searchStringAbout) !== -1) {
+            $(document).find(`a[href*="about"]`).addClass('active');
+        }
+        if (currentUrl.indexOf(searchStringAnnouncements) !== -1) {
+            $(document).find(`a[href*="id=67"]`).addClass('active');
+        }
+        if (currentUrl.indexOf(searchStringServices) !== -1) {
+            $(document).find(`a[href*="services"]`).addClass('active');
+        }
+    });
+    
 	$.datetimepicker.setLocale('hy');
 	$('.datetimepicker').datetimepicker({
 		format: 'Y-m-d H:i:s',
@@ -410,4 +442,5 @@
     $(document).on("click", ".img-center", function () {
         $(this).cpLightimg();
     });
+    
 })()

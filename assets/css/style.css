@@ -39,6 +39,9 @@ button:disabled {
 .mh-40{
     min-height: 40px;
 }
+.mh-60-vh{
+    min-height: 60vh;
+}
 .lh-20 {
     line-height: 20px;
 }
@@ -1708,7 +1711,7 @@ section.eventful img {
 --------------------------------------------------------------*/
 .multimedia #multimedia-flters {
   padding: 0;
-  margin: 0 auto 15px auto;
+  margin: 0 auto;
   list-style: none;
   text-align: center;
   border-radius: 50px;
@@ -2545,6 +2548,16 @@ nav ul {
     text-shadow: 0 -1px 0 #000;
     height: 100%;
   }  
+  .nav a.active{
+    background: #aaa;
+    color: #173c69;
+    text-shadow: unset;
+    font-weight: 900;
+  }
+  .nav li:has(> a.active){
+    border-bottom: 4px #173c69 solid;
+  }
+  
   .nav li li a { 
     border-bottom: 1px solid white;
   }
@@ -2555,7 +2568,7 @@ nav ul {
     border-bottom-color:white;
   }  
   .nav li:hover > a { 
-    color:white; 
+    /* color:white;  */
   }
   .nav > li:last-child  { 
     border-right: 0;

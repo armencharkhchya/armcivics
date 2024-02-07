@@ -5,7 +5,7 @@
 			</div>
 		</div>
 	</section> -->
-	<section>
+	<section class="mh-60-vh">
 		<div class="container">
 			<h1 class="article-title"><?= @$title ?></h1>
             <p><?php echo @$category_text; ?></p>

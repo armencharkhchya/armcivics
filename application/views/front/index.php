@@ -157,7 +157,7 @@
             </section>
             <section id="multimedia" class="multimedia">
                 <div class="container" data-aos="fade-up">                   
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row mb-2" data-aos="fade-up" data-aos-delay="100">
                         <div class="col-lg-12 d-flex justify-content-center">
                             <ul id="multimedia-flters">                               
                                 <li data-filter=".filter-app"><?php echo $this->lang->line('programs'); ?></li>
