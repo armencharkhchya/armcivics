@@ -188,7 +188,7 @@
         <div id="preloader"></div>
         <div id="calendar-open"></div>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-        <script src="<?= base_url(); ?>assets/js/main.js?v=0.01"></script>
+        <script src="<?= base_url(); ?>assets/js/main.js?v=0.02"></script>
         <script>
             $("#subscribe").click(function (e) {
                 e.target.disabled = true;
