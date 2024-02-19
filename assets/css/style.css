@@ -102,7 +102,12 @@ button:disabled {
 @media (max-width: 567px){
   .feature-box{
     height: auto;
+    padding-bottom: 18px;
   }
+  .mainnews img {
+    max-height: 360px;
+    object-fit: cover;
+}
 }
 
 .feature-box figure {
