@@ -427,23 +427,7 @@
         });
     // });
 
-    // $('[data-fancybox="images"]').fancybox({
-    //     buttons: [
-    //         'slideShow',
-    //         'share',
-    //         'zoom',
-    //         'fullScreen',
-    //         'close'
-    //     ],
-    //     thumbs: {
-    //         autoStart: true
-    //     }
-    // });
-    // $(document).on("click", ".mainnews p img", function () {
-    //     $(this).cpLightimg();
-    // });
-    
-    $('.mainnews p img').fancybox({
+    $('[data-fancybox="images"]').fancybox({
         buttons: [
             'slideShow',
             'share',
@@ -455,8 +439,7 @@
             autoStart: true
         }
     });
-    $(document).on("click", '[data-fancybox="images"]', function () {
+    $(document).on("click", ".mainnews p img", function () {
         $(this).cpLightimg();
     });
-    
 })()
