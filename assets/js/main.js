@@ -439,7 +439,7 @@
             autoStart: true
         }
     });
-    $(document).on("click", ".mainnews p img", function () {
-        $(this).cpLightimg();
-    });
+    // $(document).on("click", ".mainnews p img", function () {
+    //     $(this).cpLightimg();
+    // });
 })()
