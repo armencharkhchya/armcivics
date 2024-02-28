@@ -196,9 +196,12 @@ button:disabled {
 }
 
 .mainnews img {
-  margin-bottom: 4px;
-  min-height: 133px;
-  max-width: 100%;
+    margin-bottom: 4px;
+    min-height: 133px;
+    max-width: 100%;
+    float: left;
+    margin-right: 22px;
+    object-fit: cover;
 }
 
 .article-title {
