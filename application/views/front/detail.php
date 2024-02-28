@@ -25,7 +25,7 @@
           </div>
           <?php if ($article->img && $this->uri->segment(3) <> 25) : ?>
             <a href="<?= cdn($article->img, 700, 449); ?>" data-caption="<?= $article->name ?>" data-fancybox="images">
-                <img class="lazyload mb-4" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" />
+                <img class="lazyload mb-4" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" style="width: 100%; height: 420px; object-fit: cover;"/>
             </a>           
           <?php endif; ?>
           <p><?= $article->longtext ?></p>
