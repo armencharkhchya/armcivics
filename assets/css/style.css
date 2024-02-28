@@ -435,6 +435,16 @@ section.youtube::after {
 :focus-visible {
   outline: none;
 }
+.search_bar {
+    height: 45px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 52px;
+    width: 250px;
+    z-index: 1;
+    display: none;
+}
 input.search {
    position: absolute;
     right: 13px;

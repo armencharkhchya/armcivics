@@ -189,7 +189,10 @@
 				<?php endif; ?>	
                 <li style="background: #173c69;">
                     <div class="float-end border-start" style="margin: 3px 6px">
-                        <button class="openSearchModal btn py-1"><i class="bi bi-search text-white"></i></button>
+                        <button class="btn py-1 search_icon"><i class="bi bi-search text-white"></i></button>
+                        <form autocomplete="off" action="<?= site_url('find'); ?>" method="get" accept-charset="utf-8">
+    						<input class="search_bar" type="text" size="40" name="q" placeholder="<?= $this->lang->line('search') ?>" autocomplete="off" lang="<?= $lang; ?>" maxlength="100" required="">
+    					</form>
                         <button class="openCalendarModal btn py-1" title="<?= $this->lang->line('events'); ?>"><i class="bi bi-calendar3 fs-5 text-white"></i></button>
                     </div>
                     <a href="<?php echo base_url(); ?>#services"><?= $this->lang->line('useful_resources'); ?></a>                
@@ -205,4 +208,3 @@
              
 		</nav>
 	</header>
-    

@@ -167,11 +167,14 @@
 		}
 		window.addEventListener('load', toggleBacktotop)
 		onscroll(document, toggleBacktotop)
-	}
-
-	on('click', '.openSearchModal', function (e) {
-		$(".search-panel").addClass("search-panel-open")
-	})
+    }
+    on('click', '.search_icon', function (e) {
+        $('.search_bar').fadeToggle();
+        $("i", this).toggleClass("bi bi-x");
+    });
+	// on('click', '.openSearchModal', function (e) {
+	// 	$(".search-panel").addClass("search-panel-open")
+	// })
 	on('click', '.openSearchModalMobile', function (e) {
 		$(".search-panel").addClass("search-panel-open")
 	})

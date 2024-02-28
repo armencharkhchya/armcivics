@@ -5,6 +5,7 @@
 !application/*/.htaccess
 /cache
 /documents
+/uploads
 /images/*
 /application/config/config.php
 /application/config/database.php
