@@ -177,6 +177,7 @@
             $this->db->from($this->table);
             $this->db->join('categories', 'categories.id = articles.category_id', 'left');
             $this->db->where("articles.date <=", date("Y-m-d H:i:s"));
+            $this->db->where("categories.id", 67);
             $this->db->where_not_in("articles.publish", '0');
             $this->db->order_by('date', 'DESC');
             $query = $this->db->get()->result();

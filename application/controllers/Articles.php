@@ -16,7 +16,7 @@ class Articles extends CI_Controller {
 		$this->global['not_items'] = $this->lang->line('not_items_query');
 		$this->global['categories'] = $this->Articles_model->get_categories();	
 		$this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-		$this->breadcrumbs->push($this->lang->line('home'), '/');		
+		$this->breadcrumbs->push($this->lang->line('home'), '/');
 	}
 	
 	public function index() {
