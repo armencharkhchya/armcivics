@@ -436,14 +436,16 @@ section.youtube::after {
   outline: none;
 }
 .search_bar {
+    display: none;
+}
+.search_bar input{
     height: 45px;
     padding: 10px;
     position: absolute;
     right: 0;
     top: 52px;
     width: 250px;
-    z-index: 1;
-    display: none;
+    z-index: 1;    
 }
 input.search {
    position: absolute;
