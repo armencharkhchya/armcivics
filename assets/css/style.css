@@ -199,9 +199,6 @@ button:disabled {
     margin-bottom: 4px;
     min-height: 133px;
     max-width: 100%;
-    float: left;
-    margin-right: 20px;
-    object-fit: cover;
 }
 
 .article-title {
