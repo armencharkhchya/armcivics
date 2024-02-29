@@ -36,7 +36,7 @@
 	<link href="<?= base_url(); ?>assets/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/dist/css/select2totree.css" rel="stylesheet" type="text/css" />
 	<link href="<?= base_url(); ?>assets/css/jquery.datetimepicker.css" rel="stylesheet" type="text/css" />
-	<link href="<?= base_url(); ?>assets/css/style.css?v=0.30" rel="stylesheet">
+	<link href="<?= base_url(); ?>assets/css/style.css?v=0.31" rel="stylesheet">
 
 	<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
 	<script src="<?= base_url(); ?>assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -104,6 +104,7 @@
         </form>
     </div>
     <div class="calendar-panel bg-white">
+        <span class="title">Միջոցառումներ</span>
         <span class="calendar-panel-close closeCalendarModal"></span>
         <div id="calendar"></div>
     </div>
