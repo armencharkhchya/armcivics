@@ -438,7 +438,7 @@ section.youtube::after {
 .search_bar {
     display: none;
     position: absolute;
-    right: 0;
+    right: 52px;
     top: 52px;
     width: 250px;
     z-index: 1;    
