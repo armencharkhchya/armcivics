@@ -9,16 +9,10 @@ tinymce.init({
     automatic_uploads: true,
     relative_urls: false,
     remove_script_host: false,
-    plugins: [
-        "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-        "save table contextmenu directionality emoticons template textcolor paste  textcolor colorpicker"
-    ],
-
-    toolbar1: "save,newdocument,| media, | ,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
-    toolbar2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
-    //toolbar3: "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak,restoredraft,codehighlighting,netadvimage",
-  
+    plugins: ['advlist', 'anchor', 'autolink', 'autoresize', 'bbcode', 'charmap', 'code', 'codesample', 'colorpicker', 'compat3x', 'contextmenu', 'directionality', 'emoticons', 'fullpage', 'fullscreen', 'help','hr', 'image', 'imagetools', 'importcss', 'insertdatetime', 'legacyoutput', 'link', 'lists', 'media', 'nonbreaking', 'noneditable', 'pagebreak', 'paste', 'preview', 'print', 'save', 'searchreplace', 'spellchecker', 'tabfocus', 'table', 'template', 'textcolor', 'textpattern', 'toc', 'visualblocks', 'visualchars', 'wordcount'],
+    toolbar1: 'save | undo redo | styleselect | formatselect | fontselect | fontsizeselect | forecolor backcolor | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | link unlink anchor image media | insertdatetime | charmap emoticons | hr | codesample',
+    toolbar2: 'fullscreen | visualblocks visualchars nonbreaking pagebreak | searchreplace | removeformat | spellchecker | visualaid | preview | code',
+    
     // "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
     //menubar: false,
     image_advtab: true,
