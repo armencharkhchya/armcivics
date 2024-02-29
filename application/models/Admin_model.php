@@ -293,7 +293,7 @@
         }
 
         public function getItemById($id){
-            $this->db->select('articles.id,articles.name_am,articles.text_am,articles.longtext_am,articles.img,articles.general,articles.category_id,articles.date, JSON_ARRAYAGG(JSON_OBJECT("id", documents.id, "path", documents.file, "extension", documents.extension)) as files');
+            $this->db->select('articles.id,articles.name_am,articles.text_am,articles.longtext_am,articles.img,articles.general,articles.category_id,articles.date,articles.start_date, JSON_ARRAYAGG(JSON_OBJECT("id", documents.id, "path", documents.file, "extension", documents.extension)) as files');
             $this->db->from($this->table);
             $this->db->join('documents', 'documents.post_id=articles.id', 'left');
             $this->db->where("articles.id", $id);
@@ -332,6 +332,7 @@
                 $general = $this->input->post('general');
                 $categ_id = $this->input->post('category');
                 $date = $this->input->post('date');
+                $start_date = $this->input->post('start_date');
                 $tags = htmlentities(trim($this->input->post('tags'), ' '), ENT_QUOTES, 'UTF-8');
                 $tagsArr = explode(',', $tags);  
                 $role = $this->session->userdata('role');
@@ -358,6 +359,7 @@
                     'general' => @$general,
                     'category_id' => @$categ_id,
                     'date' => @$date,
+                    'start_date' => @$start_date,
                     'publish' => @$publish,
                     'installer_id' => $this->session->userdata('userId')
                 );

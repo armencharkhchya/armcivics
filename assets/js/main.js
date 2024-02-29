@@ -202,13 +202,15 @@
 					url: BASE_URL + 'article?' + el.name + '&i=' + el.id,
 					start: moment(el.date).format('YYYY-MM-DD')
 				})
-			});
+            });
+            console.log(events);
 			let calendar = new FullCalendar.Calendar(calendarEl, {
 				headerToolbar: {
 					left: 'prev,next today',
 					center: 'title',
 					right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-				},
+                },
+                initialDate: events[0].start,
 				locale: locale,
 				dayHeaderContent: function(arg) {
 					return DAY_NAMES[arg.date.getDay()]
@@ -218,7 +220,7 @@
 				navLinks: true, // can click day/week names to navigate views
 				editable: false,
 				dayMaxEvents: true, // allow "more" link when too many events
-				events: events,
+                events: events,
 				eventClick: function (info) {
 					if (info.event.url) {
 						info.jsEvent.preventDefault(); // don't let the browser navigate

@@ -63,7 +63,7 @@ button:disabled {
     background-repeat: no-repeat;
   }
 /* #calendar {
-    max-width: 1100px;
+    max-width: 500px;
     margin: 0 auto;
 } */
 .fit-cover{object-fit: cover;}

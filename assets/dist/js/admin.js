@@ -171,6 +171,7 @@ $(document).ready(function () {
           })
         }
         $("#date").val(item.date);
+        $("#start_date").val(item.start_date);
         $('#itemModal [name=item]').val(item.id);
         var tags = JSON.parse(data).getItemTags;
         var eltg = $('#tagsinput');

@@ -173,13 +173,12 @@
 
         public function get_news(){
             $lang = $this->lang;
-            $this->db->select('categories.id as c_id, categories.name_' . $lang . ' as c_name, articles.id,articles.name_'.$lang.' as name,articles.date');
+            $this->db->select('categories.id as c_id, categories.name_' . $lang . ' as c_name, articles.id,articles.name_'.$lang.' as name,articles.start_date as date');
             $this->db->from($this->table);
             $this->db->join('categories', 'categories.id = articles.category_id', 'left');
-            $this->db->where("articles.date <=", date("Y-m-d H:i:s"));
             $this->db->where("categories.id", 67);
             $this->db->where_not_in("articles.publish", '0');
-            $this->db->order_by('date', 'DESC');
+            $this->db->order_by('date', 'ASC');
             $query = $this->db->get()->result();
             return $query;
         }

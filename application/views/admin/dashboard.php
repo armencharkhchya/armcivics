@@ -155,6 +155,12 @@
             </div>
           </div>
           <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Մեկնարկի ամսաթիվ</label>
+            <div class="col-sm-5">
+              <input type="text" name="start_date" id="start_date" class="form-control datetimepicker" value="<?= $dateNow ?>" autocomplete="off" />
+            </div>
+          </div>
+          <div class="form-group row">
             <label class="col-sm-2 col-form-label">բանալի բառեր</label>
             <div class="col-sm-5">
               <input id="tagsinput" type="text" class="form-control tagsinput" name="tags" autocomplete="off" spellcheck="false" value="">
