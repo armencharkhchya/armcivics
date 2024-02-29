@@ -37,6 +37,63 @@
         if (currentUrl.indexOf(searchStringServices) !== -1) {
             $(document).find(`a[href*="services"]`).addClass('active');
         }
+        
+        $(document).on('click', '.openCalendarModal, .openCalendarModalMobile', function (e) { 
+            scrollto('header')
+            $(".calendar-panel").addClass("calendar-panel-open")
+            $("body").addClass('overflow-hidden')
+            $('#calendar-open').show()
+            let calendarEl = document.getElementById('calendar');
+            let events = [];
+            let locale = 'en'
+            let DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            let MONTH_NAMES = ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր'];
+            if (LANG == 'am') {
+                locale = 'hy-am';
+                DAY_NAMES = ['Կիր', 'Երկ', 'Երք', 'Չոր', 'Հնգ', 'Ուրբ', 'Շաբ'];
+            }
+            get_ajax(BASE_URL + 'getNews', null, function (result) {
+                Array.prototype.forEach.call(result.data, el => {
+                    events.push({
+                        title: el.name,
+                        url: BASE_URL + 'article?' + el.name + '&i=' + el.id,
+                        start: moment(el.date).format('YYYY-MM-DD')
+                    })
+                });
+                console.log(events);
+                let calendar = new FullCalendar.Calendar(calendarEl, {
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                    },
+                    initialDate: events[0].start,
+                    locale: locale,
+                    dayHeaderContent: function(arg) {
+                        return DAY_NAMES[arg.date.getDay()]
+                    },
+                    buttonIcons: false, // show the prev/next text
+                    weekNumbers: true,
+                    navLinks: true, // can click day/week names to navigate views
+                    editable: false,
+                    dayMaxEvents: true, // allow "more" link when too many events
+                    events: events,
+                    eventClick: function (info) {
+                        if (info.event.url) {
+                            info.jsEvent.preventDefault(); // don't let the browser navigate
+                            window.open(info.event.url, "_blank");
+                            return false;
+                        }
+                    },
+                    datesSet: function (info) {
+                        let title = LANG == 'am' ? MONTH_NAMES[info.view.currentStart.getMonth()] +  ' ' + info.view.currentStart.getFullYear() : info.view.title;
+                        $('.fc-toolbar-title').text(title);
+                    }
+                });
+                calendar.render();
+            });
+        })
+        
     });
     
 	$.datetimepicker.setLocale('hy');
@@ -172,6 +229,10 @@
         $('.search_bar').fadeToggle();
         $("i", this).toggleClass("bi bi-x");
     });
+    on('click', '.search_icon_mobile', function (e) {
+        $('.search_bar_mobile').fadeToggle();
+        $("i", this).toggleClass("bi bi-x");
+    });
 	// on('click', '.openSearchModal', function (e) {
 	// 	$(".search-panel").addClass("search-panel-open")
 	// })
@@ -180,62 +241,7 @@
 	})
 	on('click', '.closeSearchModal', function (e) {
 		$(".search-panel").removeClass("search-panel-open")
-	})
-    on('click', '.openCalendarModal', function (e) {
-        scrollto('header')
-		$(".calendar-panel").addClass("calendar-panel-open")
-		$("body").addClass('overflow-hidden')
-		$('#calendar-open').show()
-		let calendarEl = document.getElementById('calendar');
-		let events = [];
-		let locale = 'en'
-		let DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-		let MONTH_NAMES = ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր'];
-		if (LANG == 'am') {
-			locale = 'hy-am';
-			DAY_NAMES = ['Կիր', 'Երկ', 'Երք', 'Չոր', 'Հնգ', 'Ուրբ', 'Շաբ'];
-		}
-		get_ajax(BASE_URL + 'getNews', null, function (result) {
-			Array.prototype.forEach.call(result.data, el => {
-				events.push({
-					title: el.name,
-					url: BASE_URL + 'article?' + el.name + '&i=' + el.id,
-					start: moment(el.date).format('YYYY-MM-DD')
-				})
-            });
-            console.log(events);
-			let calendar = new FullCalendar.Calendar(calendarEl, {
-				headerToolbar: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-                },
-                initialDate: events[0].start,
-				locale: locale,
-				dayHeaderContent: function(arg) {
-					return DAY_NAMES[arg.date.getDay()]
-				},
-				buttonIcons: false, // show the prev/next text
-				weekNumbers: true,
-				navLinks: true, // can click day/week names to navigate views
-				editable: false,
-				dayMaxEvents: true, // allow "more" link when too many events
-                events: events,
-				eventClick: function (info) {
-					if (info.event.url) {
-						info.jsEvent.preventDefault(); // don't let the browser navigate
-						window.open(info.event.url, "_blank");
-						return false;
-					}
-				},
-				datesSet: function (info) {
-					let title = LANG == 'am' ? MONTH_NAMES[info.view.currentStart.getMonth()] +  ' ' + info.view.currentStart.getFullYear() : info.view.title;
-					$('.fc-toolbar-title').text(title);
-				}
-			});
-			calendar.render();
-		});
-	})
+	})  
 	on('click', '.closeCalendarModal', function (e) {
 		$(".calendar-panel").removeClass("calendar-panel-open")
 		$("body").removeClass('overflow-hidden')
@@ -431,7 +437,6 @@
             $("#spinner").hide();
         });
     // });
-
     
     $('.longtext-content img').click(function () {
         var src = $(this).attr('src');
