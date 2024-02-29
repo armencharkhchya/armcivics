@@ -103,7 +103,7 @@
             </button>
         </form>
     </div>
-    <div class="calendar-panel bg-white container">
+    <div class="calendar-panel bg-white">
         <span class="calendar-panel-close closeCalendarModal"></span>
         <div id="calendar"></div>
     </div>

@@ -431,6 +431,7 @@
             $("#spinner").hide();
         });
     // });
+
     
     $('.longtext-content img').click(function () {
         var src = $(this).attr('src');

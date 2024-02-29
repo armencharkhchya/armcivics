@@ -45,6 +45,53 @@ button:disabled {
 .lh-20 {
     line-height: 20px;
 }
+/* Define a smaller font size for the calendar */
+/* Make the table smaller */
+#calendar {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 10px;
+}
+.fc-toolbar {
+    font-size: .9em;
+}
+.fc-toolbar h2 {
+    font-size: 12px;
+    white-space: normal !important;
+}
+/* click +2 more for popup */
+.fc-more-cell a {
+    display: block;
+    width: 85%;
+    margin: 1px auto 0 auto;
+    border-radius: 3px;
+    background: grey;
+    color: transparent;
+    overflow: hidden;
+    height: 4px;
+}
+.fc-more-popover {
+    width: 100px;
+}
+.fc-view-month .fc-event, .fc-view-agendaWeek .fc-event, .fc-content {
+    font-size: 0;
+    overflow: hidden;
+    height: 2px;
+}
+.fc-view-agendaWeek .fc-event-vert {
+    font-size: 0;
+    overflow: hidden;
+    width: 2px !important;
+}
+.fc-agenda-axis {
+    width: 20px !important;
+    font-size: .7em;
+}
+
+.fc-button-content {
+    padding: 0;
+}
+
 /* width */
 .calendar-panel-open::-webkit-scrollbar {
     width: 10px;
@@ -475,7 +522,9 @@ input.search {
   opacity: 0;
   visibility: hidden;
 }
-
+.calendar-panel {
+    left: auto;
+}
 .search-panel a {
   color: #fff;
   font-size: 45px;
@@ -544,10 +593,9 @@ input.search {
   visibility: visible !important;
 }
 .calendar-panel-open{
-    overflow: auto;
     padding: 50px 20px 20px;
-    margin: 106px auto;
- 
+    width: fit-content;
+    height: fit-content;
 }
 #calendar-open {
     display: none;
