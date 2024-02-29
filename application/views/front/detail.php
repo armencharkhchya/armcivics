@@ -24,11 +24,11 @@
             <?php endif; ?>
           </div>
           <?php if ($article->img && $this->uri->segment(3) <> 25) : ?>
-            <a href="<?= cdn($article->img, 700, 449); ?>" data-caption="<?= $article->name ?>" data-fancybox="images">
-                <img class="lazyload mb-4 img-thumbnail" data-src="<?= cdn($article->img, 530, 340); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'" style="width: 100%; height: 420px; object-fit: cover;"/>
+            <a href="<?= cdn($article->img, 700, 449); ?>" data-caption="<?= $article->name ?>" data-fancybox="images" class="d-block my-4 rounded shadow-sm text-center" style="background: aliceblue;">
+                <img class="lazyload py-3" data-src="<?= cdn($article->img, 700, 449); ?>" alt="<?= $article->name ?>" onerror="this.style.display='none'"/>
             </a>           
           <?php endif; ?>
-          <p><?= $article->longtext ?></p>
+          <div class="longtext-content"><?= $article->longtext ?></div>
           <?php if(@$article->files):?>
             <div class="tg-tagsshare">
                 <ul class='files_cont row'>

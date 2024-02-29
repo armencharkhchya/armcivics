@@ -99,6 +99,10 @@ button:disabled {
   height: 360px;
 }
 
+.longtext-content img {
+    cursor: zoom-in;
+    margin-left: 0 !important;
+}
 @media (max-width: 567px){
   .feature-box{
     height: auto;

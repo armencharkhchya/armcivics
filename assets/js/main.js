@@ -431,20 +431,42 @@
             $("#spinner").hide();
         });
     // });
-
-    $('[data-fancybox="images"]').fancybox({
-        buttons: [
-            'slideShow',
-            'share',
-            'zoom',
-            'fullScreen',
-            'close'
-        ],
-        thumbs: {
-            autoStart: true
+    
+    $('.longtext-content img').click(function () {
+        var src = $(this).attr('src');
+        var modal;
+    
+        function removeModal() {
+            modal.fadeOut('slow', function() {
+                modal.remove();
+                $('body').off('keyup.modal-close');
+            });
         }
+    
+        modal = $('<div>').css({
+            background: 'url("' + src + '") center no-repeat RGBA(0,0,0,.8)',
+            backgroundSize: '40%',
+            width: '100%',
+            height: '100%',
+            position: 'fixed',
+            zIndex: '10000',
+            top: '0',
+            left: '0',
+            display: 'none', // initially hidden
+            cursor: 'zoom-out'
+        }).appendTo('body');
+    
+        modal.fadeIn('slow'); // Show modal with fading effect
+    
+        $('body').on('keyup.modal-close', function (e) {
+            if (e.key === 'Escape') {
+                removeModal();
+            }
+        });
+    
+        modal.click(function () {
+            removeModal();
+        });
     });
-    // $(document).on("click", ".mainnews p img", function () {
-    //     $(this).cpLightimg();
-    // });
+    
 })()
