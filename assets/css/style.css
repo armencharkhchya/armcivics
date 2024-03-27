@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  position: relative;
 }
 
 a {
@@ -34,7 +35,10 @@ h6 {
 input[type=submit]:disabled,
 button:disabled {
     opacity: .5;
-    background: #106eea !important;
+    background: #106eea !important;  
+}
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
 }
 .mh-40{
     min-height: 40px;
@@ -300,7 +304,7 @@ section.youtube svg {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    z-index: 3;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -492,9 +496,9 @@ section.youtube::after {
 .margin-left-250 {
   margin-left: 250px !important;
 }
-:focus-visible {
+/* :focus-visible {
   outline: none;
-}
+} */
 .search_bar {
     display: none;
     position: absolute;
@@ -514,7 +518,7 @@ section.youtube::after {
 .search_bar input, .search_bar_mobile input{
     height: 45px;
     padding: 10px;  
-    width: 100%;  
+    width: 100%; 
 }
 input.search {
    position: absolute;
@@ -583,7 +587,9 @@ input.search {
 }
 #calendar-open {
     display: none;
-    position: fixed;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -2639,11 +2645,12 @@ nav ul {
   .nav ul {
     position: absolute;
     border-bottom: 5px solid  white;
-    z-index: 1;
+    z-index: 2;
     left: -99999em;
   }
-  .nav > li:hover > ul {
-    left: auto;
+  .first-nav, .nav > li:hover > ul, 
+  .nav > li > a:focus-within + ul{
+    left: auto !important;
     padding-top: 5px  ;
     min-width: 100%;
   }
@@ -2651,10 +2658,16 @@ nav ul {
     border-left:1px solid #fff;
     width: 100%;
   }
-  .nav > li li:hover > ul { 
-    left: 100%;
+  .last-nav,.nav > li > ul > li:hover > ul,
+   .nav > li > ul > li > a:focus-within + ul { 
+    left: 100% !important;
     top: -1px;
   }
+  .nav > li > ul > li > ul > li:hover > ul,
+  .nav > li > ul > li > ul > li > a:focus-within + ul { 
+   left: 100%;
+   top: -1px;
+ }
   .nav > li > a:first-child:nth-last-child(2):before { 
     border-top-color: #aaa; 
   }
@@ -2675,4 +2688,10 @@ nav ul {
   
   .nav li .btn:hover, .nav li .btn:focus {
     border-color: white;
+}
+.fc a[data-navlink] {
+    cursor: default;
+}
+.fc a[data-navlink]:hover {
+    text-decoration: unset;
 }
